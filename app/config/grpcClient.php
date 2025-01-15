@@ -3,7 +3,7 @@ return [
     'services' => [
         'user' => [
             'class' => \App\Service\UserService::class,
-            'host' => '172.20.8.29:9001',
+            'host' => '192.168.1.118:9001',
         ],
     ]
 ];
