@@ -7,7 +7,7 @@ use Barsam\User\Messages\FieldDeleteRequest;
 class FieldDeleteMapper
 {
 
-    public function fromRequest(array $inputs): FieldDeleteRequest
+    public static function fromRequest(array $inputs): FieldDeleteRequest
     {
         return new FieldDeleteRequest([
             'id' => $inputs['id'],
