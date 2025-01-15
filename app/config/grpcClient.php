@@ -3,11 +3,15 @@ return [
     'services' => [
         'user' => [
             'class' => \App\Service\UserService::class,
-            'host' => '192.168.1.118:9001',
+            'host' => '172.20.8.29:9001',
         ],
         'auth' => [
             'class' => \App\Service\AuthService::class,
-            'host' => '192.168.1.118:9002',
+            'host' => '172.20.8.29:9002',
+        ],
+        'config' => [
+            'class' => \App\Service\ConfigService::class,
+            'host' => '172.20.8.29:9003',
         ]
     ]
 ];
