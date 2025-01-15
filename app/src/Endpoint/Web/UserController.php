@@ -5,13 +5,19 @@ namespace App\Endpoint\Web;
 use App\Domain\Mapper\CheckCredentialMapper;
 use App\Domain\Mapper\CreateUserMapper;
 use App\Domain\Mapper\DeleteUserMapper;
+use App\Domain\Mapper\FieldCreateMapper;
+use App\Domain\Mapper\FieldDeleteMapper;
+use App\Domain\Mapper\FieldGetAllMapper;
+use App\Domain\Mapper\FieldUpdateMapper;
 use App\Domain\Mapper\GetUserMapper;
 use App\Domain\Mapper\UpdateUserMapper;
 use App\Service\UserService;
-use Barsam\User\Messages\CheckCredentialsRequest;
 use Barsam\User\Messages\CheckCredentialsResponse;
 use Barsam\User\Messages\DeleteResponse;
-use Barsam\User\Messages\GetRequest;
+use Barsam\User\Messages\FieldCreateResponse;
+use Barsam\User\Messages\FieldDeleteResponse;
+use Barsam\User\Messages\FieldGetAllResponse;
+use Barsam\User\Messages\FieldUpdateResponse;
 use Barsam\User\Messages\GetResponse;
 use Barsam\User\Messages\RegisterResponse;
 use Barsam\User\Messages\UpdateResponse;
@@ -104,6 +110,66 @@ class UserController
         ]);
     }
 
+    #[Route('/api/field/create', methods: ['POST'])]
+    public function fieldCreate(ServerRequestInterface $request, InputManager $input): ResponseInterface
+    {
+        $userRequest = FieldCreateMapper::fromRequest($input->data->all());
+
+        $userResponse = $this->userService->FieldCreate(
+            $userRequest,
+            FieldCreateResponse::class
+        );
+
+        return $this->jsonResponse([
+            "message" => "created"
+        ]);
+    }
+
+    #[Route('/api/field/update', methods: ['PUT'])]
+    public function fieldUpdate(ServerRequestInterface $request, InputManager $input): ResponseInterface
+    {
+        $userRequest = FieldUpdateMapper::fromRequest($input->data->all());
+
+        $userResponse = $this->userService->FieldUpdate(
+            $userRequest,
+            FieldUpdateResponse::class
+        );
+
+        return $this->jsonResponse([
+            'message' => "updated"
+        ]);
+    }
+
+    #[Route('/api/field/delete', methods: ['DELETE'])]
+    public function fieldDelete(ServerRequestInterface $request, InputManager $input): ResponseInterface
+    {
+        $userRequest = FieldDeleteMapper::fromRequest($input->data->all());
+
+        $userResponse = $this->userService->FieldDelete(
+            $userRequest,
+            FieldDeleteResponse::class
+        );
+
+        return $this->jsonResponse([
+            'message' => "deleted"
+        ]);
+
+    }
+
+    #[Route('/api/field', methods: ['GET'])]
+    public function fieldGetAll(ServerRequestInterface $request, InputManager $input): ResponseInterface
+    {
+        $userRequest = FieldGetAllMapper::fromRequest($input->data->all());
+
+        $userResponse = $this->userService->FieldGetAll(
+            $userRequest,
+            FieldGetAllResponse::class
+        );
+
+        return $this->jsonResponse([
+            'feilds' => $userResponse->getResponse()->getFeilds(),
+        ]);
+    }
 
     private function jsonResponse(array $data, int $status = 200): ResponseInterface
     {
