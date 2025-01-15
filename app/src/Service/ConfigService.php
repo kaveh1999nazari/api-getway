@@ -7,7 +7,7 @@ use Barsam\Config\ConfigServiceInterface;
 use Barsam\Config\Messages\GetOneRequest;
 use Barsam\Config\Messages\SyncRequest;
 use Barsam\Config\Messages\UpdateBatchRequest;
-use Barsam\Installment\Messages\GetAllRequest;
+use Barsam\Config\Messages\GetAllRequest;
 
 /**
  * @method Sync(SyncRequest $request, string $responseClass, array $context = [])
