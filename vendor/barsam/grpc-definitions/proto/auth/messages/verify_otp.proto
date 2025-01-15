@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package barsam.auth.messages;
+
+// Define the request message
+message VerifyOtpRequest {
+  string login_id = 1;
+  string code = 2;
+}
+
+// Define the response message
+message VerifyOtpResponse {
+  bool valid = 1;
+}

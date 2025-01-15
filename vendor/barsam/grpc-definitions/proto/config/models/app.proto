@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package barsam.config.models;
+
+// Define the configuration model
+message App {
+  string name = 1;
+  string version = 2;
+  string description = 3;
+}

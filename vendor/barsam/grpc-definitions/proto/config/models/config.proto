@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package barsam.config.models;
+
+// Define the configuration model
+message Config {
+  string key = 1;
+  string value = 2;
+  repeated string validation_rules = 3;
+}

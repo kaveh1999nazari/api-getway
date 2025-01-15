@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package barsam.notification.models;
+
+message Template {
+  uint64 id = 1;
+  uint64 channel_id = 2;
+  string key = 3;
+  string subject = 4;
+  string content = 5;
+}

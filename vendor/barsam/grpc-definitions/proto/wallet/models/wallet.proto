@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package barsam.wallet.models;
+
+import "wallet/enums/wallet_type.proto";
+
+message Wallet {
+  uint64 id = 1;
+  uint64 owner_id = 2;
+  uint64 currency_id = 3;
+  enums.WalletType type = 4;
+  double balance_available = 5;
+  double balance_locked = 6;
+  double balance_total = 7;
+  string address = 8;
+}

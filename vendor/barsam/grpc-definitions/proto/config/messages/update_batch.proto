@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package barsam.config.messages;
+
+import "config/models/config_batch.proto";
+import "config/enums/status.proto";
+
+// Define the request message
+message UpdateBatchRequest {
+  repeated models.ConfigBatch configs = 1;
+}
+
+// Define the response message
+message UpdateBatchResponse {
+  enums.SyncStatus status = 1;
+}

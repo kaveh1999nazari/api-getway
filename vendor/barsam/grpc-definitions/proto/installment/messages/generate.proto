@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package barsam.installment.messages;
+
+import "google/protobuf/timestamp.proto";
+
+// Define the request message
+message GenerateRequest {
+  // The loan ID to generate the installments
+  uint64 loan_id = 1;
+
+  // The user ID
+  uint64 user_id = 2;
+
+  // The payback period in months
+  uint32 payback_period = 3;
+
+  // The amount of each installment
+  string amount = 4;
+
+  // The date of the first installment (optional)
+  google.protobuf.Timestamp start_from = 5;
+}
+
+// Define the response message
+message GenerateResponse {
+  repeated uint64 ids = 1;
+}

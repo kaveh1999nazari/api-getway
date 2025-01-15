@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package barsam.auth.messages;
+
+import "auth/enums/login_type.proto";
+
+// Define the request message
+message ValidateTokenRequest {
+  string access_token = 1;
+}
+
+// Define the response message
+message ValidateTokenResponse {
+  enums.LoginType valid = 1;
+  map<string, string> claims = 2;
+}

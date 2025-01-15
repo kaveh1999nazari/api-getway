@@ -1,0 +1,8 @@
+module:
+  name: notification
+  description: >
+    This module provides functionality for sending notifications to users.
+  consumers:
+    - send_direct
+    - send_bulk
+    - send_by_template

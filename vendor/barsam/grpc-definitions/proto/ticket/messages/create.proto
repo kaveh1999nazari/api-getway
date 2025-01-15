@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package barsam.ticket.messages;
+
+// Define the request message
+message CreateRequest {
+  uint64 department_id = 1;
+  uint64 user_id = 2;
+  string title = 3;
+  string body = 4;
+  repeated string files = 5;
+}
+
+// Define the response message
+message CreateResponse {
+  uint64 ticket_id = 1;
+}

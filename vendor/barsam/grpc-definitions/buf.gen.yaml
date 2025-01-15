@@ -1,0 +1,14 @@
+version: v1
+managed:
+    enabled: true
+    override:
+        PHP_NAMESPACE:
+            config/service.proto: "Barsam\\GRPC\\Config"
+        PHP_METADATA_NAMESPACE:
+            config/service.proto: "Barsam\\GRPC\\Config\\Metadata"
+plugins:
+    -   plugin: buf.build/community/roadrunner-server-php-grpc:v5.0.2
+        out: generated
+    # dependencies
+    -   plugin: buf.build/protocolbuffers/php:v27.2
+        out: generated

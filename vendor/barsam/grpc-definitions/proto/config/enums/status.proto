@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package barsam.config.enums;
+
+enum SyncStatus {
+  // The synchronization was successful
+  SUCCESS = 0;
+
+  // The synchronization failed
+  BAD_REQUEST = 1;
+
+  // The app does not exist
+  INVALID_APP = 2;
+}

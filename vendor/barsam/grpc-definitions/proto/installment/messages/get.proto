@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package barsam.installment.messages;
+
+import "installment/models/installment.proto";
+
+// Define the request message
+message GetRequest {
+  uint64 id = 1;
+}
+
+// Define the response message
+message GetResponse {
+  models.Installment installment = 1;
+}

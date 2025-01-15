@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package barsam.installment.models;
+
+import "google/protobuf/timestamp.proto";
+
+message Installment {
+  uint64 id = 1;
+  uint64 user_id = 2;
+  uint64 loan_id = 3;
+  uint32 number = 4;
+  string amount = 5;
+  string penalty_amount = 6;
+  google.protobuf.Timestamp due_date = 7;
+  google.protobuf.Timestamp created_at = 8;
+  google.protobuf.Timestamp updated_at = 9;
+  google.protobuf.Timestamp deleted_at = 10;
+}

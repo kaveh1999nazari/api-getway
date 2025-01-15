@@ -16,6 +16,7 @@ use Spiral\Filter\ValidationHandlerMiddleware;
 use Spiral\Http\Middleware\ErrorHandlerMiddleware;
 use Spiral\Http\Middleware\JsonPayloadMiddleware;
 use Spiral\Router\Bootloader\AnnotatedRoutesBootloader;
+use Spiral\Router\GroupRegistry;
 use Spiral\Router\Loader\Configurator\RoutingConfigurator;
 use Spiral\Session\Middleware\SessionMiddleware;
 
@@ -49,6 +50,17 @@ final class RoutesBootloader extends BaseRoutesBootloader
                 ValidationHandlerMiddleware::class
             ],
         ];
+    }
+
+    protected function configureRouteGroups(GroupRegistry $groups): void
+    {
+        $groups->getGroup('api')
+            ->setNamePrefix('api.')
+            ->setPrefix('/api');
+
+//        $groups->getGroup('web')
+//            ->addMiddleware(MyMiddelware::class)
+//            ->setPrefix('/api');
     }
 
     protected function defineRoutes(RoutingConfigurator $routes): void

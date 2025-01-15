@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package barsam.ticket;
+
+import "ticket/messages/create.proto";
+import "ticket/messages/get.proto";
+import "ticket/messages/reply.proto";
+import "ticket/messages/update.proto";
+import "ticket/messages/delete.proto";
+
+service TicketService {
+  // Create a new ticket
+  rpc Create(messages.CreateRequest) returns (messages.CreateResponse);
+
+  // Get ticket information
+  rpc Get(messages.GetRequest) returns (messages.GetResponse);
+
+  // Reply to the ticket
+  rpc Reply(messages.ReplyRequest) returns (messages.ReplyResponse);
+
+  // Update the ticket
+  rpc Update(messages.UpdateRequest) returns (messages.UpdateResponse);
+
+  // Delete the ticket
+  rpc Delete(messages.DeleteRequest) returns (messages.DeleteResponse);
+}

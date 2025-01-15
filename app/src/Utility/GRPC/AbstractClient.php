@@ -2,12 +2,12 @@
 
 namespace App\Utility\GRPC;
 
-use App\Domain\DataTransferObject\UserResponseDTO;
 use Spiral\RoadRunner\GRPC\Context;
 use Spiral\RoadRunnerBridge\GRPC\Interceptor\ServiceClientCore;
 use stdClass;
+use Throwable;
 
-abstract class BaseClient
+abstract class AbstractClient
 {
     public function __construct(
         private readonly ServiceClientCore $core,
@@ -17,15 +17,21 @@ abstract class BaseClient
 
     abstract public function getServiceInterface(): string;
 
-    abstract public function getServiceName(): string;
-
-    public function __call(string $name, array $arguments)
+    /**
+     * @param string $name
+     * @param array $arguments
+     * @return Response
+     * @throws Throwable
+     */
+    public function __call(string $name, array $arguments): Response
     {
+        $serviceName = constant("{$this->getServiceInterface()}::NAME");
+
         /** @var stdClass $detail */
         /** @var object $response */
         [$response, $detail] = $this->core->callAction(
             $this->getServiceInterface(),
-            '/' . $this->getServiceName() . '/' . $name,
+            '/' . $serviceName . '/' . $name,
             [
                 'in' => $arguments[0],
                 'responseClass' => $arguments[1],
@@ -33,7 +39,10 @@ abstract class BaseClient
             ],
         );
 
-        return new UserResponseDTO($detail->code, $detail->details);
+        return new Response(
+            response: $response,
+            detail: $detail,
+        );
     }
 
 }

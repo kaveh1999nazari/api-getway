@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package barsam.wallet;
+
+import "wallet/messages/create.proto";
+import "wallet/messages/get.proto";
+import "wallet/messages/deposit.proto";
+import "wallet/messages/withdraw.proto";
+import "wallet/messages/get_transactions.proto";
+
+service WalletService {
+  // Create a new wallet
+  rpc Create(messages.CreateRequest) returns (messages.CreateResponse);
+
+  // Get wallet information
+  rpc Get(messages.GetRequest) returns (messages.GetResponse);
+
+  // Deposit money to wallet
+  rpc Deposit(messages.DepositRequest) returns (messages.DepositResponse);
+
+  // Withdraw money from wallet
+  rpc Withdraw(messages.WithdrawRequest) returns (messages.WithdrawResponse);
+
+  // Get wallet's transactions
+  rpc GetTransactions(messages.GetTransactionsRequest) returns (messages.GetTransactionsResponse);
+}

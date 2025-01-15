@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package barsam.notification.messages;
+
+import "notification/models/channel.proto";
+
+// Define the request message
+message GetChannelsRequest {
+
+}
+
+// Define the response message
+message GetChannelsResponse {
+  repeated models.Channel channels = 1;
+}
