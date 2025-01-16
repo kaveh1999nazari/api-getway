@@ -5,7 +5,7 @@ namespace App\Endpoint\Web;
 use App\Domain\Mapper\getAllMapper;
 use App\Domain\Mapper\getOneMapper;
 use App\Domain\Mapper\SyncMapper;
-use App\Domain\Mapper\updateBatchMapper;
+use App\Domain\Mapper\UpdateBatchMapper;
 use App\Service\ConfigService;
 use Barsam\Config\Messages\GetAllResponse;
 use Barsam\Config\Messages\GetOneResponse;
@@ -71,7 +71,7 @@ class ConfigController
     #[Route('/api/', methods: [''])]
     public function updateBatch(ServerRequestInterface $request, InputManager $input): ResponseInterface
     {
-        $configRequest = updateBatchMapper::fromRequest($input->data->all());
+        $configRequest = UpdateBatchMapper::fromRequest($input->data->all());
 
         $configResponse = $this->configService->UpdateBatch(
             $configRequest,
