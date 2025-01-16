@@ -12,6 +12,10 @@ return [
         'config' => [
             'class' => \App\Service\ConfigService::class,
             'host' => '172.20.8.29:9003',
-        ]
+        ],
+        'inquiry' => [
+            'class' => \App\Service\InquiryService::class,
+            'host' => '172.20.8.29:9004',
+        ],
     ]
 ];
