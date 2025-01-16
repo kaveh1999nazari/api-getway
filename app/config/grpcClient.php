@@ -17,5 +17,9 @@ return [
             'class' => \App\Service\InquiryService::class,
             'host' => '172.20.8.29:9004',
         ],
+        'installment' => [
+            'class' => \App\Service\InstallmentService::class,
+            'host' => '172.20.8.29:9005'
+        ]
     ]
 ];
