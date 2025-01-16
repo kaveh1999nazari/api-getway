@@ -20,6 +20,10 @@ return [
         'installment' => [
             'class' => \App\Service\InstallmentService::class,
             'host' => '172.20.8.29:9005'
-        ]
+        ],
+        'loan' => [
+            'class' => \App\Service\LoanService::class,
+            'host' => '172.20.8.29:9006'
+        ],
     ]
 ];
