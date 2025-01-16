@@ -4,7 +4,7 @@ namespace App\Domain\Mapper;
 
 use Barsam\Config\Messages\UpdateBatchRequest;
 
-class updateBatchMapper
+class UpdateBatchMapper
 {
     public static function fromRequest(array $inputs): UpdateBatchRequest
     {
