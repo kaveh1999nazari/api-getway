@@ -25,5 +25,9 @@ return [
             'class' => \App\Service\LoanService::class,
             'host' => '172.20.8.29:9006'
         ],
+        'notification' => [
+            'class' => \App\Service\NotificationService::class,
+            'host' => '172.20.8.29:9007'
+        ],
     ]
 ];
