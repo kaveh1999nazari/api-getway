@@ -1,0 +1,111 @@
+<?php
+
+namespace App\Endpoint\Web;
+
+use App\Domain\Mapper\WalletCreateMapper;
+use App\Domain\Mapper\WalletDepositMapper;
+use App\Domain\Mapper\WalletGetMapper;
+use App\Domain\Mapper\WalletGetTransactionsMapper;
+use App\Domain\Mapper\WalletWithdrawMapper;
+use App\Service\WalletService;
+use Barsam\Wallet\Messages\CreateResponse;
+use Barsam\Wallet\Messages\DepositResponse;
+use Barsam\Wallet\Messages\GetResponse;
+use Barsam\Wallet\Messages\GetTransactionsResponse;
+use Barsam\Wallet\Messages\WithdrawResponse;
+use Psr\Http\Message\ResponseInterface;
+use Psr\Http\Message\ServerRequestInterface;
+use Spiral\Http\Request\InputManager;
+use Spiral\Router\Annotation\Route;
+
+class WalletController
+{
+    public function __construct(private readonly WalletService $walletService)
+    {
+    }
+
+    #[Route('/api/wallet', methods: ['POST'])]
+    public function create(ServerRequestInterface $request, InputManager $input): ResponseInterface
+    {
+        $walletRequest = WalletCreateMapper::fromRequest($input->data->all());
+
+        $walletResponse = $this->walletService->Create(
+            $walletRequest,
+            CreateResponse::class
+        );
+
+        return $this->jsonResponse([
+            'wallet_id' => $walletResponse->getResponse()->getWalletId()
+        ]);
+    }
+
+    #[Route('/api/wallet', methods: ['GET'])]
+    public function get(ServerRequestInterface $request, InputManager $input): ResponseInterface
+    {
+        $walletRequest = WalletGetMapper::fromRequest($input->data->all());
+
+        $walletResponse = $this->walletService->Get(
+            $walletRequest,
+            GetResponse::class
+        );
+
+        return $this->jsonResponse([
+            'wallet' => $walletResponse->getResponse()->getWallet()
+        ]);
+    }
+
+    #[Route('/api/wallet', methods: ['POST'])]
+    public function deposit(ServerRequestInterface $request, InputManager $input): ResponseInterface
+    {
+        $walletRequest = WalletDepositMapper::fromRequest($input->data->all());
+
+        $walletResponse = $this->walletService->Deposit(
+            $walletRequest,
+            DepositResponse::class
+        );
+
+        return $this->jsonResponse([
+            'new_balance' => $walletResponse->getResponse()->getNewBalance()
+        ]);
+    }
+
+    #[Route('/api/wallet/withdraw', methods: ['POST'])]
+    public function withdraw(ServerRequestInterface $request, InputManager $input): ResponseInterface
+    {
+        $walletRequest = WalletWithdrawMapper::fromRequest($input->data->all());
+
+        $walletResponse = $this->walletService->Withdraw(
+            $walletRequest,
+            WithdrawResponse::class
+        );
+
+        return $this->jsonResponse([
+            'new_balance' => $walletResponse->getResponse()->getNewBalance()
+        ]);
+    }
+
+    #[Route('/api/wallet/transaction', methods: ['GET'])]
+    public function getTransactions(ServerRequestInterface $request, InputManager $input): ResponseInterface
+    {
+        $walletRequest = WalletGetTransactionsMapper::fromRequest($input->data->all());
+
+        $walletResponse = $this->walletService->GetTransactions(
+            $walletRequest,
+            GetTransactionsResponse::class
+        );
+
+        return $this->jsonResponse([
+            'transactions' => $walletResponse->getResponse()->getTransactions(),
+            'max_page' => $walletResponse->getResponse()->getMaxPage(),
+            'total_records' => $walletResponse->getResponse()->getTotalRecords()
+        ]);
+    }
+
+    private function jsonResponse(array $data, int $status = 200): ResponseInterface
+    {
+        $response = new \Nyholm\Psr7\Response($status);
+        $response->getBody()->write(json_encode($data));
+        return $response->withHeader('Content-Type', 'application/json');
+    }
+
+}
