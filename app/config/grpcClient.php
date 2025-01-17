@@ -32,6 +32,10 @@ return [
         'ticket' => [
             'class' => \App\Service\TicketService::class,
             'host' => '172.20.8.29:9008'
+        ],
+        'wallet' => [
+            'class' => \App\Service\WalletService::class,
+            'host' => '172.20.8.29:9009'
         ]
     ]
 ];
