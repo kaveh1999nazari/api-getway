@@ -24,7 +24,7 @@ class TicketController
     {
     }
 
-    #[Route('/api/', methods: ['POST'])]
+    #[Route('/api/ticket', methods: ['POST'])]
     public function create(ServerRequestInterface $request, InputManager $input): ResponseInterface
     {
         $ticketRequest = TicketCreateMapper::fromRequest($input->data->all());
@@ -40,7 +40,7 @@ class TicketController
 
     }
 
-    #[Route('/api/', methods: ['GET'])]
+    #[Route('/api/ticket', methods: ['GET'])]
     public function get(ServerRequestInterface $request, InputManager $input): ResponseInterface
     {
         $ticketRequest = TicketGetMapper::fromRequest($input->data->all());
@@ -56,7 +56,7 @@ class TicketController
 
     }
 
-    #[Route('/api/', methods: ['POST'])]
+    #[Route('/api/ticket/reply', methods: ['POST'])]
     public function reply(ServerRequestInterface $request, InputManager $input): ResponseInterface
     {
         $ticketRequest = TicketReplyMapper::fromRequest($input->data->all());
@@ -72,7 +72,7 @@ class TicketController
 
     }
 
-    #[Route('/api/', methods: ['PUT'])]
+    #[Route('/api/ticket', methods: ['PUT'])]
     public function update(ServerRequestInterface $request, InputManager $input): ResponseInterface
     {
         $ticketRequest = TicketUpdateMapper::fromRequest($input->data->all());
@@ -88,7 +88,7 @@ class TicketController
 
     }
 
-    #[Route('/api/', methods: ['DELETE'])]
+    #[Route('/api/ticket', methods: ['DELETE'])]
     public function delete(ServerRequestInterface $request, InputManager $input): ResponseInterface
     {
         $ticketRequest = TicketDeleteMapper::fromRequest($input->data->all());
