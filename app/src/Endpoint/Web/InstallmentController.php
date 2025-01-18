@@ -27,7 +27,7 @@ class InstallmentController
     {
     }
 
-    #[Route('/api/', methods: ['POST'])]
+    #[Route('/api/installment', methods: ['POST'])]
     public function create(ServerRequestInterface $request, InputManager $input): ResponseInterface
     {
         $installmentRequest = CreateInstallmentMapper::fromRequest($input->data->all());
@@ -42,7 +42,7 @@ class InstallmentController
         ]);
     }
 
-    #[Route('/api/', methods: ['POST'])]
+    #[Route('/api/installment/generate', methods: ['POST'])]
     public function generate(ServerRequestInterface $request, InputManager $input): ResponseInterface
     {
         $installmentRequest = GenerateInstallmentMapper::fromRequest($input->data->all());
@@ -58,7 +58,7 @@ class InstallmentController
 
     }
 
-    #[Route('/api/', methods: ['PUT'])]
+    #[Route('/api/installment', methods: ['PUT'])]
     public function update(ServerRequestInterface $request, InputManager $input): ResponseInterface
     {
         $installmentRequest = UpdateInstallmentMapper::fromRequest($input->data->all());
@@ -74,7 +74,7 @@ class InstallmentController
 
     }
 
-    #[Route('/api/', methods: ['DELETE'])]
+    #[Route('/api/installment', methods: ['DELETE'])]
     public function delete(ServerRequestInterface $request, InputManager $input): ResponseInterface
     {
         $installmentRequest = DeleteInstallmentMapper::fromRequest($input->data->all());
@@ -90,7 +90,7 @@ class InstallmentController
 
     }
 
-    #[Route('/api/', methods: ['GET'])]
+    #[Route('/api/installment/all', methods: ['GET'])]
     public function getAll(ServerRequestInterface $request, InputManager $input): ResponseInterface
     {
         $installmentRequest = GetAllInstallmentMapper::fromRequest($input->data->all());
@@ -107,7 +107,7 @@ class InstallmentController
         ]);
     }
 
-    #[Route('/api/', methods: ['GET'])]
+    #[Route('/api/installment', methods: ['GET'])]
     public function get(ServerRequestInterface $request, InputManager $input): ResponseInterface
     {
         $installmentRequest = GetInstallmentMapper::fromRequest($input->data->all());
