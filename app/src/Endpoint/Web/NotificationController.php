@@ -37,11 +37,24 @@ class NotificationController
             GetChannelsResponse::class
         );
 
-        return $this->jsonResponse([
-            'channels' => $notificationResponse->getResponse()->getChannels()
-        ]);
+        $channels = $notificationResponse->getResponse()->getChannels();
+        $channelsArray = [];
+        foreach ($channels as $channel) {
+            $channelsArray[] = [
+                'id' => $channel->getId(),
+                'name' => $channel->getName(),
+                'description' => $channel->getDescription(),
+                'status' => $channel->getStatus(),
+            ];
+        }
 
+        return $this->jsonResponse([
+            'channels' => $channelsArray,
+            'total_records' => $notificationResponse->getResponse()->getTotalRecords(),
+            'max_page' => $notificationResponse->getResponse()->getMaxPage(),
+        ]);
     }
+
 
     #[Route('/api/notification/direct', methods: ['POST'])]
     public function sendDirect(ServerRequestInterface $request, InputManager $input): ResponseInterface
@@ -83,10 +96,23 @@ class NotificationController
             GetTemplatesResponse::class
         );
 
+        $templates = $notificationResponse->getResponse()->getTemplates();
+        $templatesArray = [];
+        foreach ($templates as $template) {
+            $templatesArray[] = [
+                'id' => $template->getId(),
+                'channel_id' => $template->getChannelId(),
+                'key' => $template->getKey(),
+                'subject' => $template->getSubject(),
+                'content' => $template->getContent(),
+            ];
+        }
+
         return $this->jsonResponse([
-            'templates' => $notificationResponse->getResponse()->getTemplates()
+            'templates' => $templatesArray,
         ]);
     }
+
 
     #[Route('/api/notification/template', methods: ['POST'])]
     public function createTemplate(ServerRequestInterface $request, InputManager $input): ResponseInterface
