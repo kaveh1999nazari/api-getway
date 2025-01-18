@@ -9,7 +9,7 @@ class GetInstallmentMapper
     public static function fromRequest(array $inputs): GetRequest
     {
         return new GetRequest([
-//            'id' => $inputs['id'],
+            'id' => $inputs['id'],
         ]);
     }
 }

@@ -100,10 +100,37 @@ class InstallmentController
             GetResponse::class
         );
 
-        return $this->jsonResponse([
-            'installment' => $installmentResponse->getResponse()->getInstallment()
-        ]);
+        $installments = $installmentResponse->getResponse()->getInstallments();
+        $installmentsArray = [];
+        foreach ($installments as $installment) {
+            $installmentsArray[] = [
+                'id' => $installment->getId(),
+                'user_id' => $installment->getUserId(),
+                'loan_id' => $installment->getLoanId(),
+                'number' => $installment->getNumber(),
+                'amount' => $installment->getAmount(),
+                'penalty_amount' => $installment->getPenaltyAmount(),
+                'due_date' => $installment->getDueDate(),
+                'created_at' => [
+                    'seconds' => $installment->getCreatedAt()->getSeconds(),
+                    'nanos' => $installment->getCreatedAt()->getNanos(),
+                ],
+                'updated_at' => [
+                    'seconds' => $installment->getUpdatedAt()->getSeconds(),
+                    'nanos' => $installment->getUpdatedAt()->getNanos(),
+                ],
+                'deleted_at' => $installment->getDeletedAt() ? [
+                    'seconds' => $installment->getDeletedAt()->getSeconds(),
+                    'nanos' => $installment->getDeletedAt()->getNanos(),
+                ] : null,
+            ];
+        }
 
+        return $this->jsonResponse([
+            'installments' => $installmentsArray,
+            'total_records' => $installmentResponse->getResponse()->getTotalRecords(),
+            'max_page' => $installmentResponse->getResponse()->getMaxPage(),
+        ]);
     }
 
     private function jsonResponse(array $data, int $status = 200): ResponseInterface
