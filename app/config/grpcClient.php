@@ -27,7 +27,7 @@ return [
         ],
         'notification' => [
             'class' => \App\Service\NotificationService::class,
-            'host' => '172.20.8.90:9007'
+            'host' => '172.20.8.90:9002'
         ],
         'ticket' => [
             'class' => \App\Service\TicketService::class,
