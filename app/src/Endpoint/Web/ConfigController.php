@@ -22,7 +22,7 @@ class ConfigController
     {
     }
 
-    #[Route('/api/', methods: [''])]
+    #[Route('/api/', methods: ['GET'])]
     public function sync(ServerRequestInterface $request, InputManager $input): ResponseInterface
     {
         $configRequest = SyncMapper::fromRequest($input->data->all());
@@ -37,7 +37,7 @@ class ConfigController
         ]);
     }
 
-    #[Route('/api/', methods: [''])]
+    #[Route('/api/', methods: ['GET'])]
     public function getOne(ServerRequestInterface $request, InputManager $input): ResponseInterface
     {
         $configRequest = getOneMapper::fromRequest($input->data->all());
@@ -53,7 +53,7 @@ class ConfigController
 
     }
 
-    #[Route('/api/', methods: [''])]
+    #[Route('/api/config/all', methods: ['GET'])]
     public function getAll(ServerRequestInterface $request, InputManager $input): ResponseInterface
     {
         $configRequest = getAllMapper::fromRequest($input->data->all());
@@ -68,7 +68,7 @@ class ConfigController
         ]);
     }
 
-    #[Route('/api/', methods: [''])]
+    #[Route('/api/config', methods: ['PUT'])]
     public function updateBatch(ServerRequestInterface $request, InputManager $input): ResponseInterface
     {
         $configRequest = UpdateBatchMapper::fromRequest($input->data->all());
