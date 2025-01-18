@@ -17,8 +17,8 @@ class Installment
         \GPBMetadata\Google\Protobuf\Timestamp::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ý
-$installment/models/installment.protobarsam.installment.models"±
+á
+$installment/models/installment.protobarsam.installment.models"•
 Installment
 
 id (
@@ -26,8 +26,8 @@ $installment/models/installment.protobarsam.installment.models"±
 loan_id (
 number (
 amount (	
-penalty_amount (	,
-due_date (2.google.protobuf.Timestamp.
+penalty_amount (	
+due_date (	.
 
 created_at (2.google.protobuf.Timestamp.
 

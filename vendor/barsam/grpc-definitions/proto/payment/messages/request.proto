@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+package barsam.payment.messages;
+
+import "payment/enums/payment_type.proto";
+
+// Define the request message
+message RequestRequest {
+  // The linked transaction id
+  uint64 transaction_id = 1;
+
+  // The user's id
+  uint64 user_id = 2;
+
+  // The amount of the payment in IRR
+  string amount = 3;
+
+  // The URL to redirect the user to after payment
+  string callback_url = 4;
+
+  // Description of the payment
+  string description = 5;
+
+  // Payer mobile to show the saved cards in ipg (if ipg supports it)
+  string payer_mobile = 6;
+}
+
+// Define the response message
+message RequestResponse {
+  // The id of the payment for tracking purposes
+  uint64 payment_id = 1;
+
+  // The type of the payment (redirect or form)
+  enums.PaymentType type = 2;
+
+  // The URL to redirect the user to (or submit the form to)
+  string payment_url = 3;
+
+  // The form data to submit to the payment gateway (if type is form)
+  map<string, string> data = 4;
+}

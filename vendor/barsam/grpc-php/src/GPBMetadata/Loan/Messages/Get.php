@@ -17,14 +17,19 @@ class Get
         \GPBMetadata\Loan\Models\Loan::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ˆ
-loan/messages/get.protobarsam.loan.messages"
+ã
+loan/messages/get.protobarsam.loan.messages"I
 
 GetRequest
 
-id ("5
-GetResponse&
-data (2.barsam.loan.models.Loanbproto3'
+id (
+user_id (
+page (
+per_page ("_
+GetResponse\'
+loans (2.barsam.loan.models.Loan
+total_records (
+max_page (bproto3'
         , true);
 
         static::$is_initialized = true;

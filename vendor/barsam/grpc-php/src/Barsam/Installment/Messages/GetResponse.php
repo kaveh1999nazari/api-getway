@@ -16,9 +16,23 @@ use Google\Protobuf\Internal\GPBUtil;
 class GetResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.barsam.installment.models.Installment installment = 1;</code>
+     * The list of installments
+     *
+     * Generated from protobuf field <code>repeated .barsam.installment.models.Installment installments = 1;</code>
      */
-    protected $installment = null;
+    private $installments;
+    /**
+     * The total number of installments
+     *
+     * Generated from protobuf field <code>uint64 total_records = 2;</code>
+     */
+    protected $total_records = 0;
+    /**
+     * The total number of pages
+     *
+     * Generated from protobuf field <code>uint32 max_page = 3;</code>
+     */
+    protected $max_page = 0;
 
     /**
      * Constructor.
@@ -26,7 +40,12 @@ class GetResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Barsam\Installment\Models\Installment $installment
+     *     @type array<\Barsam\Installment\Models\Installment>|\Google\Protobuf\Internal\RepeatedField $installments
+     *           The list of installments
+     *     @type int|string $total_records
+     *           The total number of installments
+     *     @type int $max_page
+     *           The total number of pages
      * }
      */
     public function __construct($data = NULL) {
@@ -35,33 +54,79 @@ class GetResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.barsam.installment.models.Installment installment = 1;</code>
-     * @return \Barsam\Installment\Models\Installment|null
+     * The list of installments
+     *
+     * Generated from protobuf field <code>repeated .barsam.installment.models.Installment installments = 1;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getInstallment()
+    public function getInstallments()
     {
-        return $this->installment;
-    }
-
-    public function hasInstallment()
-    {
-        return isset($this->installment);
-    }
-
-    public function clearInstallment()
-    {
-        unset($this->installment);
+        return $this->installments;
     }
 
     /**
-     * Generated from protobuf field <code>.barsam.installment.models.Installment installment = 1;</code>
-     * @param \Barsam\Installment\Models\Installment $var
+     * The list of installments
+     *
+     * Generated from protobuf field <code>repeated .barsam.installment.models.Installment installments = 1;</code>
+     * @param array<\Barsam\Installment\Models\Installment>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setInstallment($var)
+    public function setInstallments($var)
     {
-        GPBUtil::checkMessage($var, \Barsam\Installment\Models\Installment::class);
-        $this->installment = $var;
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Barsam\Installment\Models\Installment::class);
+        $this->installments = $arr;
+
+        return $this;
+    }
+
+    /**
+     * The total number of installments
+     *
+     * Generated from protobuf field <code>uint64 total_records = 2;</code>
+     * @return int|string
+     */
+    public function getTotalRecords()
+    {
+        return $this->total_records;
+    }
+
+    /**
+     * The total number of installments
+     *
+     * Generated from protobuf field <code>uint64 total_records = 2;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setTotalRecords($var)
+    {
+        GPBUtil::checkUint64($var);
+        $this->total_records = $var;
+
+        return $this;
+    }
+
+    /**
+     * The total number of pages
+     *
+     * Generated from protobuf field <code>uint32 max_page = 3;</code>
+     * @return int
+     */
+    public function getMaxPage()
+    {
+        return $this->max_page;
+    }
+
+    /**
+     * The total number of pages
+     *
+     * Generated from protobuf field <code>uint32 max_page = 3;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setMaxPage($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->max_page = $var;
 
         return $this;
     }

@@ -15,21 +15,24 @@ class User
           return;
         }
         \GPBMetadata\Google\Protobuf\Timestamp::initOnce();
+        \GPBMetadata\User\Models\UserMeta::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ý
-user/models/user.protobarsam.user.models"Æ
+Ì
+user/models/user.protobarsam.user.modelsuser/models/user_meta.proto"ø
 User
 
 id (	
 login_id (	
-password (	.
+password (	0
 
-created_at (2.google.protobuf.Timestamp.
+user_metas (2.barsam.user.models.UserMeta.
 
-updated_at (2.google.protobuf.Timestamp.
+created_at (2.google.protobuf.Timestamp.
 
-deleted_at (2.google.protobuf.Timestampbproto3'
+updated_at (2.google.protobuf.Timestamp.
+
+deleted_at (2.google.protobuf.Timestampbproto3'
         , true);
 
         static::$is_initialized = true;

@@ -19,6 +19,14 @@ class GetChannelsResponse extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated .barsam.notification.models.Channel channels = 1;</code>
      */
     private $channels;
+    /**
+     * Generated from protobuf field <code>uint64 total_records = 2;</code>
+     */
+    protected $total_records = 0;
+    /**
+     * Generated from protobuf field <code>uint32 max_page = 3;</code>
+     */
+    protected $max_page = 0;
 
     /**
      * Constructor.
@@ -27,6 +35,8 @@ class GetChannelsResponse extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type array<\Barsam\Notification\Models\Channel>|\Google\Protobuf\Internal\RepeatedField $channels
+     *     @type int|string $total_records
+     *     @type int $max_page
      * }
      */
     public function __construct($data = NULL) {
@@ -52,6 +62,50 @@ class GetChannelsResponse extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Barsam\Notification\Models\Channel::class);
         $this->channels = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint64 total_records = 2;</code>
+     * @return int|string
+     */
+    public function getTotalRecords()
+    {
+        return $this->total_records;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint64 total_records = 2;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setTotalRecords($var)
+    {
+        GPBUtil::checkUint64($var);
+        $this->total_records = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 max_page = 3;</code>
+     * @return int
+     */
+    public function getMaxPage()
+    {
+        return $this->max_page;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint32 max_page = 3;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setMaxPage($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->max_page = $var;
 
         return $this;
     }

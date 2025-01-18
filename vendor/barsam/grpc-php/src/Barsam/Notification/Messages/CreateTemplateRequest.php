@@ -20,15 +20,15 @@ class CreateTemplateRequest extends \Google\Protobuf\Internal\Message
      */
     protected $channel_id = 0;
     /**
-     * Generated from protobuf field <code>string key = 3;</code>
+     * Generated from protobuf field <code>string key = 2;</code>
      */
     protected $key = '';
     /**
-     * Generated from protobuf field <code>string subject = 4;</code>
+     * Generated from protobuf field <code>string subject = 3;</code>
      */
     protected $subject = '';
     /**
-     * Generated from protobuf field <code>string content = 5;</code>
+     * Generated from protobuf field <code>string content = 4;</code>
      */
     protected $content = '';
 
@@ -72,7 +72,7 @@ class CreateTemplateRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string key = 3;</code>
+     * Generated from protobuf field <code>string key = 2;</code>
      * @return string
      */
     public function getKey()
@@ -81,7 +81,7 @@ class CreateTemplateRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string key = 3;</code>
+     * Generated from protobuf field <code>string key = 2;</code>
      * @param string $var
      * @return $this
      */
@@ -94,7 +94,7 @@ class CreateTemplateRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string subject = 4;</code>
+     * Generated from protobuf field <code>string subject = 3;</code>
      * @return string
      */
     public function getSubject()
@@ -103,7 +103,7 @@ class CreateTemplateRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string subject = 4;</code>
+     * Generated from protobuf field <code>string subject = 3;</code>
      * @param string $var
      * @return $this
      */
@@ -116,7 +116,7 @@ class CreateTemplateRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string content = 5;</code>
+     * Generated from protobuf field <code>string content = 4;</code>
      * @return string
      */
     public function getContent()
@@ -125,7 +125,7 @@ class CreateTemplateRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string content = 5;</code>
+     * Generated from protobuf field <code>string content = 4;</code>
      * @param string $var
      * @return $this
      */

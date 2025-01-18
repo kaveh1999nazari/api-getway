@@ -29,6 +29,10 @@ class Field extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>repeated string validation_rules = 5;</code>
      */
     private $validation_rules;
+    /**
+     * Generated from protobuf field <code>repeated .barsam.user.models.FieldOption field_options = 6;</code>
+     */
+    private $field_options;
 
     /**
      * Constructor.
@@ -40,6 +44,7 @@ class Field extends \Google\Protobuf\Internal\Message
      *     @type string $label
      *     @type int $type
      *     @type array<string>|\Google\Protobuf\Internal\RepeatedField $validation_rules
+     *     @type array<\Barsam\User\Models\FieldOption>|\Google\Protobuf\Internal\RepeatedField $field_options
      * }
      */
     public function __construct($data = NULL) {
@@ -131,6 +136,28 @@ class Field extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
         $this->validation_rules = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .barsam.user.models.FieldOption field_options = 6;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getFieldOptions()
+    {
+        return $this->field_options;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .barsam.user.models.FieldOption field_options = 6;</code>
+     * @param array<\Barsam\User\Models\FieldOption>|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setFieldOptions($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Barsam\User\Models\FieldOption::class);
+        $this->field_options = $arr;
 
         return $this;
     }

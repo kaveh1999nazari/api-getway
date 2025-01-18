@@ -80,7 +80,7 @@ class UserController
         ]);
     }
 
-    #[Route('/api/delete', methods: ['DELETE'])]
+    #[Route('/api/profile', methods: ['DELETE'])]
     public function delete(ServerRequestInterface $request, InputManager $input): ResponseInterface
     {
         $userRequest = DeleteUserMapper::fromRequest($input->data->all());

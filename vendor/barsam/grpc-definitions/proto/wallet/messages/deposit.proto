@@ -5,7 +5,7 @@ package barsam.wallet.messages;
 // Define the request message
 message DepositRequest {
   uint64 wallet_id = 1;
-  double amount = 2;
+  string amount = 2;
   string description = 3;
   uint64 caused_by_id = 4;
   string caused_by_name = 5;
@@ -13,5 +13,5 @@ message DepositRequest {
 
 // Define the response message
 message DepositResponse {
-  double new_balance = 2;
+  string new_balance = 2;
 }

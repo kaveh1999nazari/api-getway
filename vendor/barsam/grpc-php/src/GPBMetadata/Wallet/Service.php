@@ -19,15 +19,17 @@ class Service
         \GPBMetadata\Wallet\Messages\Deposit::initOnce();
         \GPBMetadata\Wallet\Messages\Withdraw::initOnce();
         \GPBMetadata\Wallet\Messages\GetTransactions::initOnce();
+        \GPBMetadata\Wallet\Messages\Transfer::initOnce();
         $pool->internalAddGeneratedFile(
             '
-™
-wallet/service.protobarsam.walletwallet/messages/get.protowallet/messages/deposit.protowallet/messages/withdraw.proto&wallet/messages/get_transactions.proto2ç
+˜
+wallet/service.protobarsam.walletwallet/messages/get.protowallet/messages/deposit.protowallet/messages/withdraw.proto&wallet/messages/get_transactions.protowallet/messages/transfer.proto2Æ
 WalletServiceW
 Create%.barsam.wallet.messages.CreateRequest&.barsam.wallet.messages.CreateResponseN
 Get".barsam.wallet.messages.GetRequest#.barsam.wallet.messages.GetResponseZ
 Deposit&.barsam.wallet.messages.DepositRequest\'.barsam.wallet.messages.DepositResponse]
-Withdraw\'.barsam.wallet.messages.WithdrawRequest(.barsam.wallet.messages.WithdrawResponser
+Withdraw\'.barsam.wallet.messages.WithdrawRequest(.barsam.wallet.messages.WithdrawResponse]
+Transfer\'.barsam.wallet.messages.TransferRequest(.barsam.wallet.messages.TransferResponser
 GetTransactions..barsam.wallet.messages.GetTransactionsRequest/.barsam.wallet.messages.GetTransactionsResponsebproto3'
         , true);
 

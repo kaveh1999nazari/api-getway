@@ -15,16 +15,18 @@ class Field
           return;
         }
         \GPBMetadata\User\Enums\FieldType::initOnce();
+        \GPBMetadata\User\Models\FieldOption::initOnce();
         $pool->internalAddGeneratedFile(
             '
-Ÿ
-user/models/field.protobarsam.user.models"h
+ø
+user/models/field.protobarsam.user.modelsuser/models/field_option.proto" 
 Field
 
 id (
 label (	*
 type (2.barsam.user.enums.FieldType
-validation_rules (	bproto3'
+validation_rules (	6
+field_options (2.barsam.user.models.FieldOptionbproto3'
         , true);
 
         static::$is_initialized = true;

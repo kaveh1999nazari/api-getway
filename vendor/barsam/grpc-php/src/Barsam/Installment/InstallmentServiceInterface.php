@@ -49,15 +49,6 @@ interface InstallmentServiceInterface extends GRPC\ServiceInterface
 
     /**
     * @param GRPC\ContextInterface $ctx
-    * @param \Barsam\Installment\Messages\GetAllRequest $in
-    * @return \Barsam\Installment\Messages\GetAllResponse
-    *
-    * @throws GRPC\Exception\InvokeException
-    */
-    public function GetAll(GRPC\ContextInterface $ctx, \Barsam\Installment\Messages\GetAllRequest $in): \Barsam\Installment\Messages\GetAllResponse;
-
-    /**
-    * @param GRPC\ContextInterface $ctx
     * @param \Barsam\Installment\Messages\GetRequest $in
     * @return \Barsam\Installment\Messages\GetResponse
     *

@@ -7,6 +7,7 @@ import "wallet/messages/get.proto";
 import "wallet/messages/deposit.proto";
 import "wallet/messages/withdraw.proto";
 import "wallet/messages/get_transactions.proto";
+import "wallet/messages/transfer.proto";
 
 service WalletService {
   // Create a new wallet
@@ -20,6 +21,9 @@ service WalletService {
 
   // Withdraw money from wallet
   rpc Withdraw(messages.WithdrawRequest) returns (messages.WithdrawResponse);
+
+  // Transfer money from one wallet to another
+  rpc Transfer(messages.TransferRequest) returns (messages.TransferResponse);
 
   // Get wallet's transactions
   rpc GetTransactions(messages.GetTransactionsRequest) returns (messages.GetTransactionsResponse);

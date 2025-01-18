@@ -152,7 +152,7 @@ return array(
     'GPBMetadata\\Google\\Iam\\' => array($vendorDir . '/google/common-protos/metadata/Iam'),
     'GPBMetadata\\Google\\Cloud\\' => array($vendorDir . '/google/common-protos/metadata/Cloud'),
     'GPBMetadata\\Google\\Api\\' => array($vendorDir . '/google/common-protos/metadata/Api'),
-    'GPBMetadata\\' => array($vendorDir . '/barsam/grpc-php/src/GPBMetadata', $vendorDir . '/roadrunner-php/roadrunner-api-dto/generated/GPBMetadata'),
+    'GPBMetadata\\' => array($vendorDir . '/roadrunner-php/roadrunner-api-dto/generated/GPBMetadata', $vendorDir . '/barsam/grpc-php/src/GPBMetadata'),
     'Fidry\\CpuCoreCounter\\' => array($vendorDir . '/fidry/cpu-core-counter/src'),
     'Egulias\\EmailValidator\\' => array($vendorDir . '/egulias/email-validator/src'),
     'Dotenv\\' => array($vendorDir . '/vlucas/phpdotenv/src'),

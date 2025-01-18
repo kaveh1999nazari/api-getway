@@ -3,10 +3,12 @@ syntax = "proto3";
 package barsam.user.models;
 
 import "user/enums/field_type.proto";
+import "user/models/field_option.proto";
 
 message Field {
   uint64 id = 1;
   string label = 3;
   enums.FieldType type = 4;
   repeated string validation_rules = 5;
+  repeated models.FieldOption field_options = 6;
 }

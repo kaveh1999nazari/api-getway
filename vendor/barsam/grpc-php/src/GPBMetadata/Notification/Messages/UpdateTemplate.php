@@ -16,12 +16,14 @@ class UpdateTemplate
         }
         $pool->internalAddGeneratedFile(
             '
-µ
-+notification/messages/update_template.protobarsam.notification.messages"F
-UpdateTemplateRequest
-key (	
-subject (	
-content (	"
+Á
++notification/messages/update_template.protobarsam.notification.messages"R
+UpdateTemplateRequest
+
+id (
+key (	
+subject (	
+content (	"
 UpdateTemplateResponsebproto3'
         , true);
 

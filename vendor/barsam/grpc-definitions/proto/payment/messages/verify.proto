@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package barsam.payment.messages;
+
+// Define the request message
+message VerifyRequest {
+  // The linked transaction id
+  uint64 transaction_id = 1;
+
+  // The reference id provided by the ipg in callback url
+  string reference_id = 2;
+
+  // Additional data used for different payment gateways
+  map<string, string> additional_data = 3;
+}
+
+// Define the response message
+message VerifyResponse {
+  // Whether the payment is verified or not
+  bool is_verified = 1;
+
+  // Whether the payment is double spent or not
+  bool is_double_spent = 2;
+}

@@ -20,9 +20,9 @@ class WithdrawRequest extends \Google\Protobuf\Internal\Message
      */
     protected $wallet_id = 0;
     /**
-     * Generated from protobuf field <code>double amount = 2;</code>
+     * Generated from protobuf field <code>string amount = 2;</code>
      */
-    protected $amount = 0.0;
+    protected $amount = '';
     /**
      * Generated from protobuf field <code>string description = 3;</code>
      */
@@ -43,7 +43,7 @@ class WithdrawRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int|string $wallet_id
-     *     @type float $amount
+     *     @type string $amount
      *     @type string $description
      *     @type int|string $caused_by_id
      *     @type string $caused_by_name
@@ -77,8 +77,8 @@ class WithdrawRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>double amount = 2;</code>
-     * @return float
+     * Generated from protobuf field <code>string amount = 2;</code>
+     * @return string
      */
     public function getAmount()
     {
@@ -86,13 +86,13 @@ class WithdrawRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>double amount = 2;</code>
-     * @param float $var
+     * Generated from protobuf field <code>string amount = 2;</code>
+     * @param string $var
      * @return $this
      */
     public function setAmount($var)
     {
-        GPBUtil::checkDouble($var);
+        GPBUtil::checkString($var, True);
         $this->amount = $var;
 
         return $this;

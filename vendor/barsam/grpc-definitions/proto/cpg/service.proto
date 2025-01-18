@@ -5,13 +5,11 @@ package barsam.cpg;
 import "cpg/messages/create.proto";
 import "cpg/messages/get.proto";
 import "cpg/messages/delete.proto";
-import "cpg/messages/getAll.proto";
 import "cpg/messages/update.proto";
 
 service CPGService {
   rpc Create(messages.CreateRequest) returns (messages.CreateResponse);
   rpc Delete(messages.DeleteRequest) returns (messages.DeleteResponse);
-  rpc GetAll(messages.GetAllRequest) returns (messages.GetAllResponse);
-  rpc Get(messages.GetRequest) returns (messages.GetRequest);
+  rpc Get(messages.GetRequest) returns (messages.GetResponse);
   rpc Update(messages.UpdateRequest) returns (messages.UpdateResponse);
 }

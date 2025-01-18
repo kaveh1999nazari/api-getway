@@ -4,6 +4,14 @@ package barsam.cpg.messages;
 
 import "google/protobuf/timestamp.proto";
 
+// Define the item message
+message Item {
+  string sku = 1;
+  string name = 2;
+  uint64 unit_price = 3;
+  uint64 quantity = 4;
+}
+
 // Define the request message
 message CreateRequest {
   uint64 amount = 1;
@@ -14,7 +22,7 @@ message CreateRequest {
   string code = 6;
   string shope_id = 7;
   google.protobuf.Timestamp expired_at = 8;
-  repeated string items = 9;
+  repeated Item items = 9; // Use the Item message here
 }
 
 // Define the response message

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6c542c32a4eb63a4d959d70e896e1445",
+    "content-hash": "c6d5c248e7dcd278cc3dd1dea57dbb8c",
     "packages": [
         {
             "name": "alexkart/curl-builder",
@@ -55,16 +55,16 @@
         },
         {
             "name": "barsam/grpc-definitions",
-            "version": "0.47.9",
+            "version": "0.48.4",
             "source": {
                 "type": "git",
                 "url": "git@gitlab.dngs.ir:microservices/grpc-definition.git",
-                "reference": "db002e9577458dcb1d9da4bbb4bb5106bf037d79"
+                "reference": "9f95631e902b7cf3e1c0346f7a966f8a335200af"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://gitlab.dngs.ir/api/v4/projects/26/packages/composer/archives/barsam/grpc-definitions.zip?sha=db002e9577458dcb1d9da4bbb4bb5106bf037d79",
-                "reference": "db002e9577458dcb1d9da4bbb4bb5106bf037d79",
+                "url": "https://gitlab.dngs.ir/api/v4/projects/26/packages/composer/archives/barsam/grpc-definitions.zip?sha=9f95631e902b7cf3e1c0346f7a966f8a335200af",
+                "reference": "9f95631e902b7cf3e1c0346f7a966f8a335200af",
                 "shasum": ""
             },
             "type": "library",
@@ -77,16 +77,16 @@
         },
         {
             "name": "barsam/grpc-php",
-            "version": "0.40.0",
+            "version": "0.51.0",
             "source": {
                 "type": "git",
                 "url": "git@gitlab.dngs.ir:microservices/grpc-php.git",
-                "reference": "397032c05959a42e510f0b08d2684ba6e511f121"
+                "reference": "2e526f25e6cc9a36c2f7cd691a8403cb2e1f2881"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://gitlab.dngs.ir/api/v4/projects/27/packages/composer/archives/barsam/grpc-php.zip?sha=397032c05959a42e510f0b08d2684ba6e511f121",
-                "reference": "397032c05959a42e510f0b08d2684ba6e511f121",
+                "url": "https://gitlab.dngs.ir/api/v4/projects/27/packages/composer/archives/barsam/grpc-php.zip?sha=2e526f25e6cc9a36c2f7cd691a8403cb2e1f2881",
+                "reference": "2e526f25e6cc9a36c2f7cd691a8403cb2e1f2881",
                 "shasum": ""
             },
             "require": {

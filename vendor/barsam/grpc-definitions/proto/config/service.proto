@@ -19,5 +19,6 @@ service ConfigService {
   rpc GetAll (messages.GetAllRequest) returns (messages.GetAllResponse);
 
   // Updates the configurations of an app
-  rpc UpdateBatch (messages.UpdateBatchRequest) returns (messages.UpdateBatchResponse);
+  rpc UpdateBatch (messages.UpdateBatchRequest)
+    returns (messages.UpdateBatchResponse);
 }

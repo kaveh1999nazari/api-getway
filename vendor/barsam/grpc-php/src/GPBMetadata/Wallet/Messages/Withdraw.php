@@ -20,12 +20,12 @@ class Withdraw
 wallet/messages/withdraw.protobarsam.wallet.messages"w
 WithdrawRequest
 	wallet_id (
-amount (
+amount (	
 description (	
 caused_by_id (
 caused_by_name (	"\'
 WithdrawResponse
-new_balance (bproto3'
+new_balance (	bproto3'
         , true);
 
         static::$is_initialized = true;

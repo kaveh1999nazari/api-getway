@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package barsam.otp.messages;
+
+// Define the request message
+message GenerateRequest {
+  // A unique identifier for OTP (for example user id for login)
+  // In order to verify the code in the next step you need the identifier
+  string identifier = 1;
+
+  // The seconds for expiration time of the code
+  uint32 expire_seconds = 2;
+
+  // Do expire the latest generated codes or not? (default: true)
+  bool expire_latest = 3;
+
+  // The channel that the code generation is requested from
+  // It will prevent from expiring the latest generated codes on other channels
+  string channel = 4;
+}
+
+// Define the response message
+message GenerateResponse {
+  // Generated code by the service
+  string code = 1;
+}

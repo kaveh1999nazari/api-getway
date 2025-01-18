@@ -23,11 +23,11 @@ return [
         ],
         'loan' => [
             'class' => \App\Service\LoanService::class,
-            'host' => '172.20.8.29:9006'
+            'host' => '172.20.8.29:9004'
         ],
         'notification' => [
             'class' => \App\Service\NotificationService::class,
-            'host' => '172.20.8.90:9002'
+            'host' => '172.20.8.90:9007'
         ],
         'ticket' => [
             'class' => \App\Service\TicketService::class,

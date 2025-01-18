@@ -38,9 +38,9 @@ class Installment extends \Google\Protobuf\Internal\Message
      */
     protected $penalty_amount = '';
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp due_date = 7;</code>
+     * Generated from protobuf field <code>string due_date = 7;</code>
      */
-    protected $due_date = null;
+    protected $due_date = '';
     /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 8;</code>
      */
@@ -66,7 +66,7 @@ class Installment extends \Google\Protobuf\Internal\Message
      *     @type int $number
      *     @type string $amount
      *     @type string $penalty_amount
-     *     @type \Google\Protobuf\Timestamp $due_date
+     *     @type string $due_date
      *     @type \Google\Protobuf\Timestamp $created_at
      *     @type \Google\Protobuf\Timestamp $updated_at
      *     @type \Google\Protobuf\Timestamp $deleted_at
@@ -210,32 +210,22 @@ class Installment extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp due_date = 7;</code>
-     * @return \Google\Protobuf\Timestamp|null
+     * Generated from protobuf field <code>string due_date = 7;</code>
+     * @return string
      */
     public function getDueDate()
     {
         return $this->due_date;
     }
 
-    public function hasDueDate()
-    {
-        return isset($this->due_date);
-    }
-
-    public function clearDueDate()
-    {
-        unset($this->due_date);
-    }
-
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp due_date = 7;</code>
-     * @param \Google\Protobuf\Timestamp $var
+     * Generated from protobuf field <code>string due_date = 7;</code>
+     * @param string $var
      * @return $this
      */
     public function setDueDate($var)
     {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        GPBUtil::checkString($var, True);
         $this->due_date = $var;
 
         return $this;

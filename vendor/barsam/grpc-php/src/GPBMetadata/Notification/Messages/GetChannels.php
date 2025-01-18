@@ -17,11 +17,17 @@ class GetChannels
         \GPBMetadata\Notification\Models\Channel::initOnce();
         $pool->internalAddGeneratedFile(
             '
-´
-(notification/messages/get_channels.protobarsam.notification.messages"
-GetChannelsRequest"L
+‰
+(notification/messages/get_channels.protobarsam.notification.messages"@
+GetChannelsRequest
+
+id (
+page (
+per_page ("u
 GetChannelsResponse5
-channels (2#.barsam.notification.models.Channelbproto3'
+channels (2#.barsam.notification.models.Channel
+total_records (
+max_page (bproto3'
         , true);
 
         static::$is_initialized = true;

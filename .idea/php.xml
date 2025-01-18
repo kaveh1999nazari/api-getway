@@ -12,6 +12,18 @@
   </component>
   <component name="PhpIncludePathManager">
     <include_path>
+      <path value="$PROJECT_DIR$/vendor/spiral/roadrunner-metrics" />
+      <path value="$PROJECT_DIR$/vendor/spiral/dumper" />
+      <path value="$PROJECT_DIR$/vendor/spiral/roadrunner-worker" />
+      <path value="$PROJECT_DIR$/vendor/spiral/data-grid" />
+      <path value="$PROJECT_DIR$/vendor/spiral/nyholm-bridge" />
+      <path value="$PROJECT_DIR$/vendor/spiral/roadrunner-kv" />
+      <path value="$PROJECT_DIR$/vendor/spiral/roadrunner-jobs" />
+      <path value="$PROJECT_DIR$/vendor/spiral/testing" />
+      <path value="$PROJECT_DIR$/vendor/dnoegel/php-xdg-base-dir" />
+      <path value="$PROJECT_DIR$/vendor/vlucas/phpdotenv" />
+      <path value="$PROJECT_DIR$/vendor/spiral/goridge" />
+      <path value="$PROJECT_DIR$/vendor/spiral/roadrunner-bridge" />
       <path value="$PROJECT_DIR$/vendor/myclabs/deep-copy" />
       <path value="$PROJECT_DIR$/vendor/monolog/monolog" />
       <path value="$PROJECT_DIR$/vendor/mockery/mockery" />
@@ -161,18 +173,6 @@
       <path value="$PROJECT_DIR$/vendor/spiral/cycle-bridge" />
       <path value="$PROJECT_DIR$/vendor/spiral/roadrunner-http" />
       <path value="$PROJECT_DIR$/vendor/spiral/composer-publish-plugin" />
-      <path value="$PROJECT_DIR$/vendor/spiral/roadrunner-metrics" />
-      <path value="$PROJECT_DIR$/vendor/spiral/dumper" />
-      <path value="$PROJECT_DIR$/vendor/spiral/roadrunner-worker" />
-      <path value="$PROJECT_DIR$/vendor/spiral/data-grid" />
-      <path value="$PROJECT_DIR$/vendor/spiral/nyholm-bridge" />
-      <path value="$PROJECT_DIR$/vendor/spiral/roadrunner-kv" />
-      <path value="$PROJECT_DIR$/vendor/spiral/roadrunner-jobs" />
-      <path value="$PROJECT_DIR$/vendor/spiral/testing" />
-      <path value="$PROJECT_DIR$/vendor/dnoegel/php-xdg-base-dir" />
-      <path value="$PROJECT_DIR$/vendor/vlucas/phpdotenv" />
-      <path value="$PROJECT_DIR$/vendor/spiral/goridge" />
-      <path value="$PROJECT_DIR$/vendor/spiral/roadrunner-bridge" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.1" />

@@ -6,7 +6,7 @@ package barsam.cpg.messages;
 // Define the request message
 message UpdateRequest {
   uint64 id = 1;
-  uint64 amount = 2;
+  string amount = 2;
   string mobile = 3;
   string national_code = 4;
   string description = 5;

@@ -17,14 +17,20 @@ class Get
         \GPBMetadata\Installment\Models\Installment::initOnce();
         $pool->internalAddGeneratedFile(
             '
-«
-installment/messages/get.protobarsam.installment.messages"
+—
+installment/messages/get.protobarsam.installment.messages"Z
 
 GetRequest
 
-id ("J
-GetResponse;
-installment (2&.barsam.installment.models.Installmentbproto3'
+id (
+user_id (
+loan_id (
+page (
+per_page ("t
+GetResponse<
+installments (2&.barsam.installment.models.Installment
+total_records (
+max_page (bproto3'
         , true);
 
         static::$is_initialized = true;

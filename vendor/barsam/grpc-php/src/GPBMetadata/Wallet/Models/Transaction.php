@@ -26,7 +26,7 @@ class Transaction
 id (
 	wallet_id (2
 type (2$.barsam.wallet.enums.TransactionType
-amount (
+amount (	
 description (	
 caused_by_id (
 caused_by_name	 (	

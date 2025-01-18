@@ -20,12 +20,12 @@ class Deposit
 wallet/messages/deposit.protobarsam.wallet.messages"v
 DepositRequest
 	wallet_id (
-amount (
+amount (	
 description (	
 caused_by_id (
 caused_by_name (	"&
 DepositResponse
-new_balance (bproto3'
+new_balance (	bproto3'
         , true);
 
         static::$is_initialized = true;

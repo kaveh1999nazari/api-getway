@@ -16,9 +16,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class DepositResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>double new_balance = 2;</code>
+     * Generated from protobuf field <code>string new_balance = 2;</code>
      */
-    protected $new_balance = 0.0;
+    protected $new_balance = '';
 
     /**
      * Constructor.
@@ -26,7 +26,7 @@ class DepositResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type float $new_balance
+     *     @type string $new_balance
      * }
      */
     public function __construct($data = NULL) {
@@ -35,8 +35,8 @@ class DepositResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>double new_balance = 2;</code>
-     * @return float
+     * Generated from protobuf field <code>string new_balance = 2;</code>
+     * @return string
      */
     public function getNewBalance()
     {
@@ -44,13 +44,13 @@ class DepositResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>double new_balance = 2;</code>
-     * @param float $var
+     * Generated from protobuf field <code>string new_balance = 2;</code>
+     * @param string $var
      * @return $this
      */
     public function setNewBalance($var)
     {
-        GPBUtil::checkDouble($var);
+        GPBUtil::checkString($var, True);
         $this->new_balance = $var;
 
         return $this;

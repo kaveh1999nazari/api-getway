@@ -6,10 +6,12 @@ import "organization/messages/create.proto";
 import "organization/messages/delete.proto";
 import "organization/messages/update.proto";
 import "organization/messages/get.proto";
-import "organization/messages/add_user_to_organization.proto";
-import "organization/messages/remove_user_from_organization.proto";
-import "organization/messages/get_oranization_users.proto";
+import "organization/messages/add_user.proto";
+import "organization/messages/remove_user.proto";
+import "organization/messages/get_users.proto";
+import "organization/messages/has_user.proto";
 
+// The organization service definition
 service OrganizationService {
   // Create a new organization
   rpc Create(messages.CreateRequest) returns (messages.CreateResponse);
@@ -20,15 +22,18 @@ service OrganizationService {
   // Delete an organization
   rpc Delete(messages.DeleteRequest) returns (messages.DeleteResponse);
 
-  // Get an organization by ID or Get organizations List
+  // Get organizations list
   rpc Get(messages.GetRequest) returns (messages.GetResponse);
 
-  // add a user to organization
-  rpc AddUserToOrganization(messages.AddUserToOrganizationRequest) returns (messages.AddUserToOrganizationResponse);
+  // Add a user to organization
+  rpc AddUser(messages.AddUserRequest) returns (messages.AddUserResponse);
 
-  // remove a user to organization
-  rpc RemoveUserFromOrganization(messages.RemoveUserFromOrganizationRequest) returns (messages.RemoveUserFromOrganizationResponse);
+  // Remove a user to organization
+  rpc RemoveUser(messages.RemoveUserRequest) returns (messages.RemoveUserResponse);
 
   // Get an organization user by ID or Get organization users List
-  rpc GetOrganizationUsers(messages.GetOrganizationUsersRequest) returns (messages.GetOrganizationUsersResponse);
+  rpc GetUsers(messages.GetUsersRequest) returns (messages.GetUsersResponse);
+
+  // Check if a user is in organization or not
+  rpc HasUser(messages.HasUserRequest) returns (messages.HasUserResponse);
 }

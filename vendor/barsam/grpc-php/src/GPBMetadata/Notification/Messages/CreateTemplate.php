@@ -21,9 +21,9 @@ class CreateTemplate
 CreateTemplateRequest
 
 channel_id (
-key (	
-subject (	
-content (	"-
+key (	
+subject (	
+content (	"-
 CreateTemplateResponse
 template_id (bproto3'
         , true);

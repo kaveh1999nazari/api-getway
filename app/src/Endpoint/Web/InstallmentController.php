@@ -90,23 +90,6 @@ class InstallmentController
 
     }
 
-    #[Route('/api/installment/all', methods: ['GET'])]
-    public function getAll(ServerRequestInterface $request, InputManager $input): ResponseInterface
-    {
-        $installmentRequest = GetAllInstallmentMapper::fromRequest($input->data->all());
-
-        $installmentResponse = $this->installmentService->GetAll(
-            $installmentRequest,
-            GetAllResponse::class
-        );
-
-        return $this->jsonResponse([
-            'installments' => $installmentResponse->getResponse()->getInstallments(),
-            'total_records' => $installmentResponse->getResponse()->getTotalRecords(),
-            'max_page' => $installmentResponse->getResponse()->getMaxPage()
-        ]);
-    }
-
     #[Route('/api/installment', methods: ['GET'])]
     public function get(ServerRequestInterface $request, InputManager $input): ResponseInterface
     {

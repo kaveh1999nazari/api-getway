@@ -7,7 +7,6 @@ use Barsam\Installment\InstallmentServiceInterface;
 use Barsam\Installment\Messages\CreateRequest;
 use Barsam\Installment\Messages\DeleteRequest;
 use Barsam\Installment\Messages\GenerateRequest;
-use Barsam\Installment\Messages\GetAllRequest;
 use Barsam\Installment\Messages\GetRequest;
 use Barsam\Installment\Messages\UpdateRequest;
 
@@ -17,7 +16,6 @@ use Barsam\Installment\Messages\UpdateRequest;
  * @method Generate(GenerateRequest $request, string $responseClass, array $context = [])
  * @method Update(UpdateRequest $request, string $responseClass, array $context = [])
  * @method Delete(DeleteRequest $request, string $responseClass, array $context = [])
- * @method GetAll(GetAllRequest $request, string $responseClass, array $context = [])
  * @method Get(GetRequest $request, string $responseClass, array $context = [])
  */
 class InstallmentService extends AbstractClient

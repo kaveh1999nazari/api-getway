@@ -20,13 +20,13 @@ class CreatePlanRequest extends \Google\Protobuf\Internal\Message
      */
     protected $title = '';
     /**
-     * Generated from protobuf field <code>uint64 max_amount = 2;</code>
+     * Generated from protobuf field <code>string max_amount = 2;</code>
      */
-    protected $max_amount = 0;
+    protected $max_amount = '';
     /**
-     * Generated from protobuf field <code>uint64 min_amount = 3;</code>
+     * Generated from protobuf field <code>string min_amount = 3;</code>
      */
-    protected $min_amount = 0;
+    protected $min_amount = '';
     /**
      * Generated from protobuf field <code>double interest_rate = 4;</code>
      */
@@ -55,8 +55,8 @@ class CreatePlanRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $title
-     *     @type int|string $max_amount
-     *     @type int|string $min_amount
+     *     @type string $max_amount
+     *     @type string $min_amount
      *     @type float $interest_rate
      *     @type float $infrastructure_rate
      *     @type float $prepayment_rate
@@ -92,8 +92,8 @@ class CreatePlanRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint64 max_amount = 2;</code>
-     * @return int|string
+     * Generated from protobuf field <code>string max_amount = 2;</code>
+     * @return string
      */
     public function getMaxAmount()
     {
@@ -101,21 +101,21 @@ class CreatePlanRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint64 max_amount = 2;</code>
-     * @param int|string $var
+     * Generated from protobuf field <code>string max_amount = 2;</code>
+     * @param string $var
      * @return $this
      */
     public function setMaxAmount($var)
     {
-        GPBUtil::checkUint64($var);
+        GPBUtil::checkString($var, True);
         $this->max_amount = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>uint64 min_amount = 3;</code>
-     * @return int|string
+     * Generated from protobuf field <code>string min_amount = 3;</code>
+     * @return string
      */
     public function getMinAmount()
     {
@@ -123,13 +123,13 @@ class CreatePlanRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint64 min_amount = 3;</code>
-     * @param int|string $var
+     * Generated from protobuf field <code>string min_amount = 3;</code>
+     * @param string $var
      * @return $this
      */
     public function setMinAmount($var)
     {
-        GPBUtil::checkUint64($var);
+        GPBUtil::checkString($var, True);
         $this->min_amount = $var;
 
         return $this;

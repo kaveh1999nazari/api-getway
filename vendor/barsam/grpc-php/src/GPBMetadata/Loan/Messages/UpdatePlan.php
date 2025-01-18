@@ -23,9 +23,9 @@ class UpdatePlan
 id (
 title (	
 
-max_amount (
+max_amount (	
 
-min_amount (
+min_amount (	
 interest_rate (
 infrastructure_rate (
 prepayment_rate (

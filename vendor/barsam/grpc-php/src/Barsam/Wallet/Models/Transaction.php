@@ -26,9 +26,9 @@ class Transaction extends \Google\Protobuf\Internal\Message
      */
     protected $type = 0;
     /**
-     * Generated from protobuf field <code>double amount = 4;</code>
+     * Generated from protobuf field <code>string amount = 4;</code>
      */
-    protected $amount = 0.0;
+    protected $amount = '';
     /**
      * Generated from protobuf field <code>string description = 5;</code>
      */
@@ -63,7 +63,7 @@ class Transaction extends \Google\Protobuf\Internal\Message
      *     @type int|string $id
      *     @type int|string $wallet_id
      *     @type int $type
-     *     @type float $amount
+     *     @type string $amount
      *     @type string $description
      *     @type int|string $caused_by_id
      *     @type string $caused_by_name
@@ -144,8 +144,8 @@ class Transaction extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>double amount = 4;</code>
-     * @return float
+     * Generated from protobuf field <code>string amount = 4;</code>
+     * @return string
      */
     public function getAmount()
     {
@@ -153,13 +153,13 @@ class Transaction extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>double amount = 4;</code>
-     * @param float $var
+     * Generated from protobuf field <code>string amount = 4;</code>
+     * @param string $var
      * @return $this
      */
     public function setAmount($var)
     {
-        GPBUtil::checkDouble($var);
+        GPBUtil::checkString($var, True);
         $this->amount = $var;
 
         return $this;

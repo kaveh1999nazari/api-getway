@@ -16,15 +16,19 @@ use Google\Protobuf\Internal\GPBUtil;
 class UpdateTemplateRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string key = 3;</code>
+     * Generated from protobuf field <code>int64 id = 1;</code>
+     */
+    protected $id = 0;
+    /**
+     * Generated from protobuf field <code>string key = 2;</code>
      */
     protected $key = '';
     /**
-     * Generated from protobuf field <code>string subject = 4;</code>
+     * Generated from protobuf field <code>string subject = 3;</code>
      */
     protected $subject = '';
     /**
-     * Generated from protobuf field <code>string content = 5;</code>
+     * Generated from protobuf field <code>string content = 4;</code>
      */
     protected $content = '';
 
@@ -34,6 +38,7 @@ class UpdateTemplateRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type int|string $id
      *     @type string $key
      *     @type string $subject
      *     @type string $content
@@ -45,7 +50,29 @@ class UpdateTemplateRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string key = 3;</code>
+     * Generated from protobuf field <code>int64 id = 1;</code>
+     * @return int|string
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Generated from protobuf field <code>int64 id = 1;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setId($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string key = 2;</code>
      * @return string
      */
     public function getKey()
@@ -54,7 +81,7 @@ class UpdateTemplateRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string key = 3;</code>
+     * Generated from protobuf field <code>string key = 2;</code>
      * @param string $var
      * @return $this
      */
@@ -67,7 +94,7 @@ class UpdateTemplateRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string subject = 4;</code>
+     * Generated from protobuf field <code>string subject = 3;</code>
      * @return string
      */
     public function getSubject()
@@ -76,7 +103,7 @@ class UpdateTemplateRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string subject = 4;</code>
+     * Generated from protobuf field <code>string subject = 3;</code>
      * @param string $var
      * @return $this
      */
@@ -89,7 +116,7 @@ class UpdateTemplateRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string content = 5;</code>
+     * Generated from protobuf field <code>string content = 4;</code>
      * @return string
      */
     public function getContent()
@@ -98,7 +125,7 @@ class UpdateTemplateRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string content = 5;</code>
+     * Generated from protobuf field <code>string content = 4;</code>
      * @param string $var
      * @return $this
      */

@@ -7,8 +7,8 @@ import "google/protobuf/timestamp.proto";
 message Plan {
   uint64 id = 1;
   string title = 2;
-  uint64 max_amount = 3;
-  uint64 min_amount = 4;
+  string max_amount = 3;
+  string min_amount = 4;
   double interest_rate = 5;
   double infrastructure_rate = 6;
   double prepayment_rate = 7;

@@ -85,10 +85,10 @@ interface UserServiceInterface extends GRPC\ServiceInterface
 
     /**
     * @param GRPC\ContextInterface $ctx
-    * @param \Barsam\User\Messages\FieldGetAllRequest $in
-    * @return \Barsam\User\Messages\FieldGetAllResponse
+    * @param \Barsam\User\Messages\FieldGetRequest $in
+    * @return \Barsam\User\Messages\FieldGetResponse
     *
     * @throws GRPC\Exception\InvokeException
     */
-    public function FieldGetAll(GRPC\ContextInterface $ctx, \Barsam\User\Messages\FieldGetAllRequest $in): \Barsam\User\Messages\FieldGetAllResponse;
+    public function FieldGet(GRPC\ContextInterface $ctx, \Barsam\User\Messages\FieldGetRequest $in): \Barsam\User\Messages\FieldGetResponse;
 }

@@ -2,14 +2,31 @@ syntax = "proto3";
 
 package barsam.cpg.messages;
 
-import "cpg/models/cpgRequest.proto";
+import "cpg/models/cpg_request.proto";
 
 // Define the request message
 message GetRequest {
+  // The user ID to filter the CPGs
   uint64 id = 1;
+
+  // The shop ID to filter the CPGs
+  uint64 shop_id = 2;
+
+  // The page number
+  uint32 page = 3;
+
+  // The number of items per page
+  uint32 per_page = 4;
 }
 
 // Define the response message
 message GetResponse {
-  models.CPG cpg = 1;
+  // The list of CPGs
+  repeated models.CPG cpgs = 1;
+
+  // The total number of CPGs
+  uint64 total_records = 2;
+
+  // The total number of pages
+  uint32 max_page = 3;
 }

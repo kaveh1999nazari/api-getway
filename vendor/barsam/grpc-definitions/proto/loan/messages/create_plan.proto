@@ -5,8 +5,8 @@ package barsam.loan.messages;
 // Define the request message
 message CreatePlanRequest {
   string title = 1;
-  uint64 max_amount = 2;
-  uint64 min_amount = 3;
+  string max_amount = 2;
+  string min_amount = 3;
   double interest_rate = 4;
   double infrastructure_rate = 5;
   double prepayment_rate = 6;
