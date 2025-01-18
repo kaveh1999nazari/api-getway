@@ -50,11 +50,45 @@ class TicketController
             GetResponse::class
         );
 
-        return $this->jsonResponse([
-            'ticket' => $ticketResponse->getResponse()->getTicket()
-        ]);
+        $ticket = $ticketResponse->getResponse()->getTicket();
 
+        $filesArray = [];
+        foreach ($ticket->getFiles() as $file) {
+            $filesArray[] = $file;
+        }
+
+        $tagsArray = [];
+        foreach ($ticket->getTags() as $tag) {
+            $tagsArray[] = $tag;
+        }
+
+        $ticketArray = [
+            'files' => $filesArray,
+            'tags' => $tagsArray,
+            'id' => $ticket->getId(),
+            'department_id' => $ticket->getDepartmentId(),
+            'user_id' => $ticket->getUserId(),
+            'title' => $ticket->getTitle(),
+            'body' => $ticket->getBody(),
+            'private_note' => $ticket->getPrivateNote(),
+            'is_admin' => $ticket->getIsAdmin(),
+            'status' => $ticket->getStatus(),
+            'created_at' => [
+                'seconds' => $ticket->getCreatedAt()->getSeconds(),
+                'nanos' => $ticket->getCreatedAt()->getNanos(),
+            ],
+            'updated_at' => [
+                'seconds' => $ticket->getUpdatedAt()->getSeconds(),
+                'nanos' => $ticket->getUpdatedAt()->getNanos(),
+            ],
+        ];
+
+        return $this->jsonResponse([
+            'ticket' => $ticketArray
+        ]);
     }
+
+
 
     #[Route('/api/ticket/reply', methods: ['POST'])]
     public function reply(ServerRequestInterface $request, InputManager $input): ResponseInterface
