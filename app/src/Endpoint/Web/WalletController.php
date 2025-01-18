@@ -49,10 +49,23 @@ class WalletController
             GetResponse::class
         );
 
+        $wallet = $walletResponse->getResponse()->getWallet();
+        $walletArray = [
+            'id' => $wallet->getId(),
+            'owner_id' => $wallet->getOwnerId(),
+            'currency_id' => $wallet->getCurrencyId(),
+            'type' => $wallet->getType(),
+            'balance_available' => $wallet->getBalanceAvailable(),
+            'balance_locked' => $wallet->getBalanceLocked(),
+            'balance_total' => $wallet->getBalanceTotal(),
+            'address' => $wallet->getAddress(),
+        ];
+
         return $this->jsonResponse([
-            'wallet' => $walletResponse->getResponse()->getWallet()
+            'wallet' => $walletArray
         ]);
     }
+
 
     #[Route('/api/wallet/deposit', methods: ['POST'])]
     public function deposit(ServerRequestInterface $request, InputManager $input): ResponseInterface
@@ -94,12 +107,33 @@ class WalletController
             GetTransactionsResponse::class
         );
 
+        $transactions = $walletResponse->getResponse()->getTransactions();
+        $transactionsArray = [];
+        foreach ($transactions as $transaction) {
+            $transactionsArray[] = [
+                'id' => $transaction->getId(),
+                'wallet_id' => $transaction->getWalletId(),
+                'type' => $transaction->getType(),
+                'amount' => $transaction->getAmount(),
+                'description' => $transaction->getDescription(),
+                'status' => $transaction->getStatus(),
+                'created_at' => [
+                    'seconds' => $transaction->getCreatedAt()->getSeconds(),
+                    'nanos' => $transaction->getCreatedAt()->getNanos(),
+                ],
+                'caused_by_id' => $transaction->getCausedById(),
+                'caused_by_name' => $transaction->getCausedByName(),
+                'reference_number' => $transaction->getReferenceNumber(),
+            ];
+        }
+
         return $this->jsonResponse([
-            'transactions' => $walletResponse->getResponse()->getTransactions(),
+            'transactions' => $transactionsArray,
             'max_page' => $walletResponse->getResponse()->getMaxPage(),
-            'total_records' => $walletResponse->getResponse()->getTotalRecords()
+            'total_records' => $walletResponse->getResponse()->getTotalRecords(),
         ]);
     }
+
 
     private function jsonResponse(array $data, int $status = 200): ResponseInterface
     {
