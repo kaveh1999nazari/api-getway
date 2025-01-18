@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package barsam.auth.messages;
+
+import "auth/enums/otp_method.proto";
+
+// Define the request message
+message GenerateOtpRequest {
+  // The login id
+  string login_id = 1;
+
+  // The OTP method
+  enums.OtpMethod method = 2;
+}
+
+// Define the response message
+message GenerateOtpResponse {
+  string code = 1;
+
+  // The generated OTP qr code (if method is Authenticator)
+  string qr_code_url = 2;
+}

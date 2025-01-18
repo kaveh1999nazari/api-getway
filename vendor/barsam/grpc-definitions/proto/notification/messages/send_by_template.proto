@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package barsam.notification.messages;
+
+// Define the request message
+message SendByTemplateRequest {
+  uint64 channel_id = 1;
+  uint64 template = 2;
+  string recipient = 3;
+  map<string, string> data = 4;
+}
+
+// Define the response message
+message SendByTemplateResponse {
+  string message_id = 1;
+}

@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package barsam.notification.messages;
+
+// Define the request message
+message UpdateTemplateRequest {
+  int64 id = 2;
+  string key = 3;
+  string subject = 4;
+  string content = 5;
+}
+
+// Define the response message
+message UpdateTemplateResponse {
+
+}

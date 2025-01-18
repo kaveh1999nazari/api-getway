@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package barsam.notification;
+
+import "notification/messages/get_channels.proto";
+import "notification/messages/send_direct.proto";
+import "notification/messages/send_by_template.proto";
+import "notification/messages/get_templates.proto";
+import "notification/messages/create_template.proto";
+import "notification/messages/update_template.proto";
+
+service NotificationService {
+  // Get all channels
+  rpc GetChannels(messages.GetChannelsRequest) returns (messages.GetChannelsResponse);
+
+  // Send message to the user directly
+  rpc SendDirect(messages.SendDirectRequest) returns (messages.SendDirectResponse);
+
+  // Send message to the user by specified template
+  rpc SendByTemplate(messages.SendByTemplateRequest) returns (messages.SendByTemplateResponse);
+
+  // Get all templates
+  rpc GetTemplates(messages.GetTemplatesRequest) returns (messages.GetTemplatesResponse);
+
+  // Create new template
+  rpc CreateTemplate(messages.CreateTemplateRequest) returns (messages.CreateTemplateResponse);
+
+  // Update the template
+  rpc UpdateTemplate(messages.UpdateTemplateRequest) returns (messages.UpdateTemplateResponse);
+}

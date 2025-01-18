@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package barsam.config.messages;
+
+import "config/models/config.proto";
+
+// Define the request message
+message GetAllRequest {
+  string service_name = 1;
+}
+
+// Define the response message
+message GetAllResponse {
+  repeated models.Config configs = 1;
+}

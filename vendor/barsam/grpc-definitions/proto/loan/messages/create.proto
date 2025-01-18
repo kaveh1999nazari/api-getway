@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package barsam.loan.messages;
+
+import "google/protobuf/timestamp.proto";
+
+// Define the request message
+message CreateRequest {
+  uint64 user_id = 1;
+  uint64 plan_id = 2;
+  string selected_amount = 3;
+  uint32 selected_duration = 4;
+  string installment_amount = 5;
+  string infrastructure_amount = 6;
+  string prepayment_amount = 7;
+  string total_prepayment_amount = 8;
+  string total_user_payment = 9;
+  string credit_remaining = 10;
+  google.protobuf.Timestamp granted_at = 11;
+  string refund_bank_account_number = 12;
+}
+
+// Define the response message
+message CreateResponse {
+  uint64 id = 1;
+}

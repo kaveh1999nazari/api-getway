@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package barsam.inquiry.messages;
+
+import "inquiry/enums/inquire_type.proto";
+
+// Define the request message
+message InquireIbanRequest {
+  // The IBAN to inquire
+  string iban = 1;
+
+  // The national ID of the card owner (Required if the type is MATCH)
+  string national_id = 2;
+
+  // The type of inquiry to perform (MATCH or DETAIL)
+  enums.InquireType type = 3;
+
+  // Whether to use the cache or not
+  bool use_cache = 4;
+}
+
+// Define the response message
+message InquireIbanResponse {
+  // Available if the type is MATCH
+  bool is_matched = 1;
+
+  // Available if the type is DETAIL
+  string bank_name = 2;
+  repeated string owners = 3;
+  string account_number = 4;
+}

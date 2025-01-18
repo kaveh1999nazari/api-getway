@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package barsam.auth.enums;
+
+enum ResponseType {
+  CODE = 0;
+  ID_TOKEN = 1;
+}

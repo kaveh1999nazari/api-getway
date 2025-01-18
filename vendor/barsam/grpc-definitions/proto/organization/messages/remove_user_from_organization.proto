@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package barsam.organization.messages;
+
+// Define the request message
+message RemoveUserFromOrganizationRequest {
+  uint64 id = 1;
+}
+
+// Define the response message
+message RemoveUserFromOrganizationResponse {
+
+}

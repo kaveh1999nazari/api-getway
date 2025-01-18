@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package barsam.notification.messages;
+
+// Define the request message
+message SendDirectRequest {
+  uint64 channel_id = 1;
+  string recipient = 2;
+  string message = 3;
+  string subject = 4;
+}
+
+// Define the response message
+message SendDirectResponse {
+  string message_id = 1;
+}

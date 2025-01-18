@@ -1,0 +1,11 @@
+{
+  "devDependencies": {
+    "protolint": "^0.50.5"
+  },
+  "dependencies": {
+    "husky": "^9.1.6"
+  },
+  "scripts": {
+    "prepare": "husky"
+  }
+}

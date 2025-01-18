@@ -1,0 +1,42 @@
+syntax = "proto3";
+
+package barsam.user;
+
+import "user/messages/register.proto";
+import "user/messages/update.proto";
+import "user/messages/delete.proto";
+import "user/messages/get.proto";
+import "user/messages/field_create.proto";
+import "user/messages/field_delete.proto";
+import "user/messages/field_update.proto";
+import "user/messages/field_get.proto";
+import "user/messages/check_credentials.proto";
+
+service UserService {
+  // Register a new user
+  rpc Register(messages.RegisterRequest) returns (messages.RegisterResponse);
+
+  // Update an existing user
+  rpc Update(messages.UpdateRequest) returns (messages.UpdateResponse);
+
+  // Delete an existing user
+  rpc Delete(messages.DeleteRequest) returns (messages.DeleteResponse);
+
+  // Get a user
+  rpc Get(messages.GetRequest) returns (messages.GetResponse);
+
+  // Check user's credentials
+  rpc CheckCredentials(messages.CheckCredentialsRequest) returns (messages.CheckCredentialsResponse);
+
+  // Create a field
+  rpc FieldCreate(messages.FieldCreateRequest) returns (messages.FieldCreateResponse);
+
+  // Update a field
+  rpc FieldUpdate(messages.FieldUpdateRequest) returns (messages.FieldUpdateResponse);
+
+  // Delete a field
+  rpc FieldDelete(messages.FieldDeleteRequest) returns (messages.FieldDeleteResponse);
+
+  // Get all fields
+  rpc FieldGet(messages.FieldGetRequest) returns (messages.FieldGetResponse);
+}

@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package barsam.wallet.enums;
+
+enum TransactionType {
+  IN = 0;
+  OUT = 1;
+}

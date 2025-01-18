@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package barsam.inquiry.messages;
+
+// Define the request message
+message StartCreditScoreRequest {
+  string national_id = 1;
+  string mobile = 2;
+}
+
+// Define the response message
+message StartCreditScoreResponse {
+  string request_id = 1;
+}

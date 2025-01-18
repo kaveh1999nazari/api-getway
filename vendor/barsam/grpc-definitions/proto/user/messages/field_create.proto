@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package barsam.user.messages;
+
+import "user/enums/field_type.proto";
+// Define the request message
+message FieldCreateRequest {
+  string label = 2;
+  repeated string validation_rules = 3;
+  enums.FieldType type = 4;
+  map<string, string> options = 5;
+}
+
+// Define the response message
+message FieldCreateResponse {
+
+}
