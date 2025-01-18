@@ -43,12 +43,66 @@ class UserController
             GetResponse::class
         );
 
+        $users = $userResponse->getResponse()->getUsers();
+        $usersArray = [];
+        foreach ($users as $user) {
+            $userMetasArray = [];
+            foreach ($user->getUserMetas() as $userMeta) {
+                $fieldOptionsArray = [];
+                foreach ($userMeta->getField()->getFieldOptions() as $fieldOption) {
+                    $fieldOptionsArray[] = [
+                        'id' => $fieldOption->getId(),
+                        'field_id' => $fieldOption->getFieldId(),
+                        'key' => $fieldOption->getKey(),
+                        'value' => $fieldOption->getValue(),
+                    ];
+                }
+
+                $userMetasArray[] = [
+                    'field' => [
+                        'validation_rules' => $userMeta->getField()->getValidationRules(),
+                        'field_options' => $fieldOptionsArray,
+                        'id' => $userMeta->getField()->getId(),
+                        'label' => $userMeta->getField()->getLabel(),
+                        'type' => $userMeta->getField()->getType(),
+                    ],
+                    'field_option' => $userMeta->getFieldOption() ? [
+                        'id' => $userMeta->getFieldOption()->getId(),
+                        'field_id' => $userMeta->getFieldOption()->getFieldId(),
+                        'key' => $userMeta->getFieldOption()->getKey(),
+                        'value' => $userMeta->getFieldOption()->getValue(),
+                    ] : null,
+                    'value' => $userMeta->getValue(),
+                ];
+            }
+
+            $usersArray[] = [
+                'id' => $user->getId(),
+                'login_id' => $user->getLoginId(),
+                'password' => $user->getPassword(),
+                'created_at' => [
+                    'seconds' => $user->getCreatedAt()->getSeconds(),
+                    'nanos' => $user->getCreatedAt()->getNanos(),
+                ],
+                'updated_at' => [
+                    'seconds' => $user->getUpdatedAt()->getSeconds(),
+                    'nanos' => $user->getUpdatedAt()->getNanos(),
+                ],
+                'deleted_at' => $user->getDeletedAt() ? [
+                    'seconds' => $user->getDeletedAt()->getSeconds(),
+                    'nanos' => $user->getDeletedAt()->getNanos(),
+                ] : null,
+                'user_metas' => $userMetasArray,
+            ];
+        }
+
         return $this->jsonResponse([
-            'user' => $userResponse->getResponse()->getUsers(),
+            'users' => $usersArray,
             'total_records' => $userResponse->getResponse()->getTotalRecords(),
-            'max_page' => $userResponse->getResponse()->getMaxPage()
+            'max_page' => $userResponse->getResponse()->getMaxPage(),
         ]);
     }
+
 
     #[Route('/api/register', methods: ['POST'])]
     public function create(ServerRequestInterface $request, InputManager $input): ResponseInterface
@@ -110,7 +164,6 @@ class UserController
         ]);
     }
 
-    // todo : fix fields by protobuf
     #[Route('/api/field/create', methods: ['POST'])]
     public function fieldCreate(ServerRequestInterface $request, InputManager $input): ResponseInterface
     {
@@ -167,10 +220,32 @@ class UserController
             FieldGetResponse::class
         );
 
+        $fields = $userResponse->getResponse()->getFields();
+        $fieldsArray = [];
+        foreach ($fields as $field) {
+            $fieldOptionsArray = [];
+            foreach ($field->getFieldOptions() as $fieldOption) {
+                $fieldOptionsArray[] = [
+                    'id' => $fieldOption->getId(),
+                    'field_id' => $fieldOption->getFieldId(),
+                    'key' => $fieldOption->getKey(),
+                    'value' => $fieldOption->getValue(),
+                ];
+            }
+
+            $fieldsArray[] = [
+                'validation_rules' => $field->getValidationRules(),
+                'field_options' => $fieldOptionsArray,
+                'id' => $field->getId(),
+                'label' => $field->getLabel(),
+                'type' => $field->getType(),
+            ];
+        }
+
         return $this->jsonResponse([
-            'feilds' => $userResponse->getResponse()->getFeilds(),
+            'fields' => $fieldsArray,
             'total_records' => $userResponse->getResponse()->getTotalRecords(),
-            'max_page' => $userResponse->getResponse()->getMaxPage()
+            'max_page' => $userResponse->getResponse()->getMaxPage(),
         ]);
     }
 
