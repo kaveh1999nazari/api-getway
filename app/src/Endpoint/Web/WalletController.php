@@ -54,7 +54,7 @@ class WalletController
         ]);
     }
 
-    #[Route('/api/wallet', methods: ['POST'])]
+    #[Route('/api/wallet/deposit', methods: ['POST'])]
     public function deposit(ServerRequestInterface $request, InputManager $input): ResponseInterface
     {
         $walletRequest = WalletDepositMapper::fromRequest($input->data->all());
