@@ -27,15 +27,15 @@ return [
         ],
         'notification' => [
             'class' => \App\Service\NotificationService::class,
-            'host' => '172.20.8.29:9007'
+            'host' => '172.20.8.90:9007'
         ],
         'ticket' => [
             'class' => \App\Service\TicketService::class,
-            'host' => '172.20.8.29:9008'
+            'host' => '172.20.8.90:9008'
         ],
         'wallet' => [
             'class' => \App\Service\WalletService::class,
-            'host' => '172.20.8.29:9009'
+            'host' => '172.20.8.90:9009'
         ]
     ]
 ];
