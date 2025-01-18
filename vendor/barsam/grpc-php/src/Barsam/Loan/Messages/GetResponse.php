@@ -14,9 +14,23 @@ use Google\Protobuf\Internal\GPBUtil;
 class GetResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.barsam.loan.models.Loan data = 1;</code>
+     * The list of loans
+     *
+     * Generated from protobuf field <code>repeated .barsam.loan.models.Loan loans = 1;</code>
      */
-    protected $data = null;
+    private $loans;
+    /**
+     * The total number of loans
+     *
+     * Generated from protobuf field <code>uint64 total_records = 2;</code>
+     */
+    protected $total_records = 0;
+    /**
+     * The total number of pages
+     *
+     * Generated from protobuf field <code>uint32 max_page = 3;</code>
+     */
+    protected $max_page = 0;
 
     /**
      * Constructor.
@@ -24,7 +38,12 @@ class GetResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Barsam\Loan\Models\Loan $data
+     *     @type array<\Barsam\Loan\Models\Loan>|\Google\Protobuf\Internal\RepeatedField $loans
+     *           The list of loans
+     *     @type int|string $total_records
+     *           The total number of loans
+     *     @type int $max_page
+     *           The total number of pages
      * }
      */
     public function __construct($data = NULL) {
@@ -33,33 +52,79 @@ class GetResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.barsam.loan.models.Loan data = 1;</code>
-     * @return \Barsam\Loan\Models\Loan|null
+     * The list of loans
+     *
+     * Generated from protobuf field <code>repeated .barsam.loan.models.Loan loans = 1;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getData()
+    public function getLoans()
     {
-        return $this->data;
-    }
-
-    public function hasData()
-    {
-        return isset($this->data);
-    }
-
-    public function clearData()
-    {
-        unset($this->data);
+        return $this->loans;
     }
 
     /**
-     * Generated from protobuf field <code>.barsam.loan.models.Loan data = 1;</code>
-     * @param \Barsam\Loan\Models\Loan $var
+     * The list of loans
+     *
+     * Generated from protobuf field <code>repeated .barsam.loan.models.Loan loans = 1;</code>
+     * @param array<\Barsam\Loan\Models\Loan>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setData($var)
+    public function setLoans($var)
     {
-        GPBUtil::checkMessage($var, \Barsam\Loan\Models\Loan::class);
-        $this->data = $var;
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Barsam\Loan\Models\Loan::class);
+        $this->loans = $arr;
+
+        return $this;
+    }
+
+    /**
+     * The total number of loans
+     *
+     * Generated from protobuf field <code>uint64 total_records = 2;</code>
+     * @return int|string
+     */
+    public function getTotalRecords()
+    {
+        return $this->total_records;
+    }
+
+    /**
+     * The total number of loans
+     *
+     * Generated from protobuf field <code>uint64 total_records = 2;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setTotalRecords($var)
+    {
+        GPBUtil::checkUint64($var);
+        $this->total_records = $var;
+
+        return $this;
+    }
+
+    /**
+     * The total number of pages
+     *
+     * Generated from protobuf field <code>uint32 max_page = 3;</code>
+     * @return int
+     */
+    public function getMaxPage()
+    {
+        return $this->max_page;
+    }
+
+    /**
+     * The total number of pages
+     *
+     * Generated from protobuf field <code>uint32 max_page = 3;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setMaxPage($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->max_page = $var;
 
         return $this;
     }

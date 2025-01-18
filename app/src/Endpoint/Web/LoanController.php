@@ -77,21 +77,6 @@ class LoanController
         ]);
     }
 
-    #[Route('/api/loan/plan', methods: ['GET'])]
-    public function getAllPlans(ServerRequestInterface $request, InputManager $input): ResponseInterface
-    {
-        $loanRequest = GetAllPlanLoanMapper::fromRequest($input->data->all());
-
-        $loanResponse = $this->loanService->GetAllPlans(
-            $loanRequest,
-            GetAllPlansResponse::class
-        );
-
-        return $this->jsonResponse([
-            'data' => $loanResponse->getResponse()->getData()
-        ]);
-    }
-
     #[Route('/api/loan', methods: ['POST'])]
     public function create(ServerRequestInterface $request, InputManager $input): ResponseInterface
     {
@@ -147,8 +132,45 @@ class LoanController
             GetResponse::class
         );
 
+        $loans = $loanResponse->getResponse()->getLoans();
+        $loansArray = [];
+        foreach ($loans as $loan) {
+            $loansArray[] = [
+                'id' => $loan->getId(),
+                'user_id' => $loan->getUserId(),
+                'plan_id' => $loan->getPlanId(),
+                'selected_amount' => $loan->getSelectedAmount(),
+                'selected_duration' => $loan->getSelectedDuration(),
+                'installment_amount' => $loan->getInstallmentAmount(),
+                'infrastructure_amount' => $loan->getInfrastructureAmount(),
+                'prepayment_amount' => $loan->getPrepaymentAmount(),
+                'total_prepayment_amount' => $loan->getTotalPrepaymentAmount(),
+                'total_user_payment' => $loan->getTotalUserPayment(),
+                'credit_remaining' => $loan->getCreditRemaining(),
+                'granted_at' => [
+                    'seconds' => $loan->getGrantedAt()->getSeconds(),
+                    'nanos' => $loan->getGrantedAt()->getNanos(),
+                ],
+                'refund_bank_account_number' => $loan->getRefundBankAccountNumber(),
+                'created_at' => [
+                    'seconds' => $loan->getCreatedAt()->getSeconds(),
+                    'nanos' => $loan->getCreatedAt()->getNanos(),
+                ],
+                'updated_at' => [
+                    'seconds' => $loan->getUpdatedAt()->getSeconds(),
+                    'nanos' => $loan->getUpdatedAt()->getNanos(),
+                ],
+                'deleted_at' => $loan->getDeletedAt() ? [
+                    'seconds' => $loan->getDeletedAt()->getSeconds(),
+                    'nanos' => $loan->getDeletedAt()->getNanos(),
+                ] : null,
+            ];
+        }
+
         return $this->jsonResponse([
-            'data' => $loanResponse->getResponse()->getData()
+            'loans' => $loansArray,
+            'total_records' => $loanResponse->getResponse()->getTotalRecords(),
+            'max_page' => $loanResponse->getResponse()->getMaxPage(),
         ]);
     }
 

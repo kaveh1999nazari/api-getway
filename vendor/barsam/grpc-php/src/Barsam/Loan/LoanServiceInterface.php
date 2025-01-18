@@ -40,12 +40,12 @@ interface LoanServiceInterface extends GRPC\ServiceInterface
 
     /**
     * @param GRPC\ContextInterface $ctx
-    * @param \Barsam\Loan\Messages\GetAllPlansRequest $in
-    * @return \Barsam\Loan\Messages\GetAllPlansResponse
+    * @param \Barsam\Loan\Messages\GetPlanRequest $in
+    * @return \Barsam\Loan\Messages\GetPlanResponse
     *
     * @throws GRPC\Exception\InvokeException
     */
-    public function GetAllPlans(GRPC\ContextInterface $ctx, \Barsam\Loan\Messages\GetAllPlansRequest $in): \Barsam\Loan\Messages\GetAllPlansResponse;
+    public function GetPlan(GRPC\ContextInterface $ctx, \Barsam\Loan\Messages\GetPlanRequest $in): \Barsam\Loan\Messages\GetPlanResponse;
 
     /**
     * @param GRPC\ContextInterface $ctx

@@ -17,23 +17,23 @@ class Service
         \GPBMetadata\Loan\Messages\CreatePlan::initOnce();
         \GPBMetadata\Loan\Messages\UpdatePlan::initOnce();
         \GPBMetadata\Loan\Messages\DeletePlan::initOnce();
-        \GPBMetadata\Loan\Messages\GetAllPlans::initOnce();
+        \GPBMetadata\Loan\Messages\GetPlan::initOnce();
         \GPBMetadata\Loan\Messages\Create::initOnce();
         \GPBMetadata\Loan\Messages\Update::initOnce();
         \GPBMetadata\Loan\Messages\Delete::initOnce();
         \GPBMetadata\Loan\Messages\Get::initOnce();
         $pool->internalAddGeneratedFile(
             '
-Ý
-loan/service.protobarsam.loanloan/messages/update_plan.protoloan/messages/delete_plan.proto!loan/messages/get_all_plans.protoloan/messages/create.protoloan/messages/update.protoloan/messages/delete.protoloan/messages/get.proto2ß
+Ì
+loan/service.protobarsam.loanloan/messages/update_plan.protoloan/messages/delete_plan.protoloan/messages/get_plan.protoloan/messages/create.protoloan/messages/update.protoloan/messages/delete.protoloan/messages/get.proto2Ó
 LoanService_
 
 CreatePlan\'.barsam.loan.messages.CreatePlanRequest(.barsam.loan.messages.CreatePlanResponse_
 
 UpdatePlan\'.barsam.loan.messages.UpdatePlanRequest(.barsam.loan.messages.UpdatePlanResponse_
 
-DeletePlan\'.barsam.loan.messages.DeletePlanRequest(.barsam.loan.messages.DeletePlanResponseb
-GetAllPlans(.barsam.loan.messages.GetAllPlansRequest).barsam.loan.messages.GetAllPlansResponseS
+DeletePlan\'.barsam.loan.messages.DeletePlanRequest(.barsam.loan.messages.DeletePlanResponseV
+GetPlan$.barsam.loan.messages.GetPlanRequest%.barsam.loan.messages.GetPlanResponseS
 Create#.barsam.loan.messages.CreateRequest$.barsam.loan.messages.CreateResponseS
 Update#.barsam.loan.messages.UpdateRequest$.barsam.loan.messages.UpdateResponseS
 Delete#.barsam.loan.messages.DeleteRequest$.barsam.loan.messages.DeleteResponseJ
