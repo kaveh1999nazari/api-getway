@@ -6,7 +6,7 @@ use Barsam\User\Messages\UpdateRequest;
 
 class UpdateUserMapper
 {
-    public static function fromRequest(array $inputs)
+    public static function fromRequest(array $inputs): UpdateRequest
     {
         return new UpdateRequest([
             'id' => $inputs['id'],
