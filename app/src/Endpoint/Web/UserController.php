@@ -7,7 +7,7 @@ use App\Domain\Mapper\CreateUserMapper;
 use App\Domain\Mapper\DeleteUserMapper;
 use App\Domain\Mapper\FieldCreateMapper;
 use App\Domain\Mapper\FieldDeleteMapper;
-use App\Domain\Mapper\FieldGetAllMapper;
+use App\Domain\Mapper\FieldGetMapper;
 use App\Domain\Mapper\FieldUpdateMapper;
 use App\Domain\Mapper\GetUserMapper;
 use App\Domain\Mapper\UpdateUserMapper;
@@ -16,7 +16,7 @@ use Barsam\User\Messages\CheckCredentialsResponse;
 use Barsam\User\Messages\DeleteResponse;
 use Barsam\User\Messages\FieldCreateResponse;
 use Barsam\User\Messages\FieldDeleteResponse;
-use Barsam\User\Messages\FieldGetAllResponse;
+use Barsam\User\Messages\FieldGetResponse;
 use Barsam\User\Messages\FieldUpdateResponse;
 use Barsam\User\Messages\GetResponse;
 use Barsam\User\Messages\RegisterResponse;
@@ -25,7 +25,6 @@ use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Spiral\Http\Request\InputManager;
 use Spiral\Router\Annotation\Route;
-use Symfony\Component\HttpFoundation\JsonResponse;
 
 class UserController
 {
@@ -45,8 +44,9 @@ class UserController
         );
 
         return $this->jsonResponse([
-            'user' => $userResponse->getResponse()->getUser(),
-            'user-metas' => $userResponse->getResponse()->getUserMetas(),
+            'user' => $userResponse->getResponse()->getUsers(),
+            'total_records' => $userResponse->getResponse()->getTotalRecords(),
+            'max_page' => $userResponse->getResponse()->getMaxPage()
         ]);
     }
 
@@ -158,17 +158,19 @@ class UserController
     }
 
     #[Route('/api/field', methods: ['GET'])]
-    public function fieldGetAll(ServerRequestInterface $request, InputManager $input): ResponseInterface
+    public function fieldGet(ServerRequestInterface $request, InputManager $input): ResponseInterface
     {
-        $userRequest = FieldGetAllMapper::fromRequest($input->data->all());
+        $userRequest = FieldGetMapper::fromRequest($input->data->all());
 
         $userResponse = $this->userService->FieldGetAll(
             $userRequest,
-            FieldGetAllResponse::class
+            FieldGetResponse::class
         );
 
         return $this->jsonResponse([
             'feilds' => $userResponse->getResponse()->getFeilds(),
+            'total_records' => $userResponse->getResponse()->getTotalRecords(),
+            'max_page' => $userResponse->getResponse()->getMaxPage()
         ]);
     }
 
