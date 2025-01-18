@@ -27,7 +27,7 @@ class NotificationController
     {
     }
 
-    #[Route('/api/', methods: ['GET'])]
+    #[Route('/api/notification/channel', methods: ['GET'])]
     public function getChannels(ServerRequestInterface $request, InputManager $input): ResponseInterface
     {
         $notificationRequest = NotificationGetChannelsMapper::fromRequest($input->data->all());
@@ -43,7 +43,7 @@ class NotificationController
 
     }
 
-    #[Route('/api/', methods: ['POST'])]
+    #[Route('/api/notification/direct', methods: ['POST'])]
     public function sendDirect(ServerRequestInterface $request, InputManager $input): ResponseInterface
     {
         $notificationRequest = NotificationSendDirectMapper::fromRequest($input->data->all());
@@ -58,7 +58,7 @@ class NotificationController
         ]);
     }
 
-    #[Route('/api/', methods: ['POST'])]
+    #[Route('/api/notification/template/send', methods: ['POST'])]
     public function sendByTemplate(ServerRequestInterface $request, InputManager $input): ResponseInterface
     {
         $notificationRequest = NotificationSendByTemplateMapper::fromRequest($input->data->all());
@@ -73,7 +73,7 @@ class NotificationController
         ]);
     }
 
-    #[Route('/api/', methods: ['GET'])]
+    #[Route('/api/notification/template', methods: ['GET'])]
     public function getTemplates(ServerRequestInterface $request, InputManager $input): ResponseInterface
     {
         $notificationRequest = NotificationGetTemplatesMapper::fromRequest($input->data->all());
@@ -88,7 +88,7 @@ class NotificationController
         ]);
     }
 
-    #[Route('/api/', methods: ['POST'])]
+    #[Route('/api/notification/template', methods: ['POST'])]
     public function createTemplate(ServerRequestInterface $request, InputManager $input): ResponseInterface
     {
         $notificationRequest = NotificationCreateTemplateMapper::fromRequest($input->data->all());
@@ -103,7 +103,7 @@ class NotificationController
         ]);
     }
 
-    #[Route('/api/', methods: ['PUT'])]
+    #[Route('/api/notification/template', methods: ['PUT'])]
     public function updateTemplate(ServerRequestInterface $request, InputManager $input): ResponseInterface
     {
         $notificationRequest = NotificationUpdateTemplateMapper::fromRequest($input->data->all());
