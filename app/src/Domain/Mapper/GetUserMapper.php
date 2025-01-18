@@ -10,6 +10,9 @@ class GetUserMapper
     {
         return new GetRequest([
             'id' => $inputs['id'],
+            'login_id' => $inputs['login_id'],
+            'page' => $inputs['page'],
+            'per_page' => $inputs['per_page'],
         ]);
     }
 
