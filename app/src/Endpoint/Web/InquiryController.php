@@ -29,7 +29,7 @@ class InquiryController
     {
     }
 
-    #[Route('/api/', methods: [''])]
+    #[Route('/api/inquire/person', methods: ['POST'])]
     public function inquirePerson(ServerRequestInterface $request, InputManager $input): ResponseInterface
     {
         $inquireRequest = InquirePersonMapper::fromRequest($input->data->all());
@@ -47,7 +47,7 @@ class InquiryController
 
     }
 
-    #[Route('/api/', methods: [''])]
+    #[Route('/api/inquire/credit', methods: ['POST'])]
     public function inquireCreditScore(ServerRequestInterface $request, InputManager $input): ResponseInterface
     {
         $inquireRequest = InquireCreditScoreMapper::fromRequest($input->data->all());
@@ -65,7 +65,7 @@ class InquiryController
         ]);
     }
 
-    #[Route('/api/', methods: [''])]
+    #[Route('/api/inquire/credit/start', methods: ['POST'])]
     public function startCreditScore(ServerRequestInterface $request, InputManager $input): ResponseInterface
     {
         $inquireRequest = StartCreditScoreMapper::fromRequest($input->data->all());
@@ -80,7 +80,7 @@ class InquiryController
         ]);
     }
 
-    #[Route('/api/', methods: [''])]
+    #[Route('/api/inquire/credit/finish', methods: ['POST'])]
     public function finishCreditScore(ServerRequestInterface $request, InputManager $input): ResponseInterface
     {
         $inquireRequest = FinishCreditScoreMapper::fromRequest($input->data->all());
@@ -98,7 +98,7 @@ class InquiryController
         ]);
     }
 
-    #[Route('/api/', methods: [''])]
+    #[Route('/api/inquire/card', methods: ['POST'])]
     public function inquireCard(ServerRequestInterface $request, InputManager $input): ResponseInterface
     {
         $inquireRequest = InquireCardMapper::fromRequest($input->data->all());
@@ -118,7 +118,7 @@ class InquiryController
 
     }
 
-    #[Route('/api/', methods: [''])]
+    #[Route('/api/inquire/iban', methods: ['POST'])]
     public function inquireIban(ServerRequestInterface $request, InputManager $input): ResponseInterface
     {
         $inquireRequest = InquireIbanMapper::fromRequest($input->data->all());
@@ -138,7 +138,7 @@ class InquiryController
 
     }
 
-    #[Route('/api/', methods: [''])]
+    #[Route('/api/inquire/owner', methods: ['POST'])]
     public function inquireMobileOwnership(ServerRequestInterface $request, InputManager $input): ResponseInterface
     {
         $inquireRequest = InquireMobileOwnershipMapper::fromRequest($input->data->all());
