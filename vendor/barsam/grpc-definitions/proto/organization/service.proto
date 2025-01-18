@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package barsam.organization;
+
+import "organization/messages/create.proto";
+import "organization/messages/delete.proto";
+import "organization/messages/update.proto";
+import "organization/messages/get.proto";
+import "organization/messages/add_user_to_organization.proto";
+import "organization/messages/remove_user_from_organization.proto";
+import "organization/messages/get_oranization_users.proto";
+
+service OrganizationService {
+  // Create a new organization
+  rpc Create(messages.CreateRequest) returns (messages.CreateResponse);
+
+  // Update an organization
+  rpc Update(messages.UpdateRequest) returns (messages.UpdateResponse);
+
+  // Delete an organization
+  rpc Delete(messages.DeleteRequest) returns (messages.DeleteResponse);
+
+  // Get an organization by ID or Get organizations List
+  rpc Get(messages.GetRequest) returns (messages.GetResponse);
+
+  // add a user to organization
+  rpc AddUserToOrganization(messages.AddUserToOrganizationRequest) returns (messages.AddUserToOrganizationResponse);
+
+  // remove a user to organization
+  rpc RemoveUserFromOrganization(messages.RemoveUserFromOrganizationRequest) returns (messages.RemoveUserFromOrganizationResponse);
+
+  // Get an organization user by ID or Get organization users List
+  rpc GetOrganizationUsers(messages.GetOrganizationUsersRequest) returns (messages.GetOrganizationUsersResponse);
+}

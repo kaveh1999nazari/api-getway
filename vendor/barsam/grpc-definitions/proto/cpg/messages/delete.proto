@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package barsam.cpg.messages;
+
+// Define the request message
+message DeleteRequest {
+  uint64 id = 1;
+}
+
+// Define the response message
+message DeleteResponse {
+
+}
