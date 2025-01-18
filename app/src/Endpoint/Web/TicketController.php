@@ -88,7 +88,7 @@ class TicketController
 
     }
 
-    #[Route('/api/ticket', methods: ['DELETE'])]
+    #[Route('/api/ticket/reply', methods: ['DELETE'])]
     public function delete(ServerRequestInterface $request, InputManager $input): ResponseInterface
     {
         $ticketRequest = TicketDeleteMapper::fromRequest($input->data->all());
