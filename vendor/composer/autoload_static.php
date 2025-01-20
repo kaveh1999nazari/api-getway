@@ -893,8 +893,8 @@ class ComposerStaticInit6c542c32a4eb63a4d959d70e896e1445
         ),
         'GPBMetadata\\' => 
         array (
-            0 => __DIR__ . '/..' . '/barsam/grpc-php/src/GPBMetadata',
-            1 => __DIR__ . '/..' . '/roadrunner-php/roadrunner-api-dto/generated/GPBMetadata',
+            0 => __DIR__ . '/..' . '/roadrunner-php/roadrunner-api-dto/generated/GPBMetadata',
+            1 => __DIR__ . '/..' . '/barsam/grpc-php/src/GPBMetadata',
         ),
         'Fidry\\CpuCoreCounter\\' => 
         array (
