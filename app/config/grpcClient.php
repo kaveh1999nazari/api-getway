@@ -40,6 +40,10 @@ return [
         'cpg' => [
             'class' => \App\Service\CpgService::class,
             'host' => '172.20.8.90:90010'
-        ]
+        ],
+        'organization' => [
+            'class' => \App\Service\OrganizationService::class,
+            'host' => '172.20.8.90:90011'
+        ],
     ]
 ];
