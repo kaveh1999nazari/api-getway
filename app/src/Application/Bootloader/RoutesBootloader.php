@@ -32,7 +32,6 @@ final class RoutesBootloader extends BaseRoutesBootloader
     protected function globalMiddleware(): array
     {
         return [
-            LocaleSelector::class,
             ErrorHandlerMiddleware::class,
             DumperMiddleware::class,
             JsonPayloadMiddleware::class,
