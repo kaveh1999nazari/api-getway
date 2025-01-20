@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Endpoint\Web;
+namespace App\Endpoint\Web\backup;
 
 use App\Domain\Mapper\CreateLoanMapper;
 use App\Domain\Mapper\CreatePlanLoanMapper;
 use App\Domain\Mapper\DeleteLoanMapper;
 use App\Domain\Mapper\DeletePlanLoanMapper;
-use App\Domain\Mapper\GetAllPlanLoanMapper;
 use App\Domain\Mapper\GetLoanMapper;
 use App\Domain\Mapper\UpdateLoanMapper;
 use App\Domain\Mapper\UpdatePlanLoanMapper;
@@ -31,7 +30,7 @@ class LoanController
     {
     }
 
-    #[Route('/api/loan/plan', methods: ['POST'])]
+    #[Route('/loan/plan', methods: ['POST'], group: 'api')]
     public function createPlan(ServerRequestInterface $request, InputManager $input): ResponseInterface
     {
         $loanRequest = CreatePlanLoanMapper::fromRequest($input->data->all());
@@ -47,7 +46,7 @@ class LoanController
 
     }
 
-    #[Route('/api/loan/plan', methods: ['PUT'])]
+    #[Route('/loan/plan', methods: ['PUT'], group: 'api')]
     public function updatePlan(ServerRequestInterface $request, InputManager $input): ResponseInterface
     {
         $loanRequest = UpdatePlanLoanMapper::fromRequest($input->data->all());
@@ -62,7 +61,7 @@ class LoanController
         ]);
     }
 
-    #[Route('/api/loan/plan', methods: ['DELETE'])]
+    #[Route('/loan/plan', methods: ['DELETE'], group: 'api')]
     public function deletePlan(ServerRequestInterface $request, InputManager $input): ResponseInterface
     {
         $loanRequest = DeletePlanLoanMapper::fromRequest($input->data->all());
@@ -77,7 +76,7 @@ class LoanController
         ]);
     }
 
-    #[Route('/api/loan', methods: ['POST'])]
+    #[Route('/loan', methods: ['POST'], group: 'api')]
     public function create(ServerRequestInterface $request, InputManager $input): ResponseInterface
     {
         $loanRequest = CreateLoanMapper::fromRequest($input->data->all());
@@ -92,7 +91,7 @@ class LoanController
         ]);
     }
 
-    #[Route('/api/loan', methods: ['PUT'])]
+    #[Route('/loan', methods: ['PUT'], group: 'api')]
     public function update(ServerRequestInterface $request, InputManager $input): ResponseInterface
     {
         $loanRequest = UpdateLoanMapper::fromRequest($input->data->all());
@@ -107,7 +106,7 @@ class LoanController
         ]);
     }
 
-    #[Route('/api/loan', methods: ['DELETE'])]
+    #[Route('/loan', methods: ['DELETE'], group: 'api')]
     public function delete(ServerRequestInterface $request, InputManager $input): ResponseInterface
     {
         $loanRequest = DeleteLoanMapper::fromRequest($input->data->all());
@@ -122,7 +121,7 @@ class LoanController
         ]);
     }
 
-    #[Route('/api/loan', methods: ['GET'])]
+    #[Route('/loan', methods: ['GET'], group: 'api')]
     public function get(ServerRequestInterface $request, InputManager $input): ResponseInterface
     {
         $loanRequest = GetLoanMapper::fromRequest($input->data->all());

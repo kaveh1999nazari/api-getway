@@ -1,11 +1,10 @@
 <?php
 
-namespace App\Endpoint\Web;
+namespace App\Endpoint\Web\backup;
 
 use App\Domain\Mapper\CreateInstallmentMapper;
 use App\Domain\Mapper\DeleteInstallmentMapper;
 use App\Domain\Mapper\GenerateInstallmentMapper;
-use App\Domain\Mapper\GetAllInstallmentMapper;
 use App\Domain\Mapper\GetInstallmentMapper;
 use App\Domain\Mapper\UpdateInstallmentMapper;
 use App\Service\InstallmentService;

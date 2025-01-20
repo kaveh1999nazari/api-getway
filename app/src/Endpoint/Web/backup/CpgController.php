@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Endpoint\Web;
+namespace App\Endpoint\Web\backup;
 
 use App\Domain\Mapper\CpgCreateMapper;
 use App\Domain\Mapper\CpgDeleteMapper;
@@ -23,7 +23,7 @@ class CpgController
     {
     }
 
-    #[Route('/api/cpg', methods: ['POST'])]
+    #[Route('/cpg', methods: ['POST'], group: 'api')]
     public function create(ServerRequestInterface $request, InputManager $input): ResponseInterface
     {
         $cpgRequest = CpgCreateMapper::fromRequest($input->data->all());
@@ -38,7 +38,7 @@ class CpgController
         ]);
     }
 
-    #[Route('/api/cpg', methods: ['DELETE'])]
+    #[Route('/cpg', methods: ['DELETE'], group: 'api')]
     public function delete(ServerRequestInterface $request, InputManager $input): ResponseInterface
     {
         $cpgRequest = CpgDeleteMapper::fromRequest($input->data->all());
@@ -53,7 +53,7 @@ class CpgController
         ]);
     }
 
-    #[Route('/api/cpg', methods: ['GET'])]
+    #[Route('/cpg', methods: ['GET'], group: 'api')]
     public function get(ServerRequestInterface $request, InputManager $input): ResponseInterface
     {
         $cpgRequest = CpgGetMapper::fromRequest($input->data->all());
@@ -70,7 +70,7 @@ class CpgController
         ]);
     }
 
-    #[Route('/api/cpg', methods: ['PUT'])]
+    #[Route('/cpg', methods: ['PUT'], group: 'api')]
     public function update(ServerRequestInterface $request, InputManager $input): ResponseInterface
     {
         $cpgRequest = CpgUpdateMapper::fromRequest($input->data->all());

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Endpoint\Web;
+namespace App\Endpoint\Web\backup;
 
 use App\Domain\Mapper\PaymentRequestMapper;
 use App\Domain\Mapper\PaymentVerifyMapper;

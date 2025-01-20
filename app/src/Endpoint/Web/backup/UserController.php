@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Endpoint\Web;
+namespace App\Endpoint\Web\backup;
 
 use App\Domain\Mapper\CheckCredentialMapper;
 use App\Domain\Mapper\CreateUserMapper;
@@ -12,6 +12,7 @@ use App\Domain\Mapper\FieldUpdateMapper;
 use App\Domain\Mapper\GetUserMapper;
 use App\Domain\Mapper\UpdateUserMapper;
 use App\Service\UserService;
+use App\Utility\GoogleTimeHelper;
 use Barsam\User\Messages\CheckCredentialsResponse;
 use Barsam\User\Messages\DeleteResponse;
 use Barsam\User\Messages\FieldCreateResponse;
@@ -21,6 +22,7 @@ use Barsam\User\Messages\FieldUpdateResponse;
 use Barsam\User\Messages\GetResponse;
 use Barsam\User\Messages\RegisterResponse;
 use Barsam\User\Messages\UpdateResponse;
+use DateTimeInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Spiral\Http\Request\InputManager;
@@ -33,7 +35,7 @@ class UserController
     {
     }
 
-    #[Route('/api/profile', methods: ['GET'])]
+    #[Route('/profile', methods: ['GET'], group: 'api')]
     public function get(ServerRequestInterface $request, InputManager $input): ResponseInterface
     {
         $userRequest = GetUserMapper::fromRequest($input->data->all());
@@ -45,12 +47,15 @@ class UserController
 
         $users = $userResponse->getResponse()->getUsers();
         $usersArray = [];
+
         foreach ($users as $user) {
             $userMetasArray = [];
-            foreach ($user->getUserMetas() as $userMeta) {
+
+            foreach ($user->getUserMetas() as $metaIndex => $userMeta) {
                 $fieldOptionsArray = [];
-                foreach ($userMeta->getField()->getFieldOptions() as $fieldOption) {
-                    $fieldOptionsArray[] = [
+
+                foreach ($userMeta->getField()->getFieldOptions() as $optionIndex => $fieldOption) {
+                    $fieldOptionsArray["option_$optionIndex"] = [
                         'id' => $fieldOption->getId(),
                         'field_id' => $fieldOption->getFieldId(),
                         'key' => $fieldOption->getKey(),
@@ -58,7 +63,7 @@ class UserController
                     ];
                 }
 
-                $userMetasArray[] = [
+                $userMetasArray["meta_$metaIndex"] = [
                     'field' => [
                         'validation_rules' => $userMeta->getField()->getValidationRules(),
                         'field_options' => $fieldOptionsArray,
@@ -76,35 +81,24 @@ class UserController
                 ];
             }
 
-            $usersArray[] = [
+            $usersArray = [
                 'id' => $user->getId(),
                 'login_id' => $user->getLoginId(),
-                'password' => $user->getPassword(),
-                'created_at' => [
-                    'seconds' => $user->getCreatedAt()->getSeconds(),
-                    'nanos' => $user->getCreatedAt()->getNanos(),
-                ],
-                'updated_at' => [
-                    'seconds' => $user->getUpdatedAt()->getSeconds(),
-                    'nanos' => $user->getUpdatedAt()->getNanos(),
-                ],
-                'deleted_at' => $user->getDeletedAt() ? [
-                    'seconds' => $user->getDeletedAt()->getSeconds(),
-                    'nanos' => $user->getDeletedAt()->getNanos(),
-                ] : null,
+//                'password' => $user->getPassword(),
+                'created_at' => GoogleTimeHelper::timestampToDateTimeImmutable($user->getCreatedAt())->format(DateTimeInterface::ATOM),
+                'updated_at' => GoogleTimeHelper::timestampToDateTimeImmutable($user->getUpdatedAt())->format(DateTimeInterface::ATOM),
+                'deleted_at' => $user->getDeletedAt() ?
+                     GoogleTimeHelper::timestampToDateTimeImmutable($user->getDeletedAt())->format(DateTimeInterface::ATOM): null,
                 'user_metas' => $userMetasArray,
             ];
         }
 
-        return $this->jsonResponse([
-            'users' => $usersArray,
-            'total_records' => $userResponse->getResponse()->getTotalRecords(),
-            'max_page' => $userResponse->getResponse()->getMaxPage(),
-        ]);
+        return $this->jsonResponse(
+            $usersArray,
+        );
     }
 
-
-    #[Route('/api/register', methods: ['POST'])]
+    #[Route('/register', methods: ['POST'], group: 'api')]
     public function create(ServerRequestInterface $request, InputManager $input): ResponseInterface
     {
         $userRequest = CreateUserMapper::fromRequest($input->data->all());
@@ -114,12 +108,14 @@ class UserController
             RegisterResponse::class
         );
 
+
+
         return $this->jsonResponse([
             'id' => $userResponse->getResponse()->getUserId()
         ]);
     }
 
-    #[Route('/api/profile', methods: ['PUT'])]
+    #[Route('/profile', methods: ['PUT'], group: 'api')]
     public function update(ServerRequestInterface $request, InputManager $input): ResponseInterface
     {
         $userRequest = UpdateUserMapper::fromRequest($input->data->all());
@@ -134,7 +130,7 @@ class UserController
         ]);
     }
 
-    #[Route('/api/profile', methods: ['DELETE'])]
+    #[Route('/profile', methods: ['DELETE'], group: 'api')]
     public function delete(ServerRequestInterface $request, InputManager $input): ResponseInterface
     {
         $userRequest = DeleteUserMapper::fromRequest($input->data->all());
@@ -149,7 +145,7 @@ class UserController
         ]);
     }
 
-    #[Route('/api/check', methods: ['POST'])]
+    #[Route('/check', methods: ['POST'], group: 'api')]
     public function checkCredentials(ServerRequestInterface $request, InputManager $input): ResponseInterface
     {
         $userRequest = CheckCredentialMapper::fromRequest($input->data->all());
@@ -164,7 +160,7 @@ class UserController
         ]);
     }
 
-    #[Route('/api/field/create', methods: ['POST'])]
+    #[Route('/field/create', methods: ['POST'], group: 'api')]
     public function fieldCreate(ServerRequestInterface $request, InputManager $input): ResponseInterface
     {
         $userRequest = FieldCreateMapper::fromRequest($input->data->all());
@@ -179,7 +175,7 @@ class UserController
         ]);
     }
 
-    #[Route('/api/field/update', methods: ['PUT'])]
+    #[Route('/field/update', methods: ['PUT'], group: 'api')]
     public function fieldUpdate(ServerRequestInterface $request, InputManager $input): ResponseInterface
     {
         $userRequest = FieldUpdateMapper::fromRequest($input->data->all());
@@ -194,7 +190,7 @@ class UserController
         ]);
     }
 
-    #[Route('/api/field/delete', methods: ['DELETE'])]
+    #[Route('/field/delete', methods: ['DELETE'], group: 'api')]
     public function fieldDelete(ServerRequestInterface $request, InputManager $input): ResponseInterface
     {
         $userRequest = FieldDeleteMapper::fromRequest($input->data->all());
@@ -210,7 +206,7 @@ class UserController
 
     }
 
-    #[Route('/api/field', methods: ['GET'])]
+    #[Route('/field', methods: ['GET'], group: 'api')]
     public function fieldGet(ServerRequestInterface $request, InputManager $input): ResponseInterface
     {
         $userRequest = FieldGetMapper::fromRequest($input->data->all());

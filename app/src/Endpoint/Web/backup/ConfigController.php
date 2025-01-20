@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Endpoint\Web;
+namespace App\Endpoint\Web\backup;
 
 use App\Domain\Mapper\getAllMapper;
 use App\Domain\Mapper\getOneMapper;
@@ -22,7 +22,7 @@ class ConfigController
     {
     }
 
-    #[Route('/api/', methods: ['GET'])]
+    #[Route('/', methods: ['GET'], group: 'api')]
     public function sync(ServerRequestInterface $request, InputManager $input): ResponseInterface
     {
         $configRequest = SyncMapper::fromRequest($input->data->all());
@@ -37,7 +37,7 @@ class ConfigController
         ]);
     }
 
-    #[Route('/api/', methods: ['GET'])]
+    #[Route('/', methods: ['GET'], group: 'api')]
     public function getOne(ServerRequestInterface $request, InputManager $input): ResponseInterface
     {
         $configRequest = getOneMapper::fromRequest($input->data->all());
@@ -53,7 +53,7 @@ class ConfigController
 
     }
 
-    #[Route('/api/config/all', methods: ['GET'])]
+    #[Route('/config/all', methods: ['GET'], group: 'api')]
     public function getAll(ServerRequestInterface $request, InputManager $input): ResponseInterface
     {
         $configRequest = getAllMapper::fromRequest($input->data->all());
@@ -68,7 +68,7 @@ class ConfigController
         ]);
     }
 
-    #[Route('/api/config', methods: ['PUT'])]
+    #[Route('/config', methods: ['PUT'], group: 'api')]
     public function updateBatch(ServerRequestInterface $request, InputManager $input): ResponseInterface
     {
         $configRequest = UpdateBatchMapper::fromRequest($input->data->all());
