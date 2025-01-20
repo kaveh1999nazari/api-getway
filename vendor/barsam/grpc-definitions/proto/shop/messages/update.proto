@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package barsam.shop.messages;
+
+// Define the request message
+message UpdateRequest {
+  uint64 id = 1;
+  uint32 user_id = 2;
+  uint32 parent_id = 3;
+  string name = 4;
+  string address = 5;
+  string phone = 6;
+  string api_key = 7;
+  string website = 8;
+  uint64 VAT_percent = 9;
+  uint64 commercial_fee_percent = 10;
+}
+
+// Define the response message
+message UpdateResponse {
+
+}

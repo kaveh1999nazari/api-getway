@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package barsam.shop;
+
+import "shop/messages/create.proto";
+import "shop/messages/delete.proto";
+import "shop/messages/update.proto";
+import "shop/messages/get.proto";
+
+service ShopService {
+  // Create a new shop
+  rpc Create(messages.CreateRequest) returns (messages.CreateResponse);
+
+  // Update an shop
+  rpc Update(messages.UpdateRequest) returns (messages.UpdateResponse);
+
+  // Delete an shop
+  rpc Delete(messages.DeleteRequest) returns (messages.DeleteResponse);
+
+  // Get an shop by ID
+  rpc Get(messages.GetRequest) returns (messages.GetResponse);
+}

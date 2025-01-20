@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package barsam.user.messages;
+
+// Define the request message
+message UpdateMerchantRequest {
+  // The user id
+  uint64 id = 1;
+
+  // The user merchant status
+  bool is_merchant = 2;
+}
+
+// Define the response message
+message UpdateMerchantResponse {
+
+}
