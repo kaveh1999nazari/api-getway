@@ -26,21 +26,25 @@ class User extends \Google\Protobuf\Internal\Message
      */
     protected $password = '';
     /**
+     * Generated from protobuf field <code>bool is_merchant = 4;</code>
+     */
+    protected $is_merchant = false;
+    /**
      * The user's meta fields
      *
-     * Generated from protobuf field <code>repeated .barsam.user.models.UserMeta user_metas = 4;</code>
+     * Generated from protobuf field <code>repeated .barsam.user.models.UserMeta user_metas = 5;</code>
      */
     private $user_metas;
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 6;</code>
      */
     protected $created_at = null;
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp updated_at = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp updated_at = 7;</code>
      */
     protected $updated_at = null;
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp deleted_at = 7;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp deleted_at = 8;</code>
      */
     protected $deleted_at = null;
 
@@ -53,6 +57,7 @@ class User extends \Google\Protobuf\Internal\Message
      *     @type string $id
      *     @type string $login_id
      *     @type string $password
+     *     @type bool $is_merchant
      *     @type array<\Barsam\User\Models\UserMeta>|\Google\Protobuf\Internal\RepeatedField $user_metas
      *           The user's meta fields
      *     @type \Google\Protobuf\Timestamp $created_at
@@ -132,9 +137,31 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Generated from protobuf field <code>bool is_merchant = 4;</code>
+     * @return bool
+     */
+    public function getIsMerchant()
+    {
+        return $this->is_merchant;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool is_merchant = 4;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setIsMerchant($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->is_merchant = $var;
+
+        return $this;
+    }
+
+    /**
      * The user's meta fields
      *
-     * Generated from protobuf field <code>repeated .barsam.user.models.UserMeta user_metas = 4;</code>
+     * Generated from protobuf field <code>repeated .barsam.user.models.UserMeta user_metas = 5;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getUserMetas()
@@ -145,7 +172,7 @@ class User extends \Google\Protobuf\Internal\Message
     /**
      * The user's meta fields
      *
-     * Generated from protobuf field <code>repeated .barsam.user.models.UserMeta user_metas = 4;</code>
+     * Generated from protobuf field <code>repeated .barsam.user.models.UserMeta user_metas = 5;</code>
      * @param array<\Barsam\User\Models\UserMeta>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -158,7 +185,7 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 6;</code>
      * @return \Google\Protobuf\Timestamp|null
      */
     public function getCreatedAt()
@@ -177,7 +204,7 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 6;</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
@@ -190,7 +217,7 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp updated_at = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp updated_at = 7;</code>
      * @return \Google\Protobuf\Timestamp|null
      */
     public function getUpdatedAt()
@@ -209,7 +236,7 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp updated_at = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp updated_at = 7;</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
@@ -222,7 +249,7 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp deleted_at = 7;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp deleted_at = 8;</code>
      * @return \Google\Protobuf\Timestamp|null
      */
     public function getDeletedAt()
@@ -241,7 +268,7 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp deleted_at = 7;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp deleted_at = 8;</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */

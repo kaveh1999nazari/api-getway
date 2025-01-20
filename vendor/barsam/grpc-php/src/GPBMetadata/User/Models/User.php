@@ -18,21 +18,22 @@ class User
         \GPBMetadata\User\Models\UserMeta::initOnce();
         $pool->internalAddGeneratedFile(
             '
-Ã
-user/models/user.protobarsam.user.modelsuser/models/user_meta.proto"¯
+·
+user/models/user.protobarsam.user.modelsuser/models/user_meta.proto"ç
 User
 
 id (	
 login_id (	
-password (	0
+password (	
+is_merchant (0
 
-user_metas (2.barsam.user.models.UserMeta.
+user_metas (2.barsam.user.models.UserMeta.
 
-created_at (2.google.protobuf.Timestamp.
+created_at (2.google.protobuf.Timestamp.
 
-updated_at (2.google.protobuf.Timestamp.
+updated_at (2.google.protobuf.Timestamp.
 
-deleted_at (2.google.protobuf.Timestampbproto3'
+deleted_at (2.google.protobuf.Timestampbproto3'
         , true);
 
         static::$is_initialized = true;
