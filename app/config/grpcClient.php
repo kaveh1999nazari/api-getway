@@ -19,7 +19,7 @@ return [
         ],
         'installment' => [
             'class' => \App\Service\InstallmentService::class,
-            'host' => '172.20.8.29:9005'
+            'host' => '172.20.8.29:9003'
         ],
         'loan' => [
             'class' => \App\Service\LoanService::class,
@@ -27,7 +27,7 @@ return [
         ],
         'notification' => [
             'class' => \App\Service\NotificationService::class,
-            'host' => '172.20.8.90:9007'
+            'host' => '172.20.8.90:9005'
         ],
         'ticket' => [
             'class' => \App\Service\TicketService::class,
@@ -35,7 +35,7 @@ return [
         ],
         'wallet' => [
             'class' => \App\Service\WalletService::class,
-            'host' => '172.20.8.90:9009'
+            'host' => '172.20.8.90:9002'
         ]
     ]
 ];
