@@ -4,13 +4,13 @@ namespace App\Utility\GRPC;
 class Response
 {
     public function __construct(
-        private readonly object    $response,
+        private readonly ?object    $response,
         private readonly \stdClass $detail,
     )
     {
     }
 
-    public function getResponse(): object
+    public function getResponse(): ?object
     {
         return $this->response;
     }
