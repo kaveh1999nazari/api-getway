@@ -43,11 +43,15 @@ return [
         ],
         'organization' => [
             'class' => \App\Service\OrganizationService::class,
-            'host' => '172.20.8.90:90011'
+            'host' => '172.20.8.29:9002'
         ],
         'otp' => [
             'class' => \App\Service\OtpService::class,
             'host' => '172.20.8.90:90012'
         ],
+        'payment' => [
+            'class' => \App\Service\PaymentService::class,
+            'host' => '172.20.8.90:90013'
+        ]
     ]
 ];
