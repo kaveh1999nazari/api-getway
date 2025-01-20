@@ -45,5 +45,9 @@ return [
             'class' => \App\Service\OrganizationService::class,
             'host' => '172.20.8.90:90011'
         ],
+        'otp' => [
+            'class' => \App\Service\OtpService::class,
+            'host' => '172.20.8.90:90012'
+        ],
     ]
 ];
