@@ -1,5 +1,24 @@
 # Changelog
 
+## 1.13.1 (2025-01-19)
+
+## What's Changed
+* Allow `_` in email names in MailToFileSender by @gam6itko in https://github.com/buggregator/trap/pull/155
+
+
+**Full Changelog**: https://github.com/buggregator/trap/compare/1.13.0...1.13.1
+
+## 1.13.0 (2025-01-19)
+
+## What's Changed
+* Add MailToFile Sender by @gam6itko in https://github.com/buggregator/trap/pull/151
+* Support multiple emails in one connection by @roxblnfk in https://github.com/buggregator/trap/pull/153
+
+## New Contributors
+* @gam6itko made their first contribution in https://github.com/buggregator/trap/pull/151
+
+**Full Changelog**: https://github.com/buggregator/trap/compare/1.12.0...1.13.0
+
 ## 1.12.0 (2025-01-15)
 
 ## What's Changed

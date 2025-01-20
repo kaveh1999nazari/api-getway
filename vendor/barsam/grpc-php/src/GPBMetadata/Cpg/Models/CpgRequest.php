@@ -22,8 +22,8 @@ class CpgRequest
 
 id (
 amount (	
-mobile (
-national_code (
+mobile (	
+national_code (	
 description (	
 callback_url (	
 code (	

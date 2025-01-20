@@ -14,13 +14,13 @@ message Item {
 
 // Define the request message
 message CreateRequest {
-  uint64 amount = 1;
+  string amount = 1;
   string mobile = 2;
   string national_code = 3;
   string description = 4;
   string callback_url = 5;
   string code = 6;
-  string shope_id = 7;
+  uint64 shope_id = 7;
   google.protobuf.Timestamp expired_at = 8;
   repeated Item items = 9; // Use the Item message here
 }

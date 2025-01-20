@@ -9,9 +9,6 @@ message GetRequest {
   // The user ID to filter the CPGs
   uint64 id = 1;
 
-  // The shop ID to filter the CPGs
-  uint64 shop_id = 2;
-
   // The page number
   uint32 page = 3;
 

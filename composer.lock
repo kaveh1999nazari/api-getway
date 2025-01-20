@@ -55,16 +55,16 @@
         },
         {
             "name": "barsam/grpc-definitions",
-            "version": "0.48.4",
+            "version": "0.48.8",
             "source": {
                 "type": "git",
                 "url": "git@gitlab.dngs.ir:microservices/grpc-definition.git",
-                "reference": "9f95631e902b7cf3e1c0346f7a966f8a335200af"
+                "reference": "bb308052ff6b488e1a6679021398937483be336b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://gitlab.dngs.ir/api/v4/projects/26/packages/composer/archives/barsam/grpc-definitions.zip?sha=9f95631e902b7cf3e1c0346f7a966f8a335200af",
-                "reference": "9f95631e902b7cf3e1c0346f7a966f8a335200af",
+                "url": "https://gitlab.dngs.ir/api/v4/projects/26/packages/composer/archives/barsam/grpc-definitions.zip?sha=bb308052ff6b488e1a6679021398937483be336b",
+                "reference": "bb308052ff6b488e1a6679021398937483be336b",
                 "shasum": ""
             },
             "type": "library",
@@ -77,16 +77,16 @@
         },
         {
             "name": "barsam/grpc-php",
-            "version": "0.51.0",
+            "version": "0.55.0",
             "source": {
                 "type": "git",
                 "url": "git@gitlab.dngs.ir:microservices/grpc-php.git",
-                "reference": "2e526f25e6cc9a36c2f7cd691a8403cb2e1f2881"
+                "reference": "78f8426c832a3c7652d9f33e2eaf8aa732ec04a0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://gitlab.dngs.ir/api/v4/projects/27/packages/composer/archives/barsam/grpc-php.zip?sha=2e526f25e6cc9a36c2f7cd691a8403cb2e1f2881",
-                "reference": "2e526f25e6cc9a36c2f7cd691a8403cb2e1f2881",
+                "url": "https://gitlab.dngs.ir/api/v4/projects/27/packages/composer/archives/barsam/grpc-php.zip?sha=78f8426c832a3c7652d9f33e2eaf8aa732ec04a0",
+                "reference": "78f8426c832a3c7652d9f33e2eaf8aa732ec04a0",
                 "shasum": ""
             },
             "require": {
@@ -7912,16 +7912,16 @@
         },
         {
             "name": "yiisoft/strings",
-            "version": "2.4.0",
+            "version": "2.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/strings.git",
-                "reference": "ff519d31e1c2518f42554fb5410e31bbb74b8108"
+                "reference": "5063d70af8b59907261c66a57349ef2c20f5cf2e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/strings/zipball/ff519d31e1c2518f42554fb5410e31bbb74b8108",
-                "reference": "ff519d31e1c2518f42554fb5410e31bbb74b8108",
+                "url": "https://api.github.com/repos/yiisoft/strings/zipball/5063d70af8b59907261c66a57349ef2c20f5cf2e",
+                "reference": "5063d70af8b59907261c66a57349ef2c20f5cf2e",
                 "shasum": ""
             },
             "require": {
@@ -7931,10 +7931,10 @@
             "require-dev": {
                 "maglnet/composer-require-checker": "^4.2",
                 "phpunit/phpunit": "^9.5",
-                "rector/rector": "^0.18.3",
+                "rector/rector": "^2.0.3",
                 "roave/infection-static-analysis-plugin": "^1.16",
                 "spatie/phpunit-watcher": "^1.23",
-                "vimeo/psalm": "^4.30|^5.8"
+                "vimeo/psalm": "^4.30|^5.25"
             },
             "type": "library",
             "autoload": {
@@ -7956,22 +7956,22 @@
             "support": {
                 "chat": "https://t.me/yii3en",
                 "forum": "https://www.yiiframework.com/forum/",
-                "irc": "irc://irc.freenode.net/yii",
-                "issues": "https://github.com/yiisoft/strings/issues",
+                "irc": "ircs://irc.libera.chat:6697/yii",
+                "issues": "https://github.com/yiisoft/strings/issues?state=open",
                 "source": "https://github.com/yiisoft/strings",
                 "wiki": "https://www.yiiframework.com/wiki/"
             },
             "funding": [
                 {
-                    "url": "https://github.com/yiisoft",
+                    "url": "https://github.com/sponsors/yiisoft",
                     "type": "github"
                 },
                 {
                     "url": "https://opencollective.com/yiisoft",
-                    "type": "open_collective"
+                    "type": "opencollective"
                 }
             ],
-            "time": "2023-12-22T07:29:39+00:00"
+            "time": "2025-01-19T13:44:53+00:00"
         }
     ],
     "packages-dev": [
@@ -8137,16 +8137,16 @@
         },
         {
             "name": "buggregator/trap",
-            "version": "1.12.0",
+            "version": "1.13.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/buggregator/trap.git",
-                "reference": "1e3809c2ac66b22b21fb900d2f3b85c33d9fa51e"
+                "reference": "2ae227457719039383b04e79556d09203ba2786f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/buggregator/trap/zipball/1e3809c2ac66b22b21fb900d2f3b85c33d9fa51e",
-                "reference": "1e3809c2ac66b22b21fb900d2f3b85c33d9fa51e",
+                "url": "https://api.github.com/repos/buggregator/trap/zipball/2ae227457719039383b04e79556d09203ba2786f",
+                "reference": "2ae227457719039383b04e79556d09203ba2786f",
                 "shasum": ""
             },
             "require": {
@@ -8226,7 +8226,7 @@
             ],
             "support": {
                 "issues": "https://github.com/buggregator/trap/issues",
-                "source": "https://github.com/buggregator/trap/tree/1.12.0"
+                "source": "https://github.com/buggregator/trap/tree/1.13.1"
             },
             "funding": [
                 {
@@ -8242,7 +8242,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2025-01-15T10:32:14+00:00"
+            "time": "2025-01-19T19:22:54+00:00"
         },
         {
             "name": "clue/stream-filter",

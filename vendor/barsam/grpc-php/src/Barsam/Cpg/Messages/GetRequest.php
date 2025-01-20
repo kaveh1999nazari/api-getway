@@ -22,12 +22,6 @@ class GetRequest extends \Google\Protobuf\Internal\Message
      */
     protected $id = 0;
     /**
-     * The shop ID to filter the CPGs
-     *
-     * Generated from protobuf field <code>uint64 shop_id = 2;</code>
-     */
-    protected $shop_id = 0;
-    /**
      * The page number
      *
      * Generated from protobuf field <code>uint32 page = 3;</code>
@@ -48,8 +42,6 @@ class GetRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type int|string $id
      *           The user ID to filter the CPGs
-     *     @type int|string $shop_id
-     *           The shop ID to filter the CPGs
      *     @type int $page
      *           The page number
      *     @type int $per_page
@@ -83,32 +75,6 @@ class GetRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint64($var);
         $this->id = $var;
-
-        return $this;
-    }
-
-    /**
-     * The shop ID to filter the CPGs
-     *
-     * Generated from protobuf field <code>uint64 shop_id = 2;</code>
-     * @return int|string
-     */
-    public function getShopId()
-    {
-        return $this->shop_id;
-    }
-
-    /**
-     * The shop ID to filter the CPGs
-     *
-     * Generated from protobuf field <code>uint64 shop_id = 2;</code>
-     * @param int|string $var
-     * @return $this
-     */
-    public function setShopId($var)
-    {
-        GPBUtil::checkUint64($var);
-        $this->shop_id = $var;
 
         return $this;
     }

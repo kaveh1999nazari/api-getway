@@ -22,13 +22,13 @@ class CPG extends \Google\Protobuf\Internal\Message
      */
     protected $amount = '';
     /**
-     * Generated from protobuf field <code>uint64 mobile = 3;</code>
+     * Generated from protobuf field <code>string mobile = 3;</code>
      */
-    protected $mobile = 0;
+    protected $mobile = '';
     /**
-     * Generated from protobuf field <code>uint32 national_code = 4;</code>
+     * Generated from protobuf field <code>string national_code = 4;</code>
      */
-    protected $national_code = 0;
+    protected $national_code = '';
     /**
      * Generated from protobuf field <code>string description = 5;</code>
      */
@@ -54,8 +54,8 @@ class CPG extends \Google\Protobuf\Internal\Message
      *
      *     @type int|string $id
      *     @type string $amount
-     *     @type int|string $mobile
-     *     @type int $national_code
+     *     @type string $mobile
+     *     @type string $national_code
      *     @type string $description
      *     @type string $callback_url
      *     @type string $code
@@ -112,8 +112,8 @@ class CPG extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint64 mobile = 3;</code>
-     * @return int|string
+     * Generated from protobuf field <code>string mobile = 3;</code>
+     * @return string
      */
     public function getMobile()
     {
@@ -121,21 +121,21 @@ class CPG extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint64 mobile = 3;</code>
-     * @param int|string $var
+     * Generated from protobuf field <code>string mobile = 3;</code>
+     * @param string $var
      * @return $this
      */
     public function setMobile($var)
     {
-        GPBUtil::checkUint64($var);
+        GPBUtil::checkString($var, True);
         $this->mobile = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>uint32 national_code = 4;</code>
-     * @return int
+     * Generated from protobuf field <code>string national_code = 4;</code>
+     * @return string
      */
     public function getNationalCode()
     {
@@ -143,13 +143,13 @@ class CPG extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 national_code = 4;</code>
-     * @param int $var
+     * Generated from protobuf field <code>string national_code = 4;</code>
+     * @param string $var
      * @return $this
      */
     public function setNationalCode($var)
     {
-        GPBUtil::checkUint32($var);
+        GPBUtil::checkString($var, True);
         $this->national_code = $var;
 
         return $this;

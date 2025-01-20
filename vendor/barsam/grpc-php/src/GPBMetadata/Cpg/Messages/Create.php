@@ -26,13 +26,13 @@ class Create
 unit_price (
 quantity ("ë
 CreateRequest
-amount (
+amount (	
 mobile (	
 national_code (	
 description (	
 callback_url (	
 code (	
-shope_id (	.
+shope_id (.
 
 expired_at (2.google.protobuf.Timestamp(
 items	 (2.barsam.cpg.messages.Item"(

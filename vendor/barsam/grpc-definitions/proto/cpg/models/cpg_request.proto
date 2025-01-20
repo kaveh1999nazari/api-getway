@@ -5,8 +5,8 @@ package barsam.cpg.models;
 message CPG {
   uint64 id = 1;
   string amount = 2;
-  uint64 mobile = 3;
-  uint32 national_code = 4;
+  string mobile = 3;
+  string national_code = 4;
   string description = 5;
   string callback_url = 6;
   string code = 7;

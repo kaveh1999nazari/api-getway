@@ -17,13 +17,12 @@ class Get
         \GPBMetadata\Cpg\Models\CpgRequest::initOnce();
         $pool->internalAddGeneratedFile(
             '
-Þ
-cpg/messages/get.protobarsam.cpg.messages"I
+Í
+cpg/messages/get.protobarsam.cpg.messages"8
 
 GetRequest
 
-id (
-shop_id (
+id (
 page (
 per_page ("\\
 GetResponse$

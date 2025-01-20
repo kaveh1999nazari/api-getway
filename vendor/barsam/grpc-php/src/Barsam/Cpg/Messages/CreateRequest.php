@@ -16,9 +16,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class CreateRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>uint64 amount = 1;</code>
+     * Generated from protobuf field <code>string amount = 1;</code>
      */
-    protected $amount = 0;
+    protected $amount = '';
     /**
      * Generated from protobuf field <code>string mobile = 2;</code>
      */
@@ -40,9 +40,9 @@ class CreateRequest extends \Google\Protobuf\Internal\Message
      */
     protected $code = '';
     /**
-     * Generated from protobuf field <code>string shope_id = 7;</code>
+     * Generated from protobuf field <code>uint64 shope_id = 7;</code>
      */
-    protected $shope_id = '';
+    protected $shope_id = 0;
     /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp expired_at = 8;</code>
      */
@@ -60,13 +60,13 @@ class CreateRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int|string $amount
+     *     @type string $amount
      *     @type string $mobile
      *     @type string $national_code
      *     @type string $description
      *     @type string $callback_url
      *     @type string $code
-     *     @type string $shope_id
+     *     @type int|string $shope_id
      *     @type \Google\Protobuf\Timestamp $expired_at
      *     @type array<\Barsam\Cpg\Messages\Item>|\Google\Protobuf\Internal\RepeatedField $items
      *           Use the Item message here
@@ -78,8 +78,8 @@ class CreateRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint64 amount = 1;</code>
-     * @return int|string
+     * Generated from protobuf field <code>string amount = 1;</code>
+     * @return string
      */
     public function getAmount()
     {
@@ -87,13 +87,13 @@ class CreateRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint64 amount = 1;</code>
-     * @param int|string $var
+     * Generated from protobuf field <code>string amount = 1;</code>
+     * @param string $var
      * @return $this
      */
     public function setAmount($var)
     {
-        GPBUtil::checkUint64($var);
+        GPBUtil::checkString($var, True);
         $this->amount = $var;
 
         return $this;
@@ -210,8 +210,8 @@ class CreateRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string shope_id = 7;</code>
-     * @return string
+     * Generated from protobuf field <code>uint64 shope_id = 7;</code>
+     * @return int|string
      */
     public function getShopeId()
     {
@@ -219,13 +219,13 @@ class CreateRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string shope_id = 7;</code>
-     * @param string $var
+     * Generated from protobuf field <code>uint64 shope_id = 7;</code>
+     * @param int|string $var
      * @return $this
      */
     public function setShopeId($var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkUint64($var);
         $this->shope_id = $var;
 
         return $this;

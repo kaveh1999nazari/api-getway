@@ -438,6 +438,10 @@ final class StringHelper
      * @param string $input The string to encode.
      *
      * @return string Encoded string.
+     *
+     * @psalm-template T as string
+     * @psalm-param T $input
+     * @psalm-return (T is non-empty-string ? non-empty-string : "")
      */
     public static function base64UrlEncode(string $input): string
     {
@@ -723,6 +727,27 @@ final class StringHelper
         $startPos += mb_strlen($start);
 
         return mb_substr($string, $startPos, $endPos - $startPos);
+    }
+
+    /**
+     * Checks if a given string matches any of the provided patterns.
+     *
+     * Note that patterns should be provided without delimiters on both sides. For example, `te(s|x)t`.
+     *
+     * @see https://www.php.net/manual/reference.pcre.pattern.syntax.php
+     * @see https://www.php.net/manual/reference.pcre.pattern.modifiers.php
+     *
+     * @param string $string The string to match against the patterns.
+     * @param string[] $patterns Regular expressions without delimiters on both sides.
+     * @param string $flags Flags to apply to all regular expressions.
+     */
+    public static function matchAnyRegex(string $string, array $patterns, string $flags = ''): bool
+    {
+        if (empty($patterns)) {
+            return false;
+        }
+
+        return (new CombinedRegexp($patterns, $flags))->matches($string);
     }
 
     /**
