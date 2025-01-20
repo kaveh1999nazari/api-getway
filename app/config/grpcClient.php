@@ -35,7 +35,11 @@ return [
         ],
         'wallet' => [
             'class' => \App\Service\WalletService::class,
-            'host' => '172.20.8.90:9002'
+            'host' => '172.20.8.90:9009'
+        ],
+        'cpg' => [
+            'class' => \App\Service\CpgService::class,
+            'host' => '172.20.8.90:90010'
         ]
     ]
 ];
