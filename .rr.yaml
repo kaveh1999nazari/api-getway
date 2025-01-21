@@ -3,14 +3,17 @@ rpc:
     listen: 'tcp://127.0.0.1:6001'
 http:
     address: '0.0.0.0:8082'
-    middleware:
-        - gzip
-        - static
-    static:
-        dir: public
-        forbid:
-            - .php
-            - .htaccess
+    middleware: ["headers", "gzip"]
+    headers:
+      cors:
+        allowed_origin_regex: "^(.*)"
+        allowed_headers: "*"
+        allowed_methods: "GET,POST,PUT,PATCH,DELETE"
+        allow_credentials: true
+        options_success_status: 200
+        exposed_headers: "Cache-Control,Content-Language,Content-Type,Expires,Last-Modified,Pragma"
+        max_age: 600
+        debug: true
     pool:
       num_workers: 1
       debug: true
