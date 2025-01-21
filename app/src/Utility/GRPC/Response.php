@@ -1,6 +1,10 @@
 <?php
 
 namespace App\Utility\GRPC;
+
+/**
+ * @template T
+ */
 class Response
 {
     public function __construct(
@@ -10,6 +14,9 @@ class Response
     {
     }
 
+    /**
+     * @return T
+     */
     public function getResponse(): ?object
     {
         return $this->response;
