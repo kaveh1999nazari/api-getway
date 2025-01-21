@@ -18,6 +18,8 @@ use Barsam\Auth\Messages\GenerateOtpRequest;
 use Barsam\Auth\Messages\GenerateOtpResponse;
 use Barsam\Auth\Messages\IssueTokenRequest;
 use Barsam\Auth\Messages\IssueTokenResponse;
+use Barsam\Auth\Messages\LogoutSessionRequest;
+use Barsam\Auth\Messages\LogoutSessionResponse;
 use Barsam\Auth\Messages\VerifyOtpRequest;
 use Barsam\Auth\Messages\VerifyOtpResponse;
 use Barsam\Notification\Messages\SendByTemplateRequest;
@@ -127,5 +129,20 @@ class AuthController
     public function get(): array
     {
         return CurrentUserMapper::fromRequest(Auth::user());
+    }
+
+    #[Route('/auth', name: 'auth.logout', methods: ['DELETE'], group: 'api_auth')]
+    public function logout(ServerRequestInterface $request)
+    {
+        $tokenParts = explode(' ', $request->getHeader('Authorization')[0]);
+        $authRequest = new LogoutSessionRequest();
+        $authRequest->setAccessToken($tokenParts[0]);
+
+        $this->authService->LogoutSession(
+            $authRequest,
+            LogoutSessionResponse::class
+        );
+
+        return [];
     }
 }
