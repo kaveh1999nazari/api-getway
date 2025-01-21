@@ -16,8 +16,8 @@ class Session
         }
         $pool->internalAddGeneratedFile(
             '
-²
-auth/models/session.protobarsam.auth.models"y
+Ä
+auth/models/session.protobarsam.auth.models"Š
 Session
 
 id (
@@ -28,7 +28,8 @@ ip_address (	
 location (	
 last_used_at (	
 
-created_at (	bproto3'
+created_at (	
+user_id (bproto3'
         , true);
 
         static::$is_initialized = true;

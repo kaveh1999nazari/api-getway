@@ -9,4 +9,5 @@ message Session {
   string location = 4;
   string last_used_at = 5;
   string created_at = 6;
+  uint64 user_id = 7;
 }

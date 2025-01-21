@@ -37,6 +37,10 @@ class Session extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string created_at = 6;</code>
      */
     protected $created_at = '';
+    /**
+     * Generated from protobuf field <code>uint64 user_id = 7;</code>
+     */
+    protected $user_id = 0;
 
     /**
      * Constructor.
@@ -50,6 +54,7 @@ class Session extends \Google\Protobuf\Internal\Message
      *     @type string $location
      *     @type string $last_used_at
      *     @type string $created_at
+     *     @type int|string $user_id
      * }
      */
     public function __construct($data = NULL) {
@@ -185,6 +190,28 @@ class Session extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->created_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint64 user_id = 7;</code>
+     * @return int|string
+     */
+    public function getUserId()
+    {
+        return $this->user_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint64 user_id = 7;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setUserId($var)
+    {
+        GPBUtil::checkUint64($var);
+        $this->user_id = $var;
 
         return $this;
     }
