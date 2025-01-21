@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace App\Application\Bootloader;
 
+use App\Endpoint\Web\LoansController;
 use App\Endpoint\Web\Middleware\LocaleSelector;
+use App\Endpoint\Web\Middleware\AuthMiddleware;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Spiral\Bootloader\Http\RoutesBootloader as BaseRoutesBootloader;
@@ -48,12 +50,22 @@ final class RoutesBootloader extends BaseRoutesBootloader
                 CsrfMiddleware::class,
                 ValidationHandlerMiddleware::class
             ],
+            'api' => [
+
+            ],
+            'api_auth' => [
+                AuthMiddleware::class,
+            ]
         ];
     }
 
     protected function configureRouteGroups(GroupRegistry $groups): void
     {
         $groups->getGroup('api')
+            ->setNamePrefix('api.')
+            ->setPrefix('/api');
+
+        $groups->getGroup('api_auth')
             ->setNamePrefix('api.')
             ->setPrefix('/api');
 
@@ -66,9 +78,13 @@ final class RoutesBootloader extends BaseRoutesBootloader
     {
         // Fallback route if no other route matched
         // Will show 404 page
-        // $routes->default('/<path:.*>')
-        //    ->callable(function (ServerRequestInterface $r, ResponseInterface $response) {
-        //        return $response->withStatus(404)->withBody('Not found');
-        //    });
+//         $routes->default('/<path:.*>')
+//            ->callable(function (ServerRequestInterface $r, ResponseInterface $response) {
+//                if ($r->getMethod() === 'OPTIONS') {
+//                    return $response->withStatus(200);
+//                }
+//
+//                return $response->withStatus(404);
+//            });
     }
 }
