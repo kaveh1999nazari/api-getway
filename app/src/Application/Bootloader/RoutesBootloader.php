@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Application\Bootloader;
 
 use App\Endpoint\Web\LoansController;
+use App\Endpoint\Web\Middleware\ExceptionMiddleware;
 use App\Endpoint\Web\Middleware\LocaleSelector;
 use App\Endpoint\Web\Middleware\AuthMiddleware;
 use Psr\Http\Message\ResponseInterface;
@@ -48,13 +49,14 @@ final class RoutesBootloader extends BaseRoutesBootloader
                 CookiesMiddleware::class,
                 SessionMiddleware::class,
                 CsrfMiddleware::class,
-                ValidationHandlerMiddleware::class
+                ValidationHandlerMiddleware::class,
             ],
             'api' => [
-
+                ExceptionMiddleware::class,
             ],
             'api_auth' => [
                 AuthMiddleware::class,
+                ExceptionMiddleware::class,
             ]
         ];
     }
