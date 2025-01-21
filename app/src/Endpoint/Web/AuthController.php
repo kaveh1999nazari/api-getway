@@ -3,13 +3,23 @@
 namespace App\Endpoint\Web;
 
 
+use App\Domain\Mapper\CurrentUserMapper;
+use App\Domain\Mapper\GetUserMapper;
+use App\Facade\Auth;
 use App\Service\AuthService;
 use App\Service\NotificationService;
 use App\Service\UserService;
 use App\Utility\GRPC\Response;
+use Barsam\Auth\Enums\GrantType;
 use Barsam\Auth\Enums\ResponseType;
 use Barsam\Auth\Messages\AuthorizeRequest;
 use Barsam\Auth\Messages\AuthorizeResponse;
+use Barsam\Auth\Messages\GenerateOtpRequest;
+use Barsam\Auth\Messages\GenerateOtpResponse;
+use Barsam\Auth\Messages\IssueTokenRequest;
+use Barsam\Auth\Messages\IssueTokenResponse;
+use Barsam\Auth\Messages\VerifyOtpRequest;
+use Barsam\Auth\Messages\VerifyOtpResponse;
 use Barsam\Notification\Messages\SendByTemplateRequest;
 use Barsam\Notification\Messages\SendByTemplateResponse;
 use Barsam\User\Messages\GetRequest;
@@ -36,12 +46,12 @@ class AuthController
     {
         $getUserRequest = new GetRequest();
         $getUserRequest->setLoginId($input->post('mobile'));
-        /** @var Response $usersResponse */
+        /** @var Response<GetResponse> $usersResponse */
         $usersResponse = $this->userService->Get(
             $getUserRequest,
             GetResponse::class
         );
-        if (count($usersResponse->getResponse()->getUsers()) === 0) {
+        if (iterator_count($usersResponse->getResponse()->getUsers()->getIterator()) === 0) {
             throw new HttpException('کاربر درخواستی یافت نشد.', 404);
         }
 
@@ -62,15 +72,60 @@ class AuthController
 
         $sendOtpRequest = new SendByTemplateRequest();
         $sendOtpRequest->setRecipient($user->getLoginId());
-        $sendOtpRequest->setChannelId(1);
+        $sendOtpRequest->setChannelId(2);
         $sendOtpRequest->setData(['code' => $otpCode]);
-        $sendOtpRequest->setTemplate(1);
+        $sendOtpRequest->setTemplate(2);
         $otpResponse = $this->notificationService->SendByTemplate(
             $sendOtpRequest,
             SendByTemplateResponse::class
         );
 
-        dd($otpResponse);
-        return [];
+
+        return ['پیامک فرستاده شد'];
+    }
+
+    #[Route('/auth/confirm-otp', name: 'auth.generate_otp', methods: ['POST'], group: 'api')]
+    public function confirmOtp(InputManager $input): array
+    {
+        $getUserRequest = new GetRequest();
+        $getUserRequest->setLoginId($input->post('mobile'));
+
+        /** @var Response $usersResponse */
+        $usersResponse = $this->userService->Get(
+            $getUserRequest,
+            GetResponse::class
+        );
+        if (count($usersResponse->getResponse()->getUsers()) === 0) {
+            throw new HttpException('کاربر درخواستی یافت نشد.', 404);
+        }
+
+        /** @var User $user */
+        $user = $usersResponse->getResponse()->getUsers()[0];
+
+        $otpRequest = new IssueTokenRequest();
+        $otpRequest->setUserId($user->getId());
+        $otpRequest->setCode($input->post('code'));
+        $otpRequest->setGrantType(GrantType::AUTHORIZATION_CODE);
+
+        /** @var Response $otpResponse */
+        $otpResponse = $this->authService->IssueToken(
+            $otpRequest,
+            IssueTokenResponse::class
+        );
+        if ($otpResponse->getDetail()->code !== 0) {
+            throw new HttpException($otpResponse->getDetail()->details, 403);
+        }
+
+        return [
+            'access_token' => $otpResponse->getResponse()->getAccessToken(),
+            'token_type' => $otpResponse->getResponse()->getTokenType(),
+            'expires_in' => $otpResponse->getResponse()->getExpiresIn(),
+        ];
+    }
+
+    #[Route('/auth', name: 'auth.get', methods: ['GET'], group: 'api_auth')]
+    public function get(): array
+    {
+        return CurrentUserMapper::fromRequest(Auth::user());
     }
 }
