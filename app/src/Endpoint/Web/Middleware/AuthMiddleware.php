@@ -55,7 +55,7 @@ class AuthMiddleware implements MiddlewareInterface
         }
 
         $getUserRequest = new GetRequest();
-        $getUserRequest->setId($validateResponse->getResponse()->getClaims()['sub']);
+        $getUserRequest->setId($validateResponse->getResponse()->getClaims()['uid']);
 
         /** @var Response<GetResponse> $getUserResponse */
         $getUserResponse = $this->userService->Get($getUserRequest, GetResponse::class);
