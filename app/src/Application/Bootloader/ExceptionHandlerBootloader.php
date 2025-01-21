@@ -39,7 +39,7 @@ final class ExceptionHandlerBootloader extends Bootloader
     {
         // Register the console renderer, that will be used when the application
         // is running in the console.
-        $this->handler->addRenderer(new ConsoleRenderer());
+        $this->handler->addRenderer(new JsonRenderer());
 
         $kernel->running(function (): void {
             // Register the JSON renderer, that will be used when the application is
