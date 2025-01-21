@@ -81,7 +81,7 @@ class AuthController
         );
 
 
-        return ['پیامک فرستاده شد'];
+        return [];
     }
 
     #[Route('/auth/confirm-otp', name: 'auth.generate_otp', methods: ['POST'], group: 'api')]
