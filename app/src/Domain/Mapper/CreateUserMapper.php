@@ -11,8 +11,8 @@ class CreateUserMapper
         return new RegisterRequest(
             [
                 'login_id' => $inputs['login_id'],
-                'password_raw' => $inputs['password_raw'],
                 'meta_fields' => $inputs['meta_fields'],
+                'password_raw' => $inputs['password_raw'] ?? null,
             ]
         );
     }
