@@ -13,7 +13,7 @@ class GetInstallmentMapper
             'user_id' => $userId,
             'loan_id' => $id,
 //            'page' => $inputs['page'],
-//            'per_page' => $inputs['per_page']
+            'per_page' => $inputs['per_page'] ?? 50
         ]);
     }
 }
