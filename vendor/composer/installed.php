@@ -3,7 +3,7 @@
         'name' => 'spiral/app',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '8b48d10ee83ef022bcd9cb3b6668e5a503a5e585',
+        'reference' => '57a0a94965da43bb14417583d34a1feb3a7f287e',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -38,18 +38,18 @@
             'dev_requirement' => true,
         ),
         'barsam/grpc-definitions' => array(
-            'pretty_version' => '0.50.2',
-            'version' => '0.50.2.0',
-            'reference' => '5b6302452f0894741712599a7e32d88a73d7ed12',
+            'pretty_version' => '0.52.0',
+            'version' => '0.52.0.0',
+            'reference' => '2e7435a1c67066334f4d132a0aa112ec5606a1f1',
             'type' => 'library',
             'install_path' => __DIR__ . '/../barsam/grpc-definitions',
             'aliases' => array(),
             'dev_requirement' => false,
         ),
         'barsam/grpc-php' => array(
-            'pretty_version' => '0.60.0',
-            'version' => '0.60.0.0',
-            'reference' => '50f0e9f98978bc69a3280aff8cf3f960b19034d8',
+            'pretty_version' => '0.63.0',
+            'version' => '0.63.0.0',
+            'reference' => '6fa2043d32653efd93356c3e3afb34607bbf1dc6',
             'type' => 'library',
             'install_path' => __DIR__ . '/../barsam/grpc-php',
             'aliases' => array(),
@@ -1085,13 +1085,13 @@
         'spiral/annotated-routes' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => '3.14.9',
+                0 => '3.14.10',
             ),
         ),
         'spiral/app' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '8b48d10ee83ef022bcd9cb3b6668e5a503a5e585',
+            'reference' => '57a0a94965da43bb14417583d34a1feb3a7f287e',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -1109,31 +1109,31 @@
         'spiral/auth' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => '3.14.9',
+                0 => '3.14.10',
             ),
         ),
         'spiral/auth-http' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => '3.14.9',
+                0 => '3.14.10',
             ),
         ),
         'spiral/boot' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => '3.14.9',
+                0 => '3.14.10',
             ),
         ),
         'spiral/broadcasting' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => '3.14.9',
+                0 => '3.14.10',
             ),
         ),
         'spiral/cache' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => '3.14.9',
+                0 => '3.14.10',
             ),
         ),
         'spiral/composer-publish-plugin' => array(
@@ -1148,31 +1148,31 @@
         'spiral/config' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => '3.14.9',
+                0 => '3.14.10',
             ),
         ),
         'spiral/console' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => '3.14.9',
+                0 => '3.14.10',
             ),
         ),
         'spiral/cookies' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => '3.14.9',
+                0 => '3.14.10',
             ),
         ),
         'spiral/core' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => '3.14.9',
+                0 => '3.14.10',
             ),
         ),
         'spiral/csrf' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => '3.14.9',
+                0 => '3.14.10',
             ),
         ),
         'spiral/cycle-bridge' => array(
@@ -1205,19 +1205,19 @@
         'spiral/debug' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => '3.14.9',
+                0 => '3.14.10',
             ),
         ),
         'spiral/distribution' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => '3.14.9',
+                0 => '3.14.10',
             ),
         ),
         'spiral/dotenv-bridge' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => '3.14.9',
+                0 => '3.14.10',
             ),
         ),
         'spiral/dumper' => array(
@@ -1232,37 +1232,37 @@
         'spiral/encrypter' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => '3.14.9',
+                0 => '3.14.10',
             ),
         ),
         'spiral/events' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => '3.14.9',
+                0 => '3.14.10',
             ),
         ),
         'spiral/exceptions' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => '3.14.9',
+                0 => '3.14.10',
             ),
         ),
         'spiral/files' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => '3.14.9',
+                0 => '3.14.10',
             ),
         ),
         'spiral/filters' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => '3.14.9',
+                0 => '3.14.10',
             ),
         ),
         'spiral/framework' => array(
-            'pretty_version' => '3.14.9',
-            'version' => '3.14.9.0',
-            'reference' => 'be072e6392589d875b400ecad017fa61b2ca4c0f',
+            'pretty_version' => '3.14.10',
+            'version' => '3.14.10.0',
+            'reference' => '6677c1ad17517468cda27647446e0a69d41b1053',
             'type' => 'library',
             'install_path' => __DIR__ . '/../spiral/framework',
             'aliases' => array(),
@@ -1280,43 +1280,43 @@
         'spiral/hmvc' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => '3.14.9',
+                0 => '3.14.10',
             ),
         ),
         'spiral/http' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => '3.14.9',
+                0 => '3.14.10',
             ),
         ),
         'spiral/interceptors' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => '3.14.9',
+                0 => '3.14.10',
             ),
         ),
         'spiral/logger' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => '3.14.9',
+                0 => '3.14.10',
             ),
         ),
         'spiral/mailer' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => '3.14.9',
+                0 => '3.14.10',
             ),
         ),
         'spiral/models' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => '3.14.9',
+                0 => '3.14.10',
             ),
         ),
         'spiral/monolog-bridge' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => '3.14.9',
+                0 => '3.14.10',
             ),
         ),
         'spiral/nyholm-bridge' => array(
@@ -1331,25 +1331,25 @@
         'spiral/pagination' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => '3.14.9',
+                0 => '3.14.10',
             ),
         ),
         'spiral/prototype' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => '3.14.9',
+                0 => '3.14.10',
             ),
         ),
         'spiral/queue' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => '3.14.9',
+                0 => '3.14.10',
             ),
         ),
         'spiral/reactor' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => '3.14.9',
+                0 => '3.14.10',
             ),
         ),
         'spiral/roadrunner' => array(
@@ -1445,73 +1445,73 @@
         'spiral/router' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => '3.14.9',
+                0 => '3.14.10',
             ),
         ),
         'spiral/scaffolder' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => '3.14.9',
+                0 => '3.14.10',
             ),
         ),
         'spiral/security' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => '3.14.9',
+                0 => '3.14.10',
             ),
         ),
         'spiral/sendit' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => '3.14.9',
+                0 => '3.14.10',
             ),
         ),
         'spiral/serializer' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => '3.14.9',
+                0 => '3.14.10',
             ),
         ),
         'spiral/session' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => '3.14.9',
+                0 => '3.14.10',
             ),
         ),
         'spiral/snapshots' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => '3.14.9',
+                0 => '3.14.10',
             ),
         ),
         'spiral/stempler' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => '3.14.9',
+                0 => '3.14.10',
             ),
         ),
         'spiral/stempler-bridge' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => '3.14.9',
+                0 => '3.14.10',
             ),
         ),
         'spiral/storage' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => '3.14.9',
+                0 => '3.14.10',
             ),
         ),
         'spiral/streams' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => '3.14.9',
+                0 => '3.14.10',
             ),
         ),
         'spiral/telemetry' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => '3.14.9',
+                0 => '3.14.10',
             ),
         ),
         'spiral/testing' => array(
@@ -1526,25 +1526,25 @@
         'spiral/tokenizer' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => '3.14.9',
+                0 => '3.14.10',
             ),
         ),
         'spiral/translator' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => '3.14.9',
+                0 => '3.14.10',
             ),
         ),
         'spiral/validation' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => '3.14.9',
+                0 => '3.14.10',
             ),
         ),
         'spiral/views' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => '3.14.9',
+                0 => '3.14.10',
             ),
         ),
         'symfony/console' => array(

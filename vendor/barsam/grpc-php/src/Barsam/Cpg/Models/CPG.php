@@ -42,9 +42,9 @@ class CPG extends \Google\Protobuf\Internal\Message
      */
     protected $code = '';
     /**
-     * Generated from protobuf field <code>uint32 shop_id = 8;</code>
+     * Generated from protobuf field <code>string shop_id = 8;</code>
      */
-    protected $shop_id = 0;
+    protected $shop_id = '';
 
     /**
      * Constructor.
@@ -59,7 +59,7 @@ class CPG extends \Google\Protobuf\Internal\Message
      *     @type string $description
      *     @type string $callback_url
      *     @type string $code
-     *     @type int $shop_id
+     *     @type string $shop_id
      * }
      */
     public function __construct($data = NULL) {
@@ -222,8 +222,8 @@ class CPG extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 shop_id = 8;</code>
-     * @return int
+     * Generated from protobuf field <code>string shop_id = 8;</code>
+     * @return string
      */
     public function getShopId()
     {
@@ -231,13 +231,13 @@ class CPG extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 shop_id = 8;</code>
-     * @param int $var
+     * Generated from protobuf field <code>string shop_id = 8;</code>
+     * @param string $var
      * @return $this
      */
     public function setShopId($var)
     {
-        GPBUtil::checkUint32($var);
+        GPBUtil::checkString($var, True);
         $this->shop_id = $var;
 
         return $this;

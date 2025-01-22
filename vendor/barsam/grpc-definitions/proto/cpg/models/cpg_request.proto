@@ -10,5 +10,5 @@ message CPG {
   string description = 5;
   string callback_url = 6;
   string code = 7;
-  uint32 shop_id = 8;
+  string shop_id = 8;
 }

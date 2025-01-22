@@ -82,4 +82,13 @@ interface LoanServiceInterface extends GRPC\ServiceInterface
     * @throws GRPC\Exception\InvokeException
     */
     public function Get(GRPC\ContextInterface $ctx, \Barsam\Loan\Messages\GetRequest $in): \Barsam\Loan\Messages\GetResponse;
+
+    /**
+    * @param GRPC\ContextInterface $ctx
+    * @param \Barsam\Loan\Messages\CalculateRequest $in
+    * @return \Barsam\Loan\Messages\CalculateResponse
+    *
+    * @throws GRPC\Exception\InvokeException
+    */
+    public function Calculate(GRPC\ContextInterface $ctx, \Barsam\Loan\Messages\CalculateRequest $in): \Barsam\Loan\Messages\CalculateResponse;
 }

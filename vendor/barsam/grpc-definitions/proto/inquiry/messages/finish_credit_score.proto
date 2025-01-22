@@ -6,6 +6,8 @@ package barsam.inquiry.messages;
 message FinishCreditScoreRequest {
   string request_id = 1;
   string code = 2;
+  string mobile = 3;
+  string national_code = 4;
 }
 
 // Define the response message

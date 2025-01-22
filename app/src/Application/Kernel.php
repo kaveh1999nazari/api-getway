@@ -108,7 +108,11 @@ class Kernel extends \Spiral\Framework\Kernel
             Bootloader\RoutesBootloader::class,
 
             // GRPC Client
-            GrpcClientBootloader::class
+            GrpcClientBootloader::class,
+
+            // Cache
+//            \Spiral\Cache\Bootloader\CacheBootloader::class,
+//            \Spiral\RoadRunnerBridge\Bootloader\CacheBootloader::class,
 
         ];
     }

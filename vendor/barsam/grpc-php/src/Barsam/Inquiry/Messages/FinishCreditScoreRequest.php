@@ -23,6 +23,14 @@ class FinishCreditScoreRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string code = 2;</code>
      */
     protected $code = '';
+    /**
+     * Generated from protobuf field <code>string mobile = 3;</code>
+     */
+    protected $mobile = '';
+    /**
+     * Generated from protobuf field <code>string national_code = 4;</code>
+     */
+    protected $national_code = '';
 
     /**
      * Constructor.
@@ -32,6 +40,8 @@ class FinishCreditScoreRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type string $request_id
      *     @type string $code
+     *     @type string $mobile
+     *     @type string $national_code
      * }
      */
     public function __construct($data = NULL) {
@@ -79,6 +89,50 @@ class FinishCreditScoreRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->code = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string mobile = 3;</code>
+     * @return string
+     */
+    public function getMobile()
+    {
+        return $this->mobile;
+    }
+
+    /**
+     * Generated from protobuf field <code>string mobile = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setMobile($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->mobile = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string national_code = 4;</code>
+     * @return string
+     */
+    public function getNationalCode()
+    {
+        return $this->national_code;
+    }
+
+    /**
+     * Generated from protobuf field <code>string national_code = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setNationalCode($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->national_code = $var;
 
         return $this;
     }

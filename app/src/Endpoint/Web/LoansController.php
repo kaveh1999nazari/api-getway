@@ -3,11 +3,12 @@
 namespace App\Endpoint\Web;
 
 use App\Domain\Mapper\CreateLoanMapper;
-use App\Endpoint\Web\backup\GetPlanLoanMapper;
 use App\Facade\Auth;
 use App\Service\LoanService;
 use App\Utility\GoogleTimeHelper;
 use App\Utility\GRPC\Response;
+use Barsam\Loan\Messages\CalculateRequest;
+use Barsam\Loan\Messages\CalculateResponse;
 use Barsam\Loan\Messages\CreateResponse;
 use Barsam\Loan\Messages\GetPlanRequest;
 use Barsam\Loan\Messages\GetPlanResponse;
@@ -19,7 +20,6 @@ use DateTimeInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Spiral\Http\Request\InputManager;
 use Spiral\Router\Annotation\Route;
-use Spiral\Http\Exception\HttpException;
 
 class LoansController
 {
@@ -33,7 +33,7 @@ class LoansController
     #[Route('/loans', name: 'loans.create', methods: ['POST'], group: 'api_auth')]
     public function create(InputManager $input): array
     {
-        $loanRequest = CreateLoanMapper::fromRequest($input->data->all(), Auth::user()->getId());
+        $loanRequest = CreateLoanMapper::fromRequest($input->data->all());
 
         $loanResponse = $this->loanService->Create(
             $loanRequest,
@@ -46,7 +46,7 @@ class LoansController
     }
 
     #[Route('/loans', name: 'loans.list', methods: ['GET'], group: 'api_auth')]
-    public function list(ServerRequestInterface $request, InputManager $input): array
+    public function list(InputManager $input): array
     {
         $loanRequest = new GetRequest();
         $loanRequest->setUserId(Auth::user()->getId());
@@ -113,6 +113,29 @@ class LoansController
         return $loansArray;
     }
 
+    #[Route('/loans/calculate', name: 'loans.calculate', methods: ['POST'], group: 'api_auth')]
+    public function calculate(InputManager $input): array
+    {
+        $loanRequest = new CalculateRequest();
+        $loanRequest->setPlanId($input->post('plan_id'));
+        $loanRequest->setSelectedAmount($input->post('selected_amount', 0));
+        $loanRequest->setSelectedDuration($input->post('selected_duration', 0));
+
+        /** @var Response<CalculateResponse> $loanResponse */
+        $loanResponse = $this->loanService->Calculate(
+            $loanRequest,
+            CalculateResponse::class
+        );
+
+        return [
+            'infrastructure_amount' => $loanResponse->getResponse()->getInfrastructureAmount(),
+            'prepayment_amount' => $loanResponse->getResponse()->getPrepaymentAmount(),
+            'total_prepayment_amount' => $loanResponse->getResponse()->getTotalPrepaymentAmount(),
+            'total_user_payment' => $loanResponse->getResponse()->getTotalUserPayment(),
+            'installment_amount' => $loanResponse->getResponse()->getInstallmentAmount(),
+        ];
+    }
+
     #[Route('/loans/<id:\d+>', name: 'loans.get', methods: ['GET'], group: 'api_auth')]
     public function get(InputManager $input, ServerRequestInterface $request): array
     {
@@ -166,31 +189,7 @@ class LoansController
             'status_one' => $loan->getStatusOne(),
             'status_two' => $loan->getStatusTow(),
             'status_three' => $loan->getStatusThree(),
+            'is_approved_by_admin' => false,
         ];
-    }
-
-    #[Route('/loans/plans/', methods: ['GET'], group: 'api_auth')]
-    public function getPlan(InputManager $input, ServerRequestInterface $request): array
-    {
-        $amount = $input->query('amount');
-
-        $loanRequest = GetPlanLoanMapper::fromRequest($input->data->all());
-
-        $loanResponse = $this->loanService->GetPlan(
-            $loanRequest,
-            GetPlanResponse::class
-        );
-
-        $min = $loanResponse->getResponse()->getplans()[0]->getMinAmount();
-        $max = $loanResponse->getResponse()->getplans()[0]->getMaxAmount();
-
-        if ($amount >= $min && $amount <= $max) {
-            $loan = iterator_to_array($loanResponse->getResponse()->getPlans())[0];
-            return [
-                'available_durations' => explode(',', $loan->getAvailableDurations()),
-            ];
-        } else {
-            throw new HttpException('مقدارت با مقدار موجود نمیخونه', 406);
-        }
     }
 }

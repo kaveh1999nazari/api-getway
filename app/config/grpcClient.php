@@ -1,6 +1,7 @@
 <?php
 $serviceIp = '172.20.8.53';
 $majodIP = '172.20.8.29';
+$abbsIp = '172.20.8.90';
 return [
     'services' => [
         'config' => [
@@ -29,7 +30,7 @@ return [
         ],
         'wallet' => [
             'class' => \App\Service\WalletService::class,
-            'host' => $serviceIp . ':50007'
+            'host' => $abbsIp . ':9002'
         ],
         'organization' => [
             'class' => \App\Service\OrganizationService::class,
@@ -45,7 +46,7 @@ return [
         ],
         'inquiry' => [
             'class' => \App\Service\InquiryService::class,
-            'host' => $serviceIp . ':50011',
+            'host' => $majodIP . ':9001',
         ],
         'cpg' => [
             'class' => \App\Service\CpgService::class,

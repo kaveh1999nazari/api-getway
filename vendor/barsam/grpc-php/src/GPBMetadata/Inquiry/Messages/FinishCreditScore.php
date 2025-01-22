@@ -16,12 +16,14 @@ class FinishCreditScore
         }
         $pool->internalAddGeneratedFile(
             '
-î
-*inquiry/messages/finish_credit_score.protobarsam.inquiry.messages"<
+•
+*inquiry/messages/finish_credit_score.protobarsam.inquiry.messages"c
 FinishCreditScoreRequest
 
 request_id (	
-code (	"a
+code (	
+mobile (	
+national_code (	"a
 FinishCreditScoreResponse
 score (
 group (	

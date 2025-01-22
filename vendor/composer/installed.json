@@ -218,17 +218,17 @@
         },
         {
             "name": "barsam/grpc-definitions",
-            "version": "0.50.2",
-            "version_normalized": "0.50.2.0",
+            "version": "0.52.0",
+            "version_normalized": "0.52.0.0",
             "source": {
                 "type": "git",
                 "url": "git@gitlab.dngs.ir:microservices/grpc-definition.git",
-                "reference": "5b6302452f0894741712599a7e32d88a73d7ed12"
+                "reference": "2e7435a1c67066334f4d132a0aa112ec5606a1f1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://gitlab.dngs.ir/api/v4/projects/26/packages/composer/archives/barsam/grpc-definitions.zip?sha=5b6302452f0894741712599a7e32d88a73d7ed12",
-                "reference": "5b6302452f0894741712599a7e32d88a73d7ed12",
+                "url": "https://gitlab.dngs.ir/api/v4/projects/26/packages/composer/archives/barsam/grpc-definitions.zip?sha=2e7435a1c67066334f4d132a0aa112ec5606a1f1",
+                "reference": "2e7435a1c67066334f4d132a0aa112ec5606a1f1",
                 "shasum": ""
             },
             "type": "library",
@@ -243,17 +243,17 @@
         },
         {
             "name": "barsam/grpc-php",
-            "version": "0.60.0",
-            "version_normalized": "0.60.0.0",
+            "version": "0.63.0",
+            "version_normalized": "0.63.0.0",
             "source": {
                 "type": "git",
                 "url": "git@gitlab.dngs.ir:microservices/grpc-php.git",
-                "reference": "50f0e9f98978bc69a3280aff8cf3f960b19034d8"
+                "reference": "6fa2043d32653efd93356c3e3afb34607bbf1dc6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://gitlab.dngs.ir/api/v4/projects/27/packages/composer/archives/barsam/grpc-php.zip?sha=50f0e9f98978bc69a3280aff8cf3f960b19034d8",
-                "reference": "50f0e9f98978bc69a3280aff8cf3f960b19034d8",
+                "url": "https://gitlab.dngs.ir/api/v4/projects/27/packages/composer/archives/barsam/grpc-php.zip?sha=6fa2043d32653efd93356c3e3afb34607bbf1dc6",
+                "reference": "6fa2043d32653efd93356c3e3afb34607bbf1dc6",
                 "shasum": ""
             },
             "require": {
@@ -7661,17 +7661,17 @@
         },
         {
             "name": "spiral/framework",
-            "version": "3.14.9",
-            "version_normalized": "3.14.9.0",
+            "version": "3.14.10",
+            "version_normalized": "3.14.10.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spiral/framework.git",
-                "reference": "be072e6392589d875b400ecad017fa61b2ca4c0f"
+                "reference": "6677c1ad17517468cda27647446e0a69d41b1053"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spiral/framework/zipball/be072e6392589d875b400ecad017fa61b2ca4c0f",
-                "reference": "be072e6392589d875b400ecad017fa61b2ca4c0f",
+                "url": "https://api.github.com/repos/spiral/framework/zipball/6677c1ad17517468cda27647446e0a69d41b1053",
+                "reference": "6677c1ad17517468cda27647446e0a69d41b1053",
                 "shasum": ""
             },
             "require": {
@@ -7774,7 +7774,7 @@
                 "symplify/monorepo-builder": "^10.2.7",
                 "vimeo/psalm": "^5.9"
             },
-            "time": "2025-01-07T13:03:32+00:00",
+            "time": "2025-01-22T15:07:32+00:00",
             "type": "library",
             "extra": {
                 "branch-alias": {

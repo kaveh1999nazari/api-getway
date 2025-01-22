@@ -11,6 +11,7 @@ import "loan/messages/create.proto";
 import "loan/messages/update.proto";
 import "loan/messages/delete.proto";
 import "loan/messages/get.proto";
+import "loan/messages/calculate.proto";
 
 // Loan service
 service LoanService {
@@ -37,4 +38,7 @@ service LoanService {
 
   // Get loans
   rpc Get(messages.GetRequest) returns (messages.GetResponse);
+
+  // Calculate
+  rpc Calculate(messages.CalculateRequest) returns (messages.CalculateResponse);
 }

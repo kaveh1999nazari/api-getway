@@ -64,4 +64,22 @@ interface WalletServiceInterface extends GRPC\ServiceInterface
     * @throws GRPC\Exception\InvokeException
     */
     public function GetTransactions(GRPC\ContextInterface $ctx, \Barsam\Wallet\Messages\GetTransactionsRequest $in): \Barsam\Wallet\Messages\GetTransactionsResponse;
+
+    /**
+    * @param GRPC\ContextInterface $ctx
+    * @param \Barsam\Wallet\Messages\RequestRequest $in
+    * @return \Barsam\Wallet\Messages\RequestResponse
+    *
+    * @throws GRPC\Exception\InvokeException
+    */
+    public function Request(GRPC\ContextInterface $ctx, \Barsam\Wallet\Messages\RequestRequest $in): \Barsam\Wallet\Messages\RequestResponse;
+
+    /**
+    * @param GRPC\ContextInterface $ctx
+    * @param \Barsam\Wallet\Messages\VerifyRequest $in
+    * @return \Barsam\Wallet\Messages\VerifyResponse
+    *
+    * @throws GRPC\Exception\InvokeException
+    */
+    public function Verify(GRPC\ContextInterface $ctx, \Barsam\Wallet\Messages\VerifyRequest $in): \Barsam\Wallet\Messages\VerifyResponse;
 }

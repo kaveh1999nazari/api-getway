@@ -20,17 +20,21 @@ class Service
         \GPBMetadata\Wallet\Messages\Withdraw::initOnce();
         \GPBMetadata\Wallet\Messages\GetTransactions::initOnce();
         \GPBMetadata\Wallet\Messages\Transfer::initOnce();
+        \GPBMetadata\Wallet\Messages\Request::initOnce();
+        \GPBMetadata\Wallet\Messages\Verify::initOnce();
         $pool->internalAddGeneratedFile(
             '
-˜
-wallet/service.protobarsam.walletwallet/messages/get.protowallet/messages/deposit.protowallet/messages/withdraw.proto&wallet/messages/get_transactions.protowallet/messages/transfer.proto2Æ
+Š
+wallet/service.protobarsam.walletwallet/messages/get.protowallet/messages/deposit.protowallet/messages/withdraw.proto&wallet/messages/get_transactions.protowallet/messages/transfer.protowallet/messages/request.protowallet/messages/verify.proto2û
 WalletServiceW
 Create%.barsam.wallet.messages.CreateRequest&.barsam.wallet.messages.CreateResponseN
 Get".barsam.wallet.messages.GetRequest#.barsam.wallet.messages.GetResponseZ
 Deposit&.barsam.wallet.messages.DepositRequest\'.barsam.wallet.messages.DepositResponse]
 Withdraw\'.barsam.wallet.messages.WithdrawRequest(.barsam.wallet.messages.WithdrawResponse]
 Transfer\'.barsam.wallet.messages.TransferRequest(.barsam.wallet.messages.TransferResponser
-GetTransactions..barsam.wallet.messages.GetTransactionsRequest/.barsam.wallet.messages.GetTransactionsResponsebproto3'
+GetTransactions..barsam.wallet.messages.GetTransactionsRequest/.barsam.wallet.messages.GetTransactionsResponseZ
+Request&.barsam.wallet.messages.RequestRequest\'.barsam.wallet.messages.RequestResponseW
+Verify%.barsam.wallet.messages.VerifyRequest&.barsam.wallet.messages.VerifyResponsebproto3'
         , true);
 
         static::$is_initialized = true;

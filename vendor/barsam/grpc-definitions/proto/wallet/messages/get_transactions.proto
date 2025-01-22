@@ -10,18 +10,19 @@ import "google/protobuf/timestamp.proto";
 // Define the request message for getting transactions with pagination
 message GetTransactionsRequest {
   uint64 wallet_id = 1;
-  string address = 2;
+  uint64 user_id = 2;
+  string address = 3;
 
   // Filters
-  enums.TransactionType type = 3;
-  enums.TransactionStatus status = 4;
-  google.protobuf.Timestamp from = 5;
-  google.protobuf.Timestamp to = 6;
-  string caused_by_name = 7;
+  enums.TransactionType type = 4;
+  enums.TransactionStatus status = 5;
+  google.protobuf.Timestamp from = 6;
+  google.protobuf.Timestamp to = 7;
+  string caused_by_name = 8;
 
   // Pagination
-  uint32 page = 10;
-  uint32 per_page = 11;
+  uint32 page = 9;
+  uint32 per_page = 10;
 }
 
 // Define the response message for getting transactions with pagination

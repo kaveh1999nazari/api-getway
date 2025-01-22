@@ -20,19 +20,20 @@ class GetTransactions
         \GPBMetadata\Google\Protobuf\Timestamp::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ç
-&wallet/messages/get_transactions.protobarsam.wallet.messages#wallet/enums/transaction_type.proto%wallet/enums/transaction_status.protogoogle/protobuf/timestamp.proto"²
+ø
+&wallet/messages/get_transactions.protobarsam.wallet.messages#wallet/enums/transaction_type.proto%wallet/enums/transaction_status.protogoogle/protobuf/timestamp.proto"Ã
 GetTransactionsRequest
 	wallet_id (
-address (	2
-type (2$.barsam.wallet.enums.TransactionType6
-status (2&.barsam.wallet.enums.TransactionStatus(
-from (2.google.protobuf.Timestamp&
-to (2.google.protobuf.Timestamp
-caused_by_name (	
-page
- (
-per_page ("{
+user_id (
+address (	2
+type (2$.barsam.wallet.enums.TransactionType6
+status (2&.barsam.wallet.enums.TransactionStatus(
+from (2.google.protobuf.Timestamp&
+to (2.google.protobuf.Timestamp
+caused_by_name (	
+page	 (
+per_page
+ ("{
 GetTransactionsResponse7
 transactions (2!.barsam.wallet.models.Transaction
 max_page (

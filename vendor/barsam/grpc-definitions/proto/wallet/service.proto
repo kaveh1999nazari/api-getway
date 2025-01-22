@@ -8,6 +8,8 @@ import "wallet/messages/deposit.proto";
 import "wallet/messages/withdraw.proto";
 import "wallet/messages/get_transactions.proto";
 import "wallet/messages/transfer.proto";
+import "wallet/messages/request.proto";
+import "wallet/messages/verify.proto";
 
 service WalletService {
   // Create a new wallet
@@ -27,4 +29,10 @@ service WalletService {
 
   // Get wallet's transactions
   rpc GetTransactions(messages.GetTransactionsRequest) returns (messages.GetTransactionsResponse);
+
+  // Request payment from payment gateway
+  rpc Request(messages.RequestRequest) returns (messages.RequestResponse);
+
+  // Verify the payment from payment gateway
+  rpc Verify(messages.VerifyRequest) returns (messages.VerifyResponse);
 }

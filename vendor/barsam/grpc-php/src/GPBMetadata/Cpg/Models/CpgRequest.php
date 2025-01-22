@@ -27,7 +27,7 @@ class CpgRequest
 description (	
 callback_url (	
 code (	
-shop_id (bproto3'
+shop_id (	bproto3'
         , true);
 
         static::$is_initialized = true;

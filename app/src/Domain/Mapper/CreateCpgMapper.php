@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Domain\Mapper\Backup;
+namespace App\Domain\Mapper;
 
 use Barsam\Cpg\Messages\CreateRequest;
 
-class CpgCreateMapper
+class CreateCpgMapper
 {
     public static function fromRequest(array $inputs): CreateRequest
     {

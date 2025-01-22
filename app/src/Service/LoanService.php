@@ -4,6 +4,7 @@ namespace App\Service;
 
 use App\Utility\GRPC\AbstractClient;
 use Barsam\Loan\LoanServiceInterface;
+use Barsam\Loan\Messages\CalculateRequest;
 use Barsam\Loan\Messages\CreatePlanRequest;
 use Barsam\Loan\Messages\CreateRequest;
 use Barsam\Loan\Messages\DeletePlanRequest;
@@ -23,6 +24,7 @@ use Barsam\Loan\Messages\UpdateRequest;
  * @method Update(UpdateRequest $request, string $responseClass, array $context = [])
  * @method Delete(DeleteRequest $request, string $responseClass, array $context = [])
  * @method Get(GetRequest $request, string $responseClass, array $context = [])
+ * @method Calculate(CalculateRequest $request, string $responseClass, array $context = [])
  */
 class LoanService extends AbstractClient
 {

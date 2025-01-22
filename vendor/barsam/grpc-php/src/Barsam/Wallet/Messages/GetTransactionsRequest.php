@@ -20,39 +20,43 @@ class GetTransactionsRequest extends \Google\Protobuf\Internal\Message
      */
     protected $wallet_id = 0;
     /**
-     * Generated from protobuf field <code>string address = 2;</code>
+     * Generated from protobuf field <code>uint64 user_id = 2;</code>
+     */
+    protected $user_id = 0;
+    /**
+     * Generated from protobuf field <code>string address = 3;</code>
      */
     protected $address = '';
     /**
      * Filters
      *
-     * Generated from protobuf field <code>.barsam.wallet.enums.TransactionType type = 3;</code>
+     * Generated from protobuf field <code>.barsam.wallet.enums.TransactionType type = 4;</code>
      */
     protected $type = 0;
     /**
-     * Generated from protobuf field <code>.barsam.wallet.enums.TransactionStatus status = 4;</code>
+     * Generated from protobuf field <code>.barsam.wallet.enums.TransactionStatus status = 5;</code>
      */
     protected $status = 0;
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp from = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp from = 6;</code>
      */
     protected $from = null;
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp to = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp to = 7;</code>
      */
     protected $to = null;
     /**
-     * Generated from protobuf field <code>string caused_by_name = 7;</code>
+     * Generated from protobuf field <code>string caused_by_name = 8;</code>
      */
     protected $caused_by_name = '';
     /**
      * Pagination
      *
-     * Generated from protobuf field <code>uint32 page = 10;</code>
+     * Generated from protobuf field <code>uint32 page = 9;</code>
      */
     protected $page = 0;
     /**
-     * Generated from protobuf field <code>uint32 per_page = 11;</code>
+     * Generated from protobuf field <code>uint32 per_page = 10;</code>
      */
     protected $per_page = 0;
 
@@ -63,6 +67,7 @@ class GetTransactionsRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type int|string $wallet_id
+     *     @type int|string $user_id
      *     @type string $address
      *     @type int $type
      *           Filters
@@ -103,7 +108,29 @@ class GetTransactionsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string address = 2;</code>
+     * Generated from protobuf field <code>uint64 user_id = 2;</code>
+     * @return int|string
+     */
+    public function getUserId()
+    {
+        return $this->user_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint64 user_id = 2;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setUserId($var)
+    {
+        GPBUtil::checkUint64($var);
+        $this->user_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string address = 3;</code>
      * @return string
      */
     public function getAddress()
@@ -112,7 +139,7 @@ class GetTransactionsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string address = 2;</code>
+     * Generated from protobuf field <code>string address = 3;</code>
      * @param string $var
      * @return $this
      */
@@ -127,7 +154,7 @@ class GetTransactionsRequest extends \Google\Protobuf\Internal\Message
     /**
      * Filters
      *
-     * Generated from protobuf field <code>.barsam.wallet.enums.TransactionType type = 3;</code>
+     * Generated from protobuf field <code>.barsam.wallet.enums.TransactionType type = 4;</code>
      * @return int
      */
     public function getType()
@@ -138,7 +165,7 @@ class GetTransactionsRequest extends \Google\Protobuf\Internal\Message
     /**
      * Filters
      *
-     * Generated from protobuf field <code>.barsam.wallet.enums.TransactionType type = 3;</code>
+     * Generated from protobuf field <code>.barsam.wallet.enums.TransactionType type = 4;</code>
      * @param int $var
      * @return $this
      */
@@ -151,7 +178,7 @@ class GetTransactionsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.barsam.wallet.enums.TransactionStatus status = 4;</code>
+     * Generated from protobuf field <code>.barsam.wallet.enums.TransactionStatus status = 5;</code>
      * @return int
      */
     public function getStatus()
@@ -160,7 +187,7 @@ class GetTransactionsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.barsam.wallet.enums.TransactionStatus status = 4;</code>
+     * Generated from protobuf field <code>.barsam.wallet.enums.TransactionStatus status = 5;</code>
      * @param int $var
      * @return $this
      */
@@ -173,7 +200,7 @@ class GetTransactionsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp from = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp from = 6;</code>
      * @return \Google\Protobuf\Timestamp|null
      */
     public function getFrom()
@@ -192,7 +219,7 @@ class GetTransactionsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp from = 5;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp from = 6;</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
@@ -205,7 +232,7 @@ class GetTransactionsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp to = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp to = 7;</code>
      * @return \Google\Protobuf\Timestamp|null
      */
     public function getTo()
@@ -224,7 +251,7 @@ class GetTransactionsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp to = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp to = 7;</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
@@ -237,7 +264,7 @@ class GetTransactionsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string caused_by_name = 7;</code>
+     * Generated from protobuf field <code>string caused_by_name = 8;</code>
      * @return string
      */
     public function getCausedByName()
@@ -246,7 +273,7 @@ class GetTransactionsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string caused_by_name = 7;</code>
+     * Generated from protobuf field <code>string caused_by_name = 8;</code>
      * @param string $var
      * @return $this
      */
@@ -261,7 +288,7 @@ class GetTransactionsRequest extends \Google\Protobuf\Internal\Message
     /**
      * Pagination
      *
-     * Generated from protobuf field <code>uint32 page = 10;</code>
+     * Generated from protobuf field <code>uint32 page = 9;</code>
      * @return int
      */
     public function getPage()
@@ -272,7 +299,7 @@ class GetTransactionsRequest extends \Google\Protobuf\Internal\Message
     /**
      * Pagination
      *
-     * Generated from protobuf field <code>uint32 page = 10;</code>
+     * Generated from protobuf field <code>uint32 page = 9;</code>
      * @param int $var
      * @return $this
      */
@@ -285,7 +312,7 @@ class GetTransactionsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 per_page = 11;</code>
+     * Generated from protobuf field <code>uint32 per_page = 10;</code>
      * @return int
      */
     public function getPerPage()
@@ -294,7 +321,7 @@ class GetTransactionsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>uint32 per_page = 11;</code>
+     * Generated from protobuf field <code>uint32 per_page = 10;</code>
      * @param int $var
      * @return $this
      */

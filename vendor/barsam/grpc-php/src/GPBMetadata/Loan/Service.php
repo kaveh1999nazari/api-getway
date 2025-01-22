@@ -22,10 +22,11 @@ class Service
         \GPBMetadata\Loan\Messages\Update::initOnce();
         \GPBMetadata\Loan\Messages\Delete::initOnce();
         \GPBMetadata\Loan\Messages\Get::initOnce();
+        \GPBMetadata\Loan\Messages\Calculate::initOnce();
         $pool->internalAddGeneratedFile(
             '
-Ì
-loan/service.protobarsam.loanloan/messages/update_plan.protoloan/messages/delete_plan.protoloan/messages/get_plan.protoloan/messages/create.protoloan/messages/update.protoloan/messages/delete.protoloan/messages/get.proto2Ó
+É
+loan/service.protobarsam.loanloan/messages/update_plan.protoloan/messages/delete_plan.protoloan/messages/get_plan.protoloan/messages/create.protoloan/messages/update.protoloan/messages/delete.protoloan/messages/get.protoloan/messages/calculate.proto2±
 LoanService_
 
 CreatePlan\'.barsam.loan.messages.CreatePlanRequest(.barsam.loan.messages.CreatePlanResponse_
@@ -37,7 +38,8 @@ DeletePlan\'.barsam.loan.messages.DeletePlanRequest(.barsam.loan.messages.Dele
 Create#.barsam.loan.messages.CreateRequest$.barsam.loan.messages.CreateResponseS
 Update#.barsam.loan.messages.UpdateRequest$.barsam.loan.messages.UpdateResponseS
 Delete#.barsam.loan.messages.DeleteRequest$.barsam.loan.messages.DeleteResponseJ
-Get .barsam.loan.messages.GetRequest!.barsam.loan.messages.GetResponsebproto3'
+Get .barsam.loan.messages.GetRequest!.barsam.loan.messages.GetResponse\\
+	Calculate&.barsam.loan.messages.CalculateRequest\'.barsam.loan.messages.CalculateResponsebproto3'
         , true);
 
         static::$is_initialized = true;

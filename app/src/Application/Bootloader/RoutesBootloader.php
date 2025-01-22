@@ -57,6 +57,10 @@ final class RoutesBootloader extends BaseRoutesBootloader
             'api_auth' => [
                 ExceptionMiddleware::class,
                 AuthMiddleware::class,
+            ],
+            'api_merchant' => [
+                ExceptionMiddleware::class,
+                AuthMiddleware::class
             ]
         ];
     }

@@ -301,8 +301,8 @@ class ComposerStaticInitc6d5c248e7dcd278cc3dd1dea57dbb8c
         'phpDocumentor\\Reflection\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
-            1 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
-            2 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+            1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+            2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
         ),
         'cebe\\markdown\\' => 
         array (
@@ -632,8 +632,8 @@ class ComposerStaticInitc6d5c248e7dcd278cc3dd1dea57dbb8c
         ),
         'Spiral\\Debug\\' => 
         array (
-            0 => __DIR__ . '/..' . '/spiral/framework/src/Debug/src',
-            1 => __DIR__ . '/..' . '/spiral/dumper/src',
+            0 => __DIR__ . '/..' . '/spiral/dumper/src',
+            1 => __DIR__ . '/..' . '/spiral/framework/src/Debug/src',
         ),
         'Spiral\\DataGrid\\' => 
         array (
@@ -737,8 +737,8 @@ class ComposerStaticInitc6d5c248e7dcd278cc3dd1dea57dbb8c
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-message/src',
-            1 => __DIR__ . '/..' . '/psr/http-factory/src',
+            0 => __DIR__ . '/..' . '/psr/http-factory/src',
+            1 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
         'Psr\\EventDispatcher\\' => 
         array (
@@ -810,9 +810,9 @@ class ComposerStaticInitc6d5c248e7dcd278cc3dd1dea57dbb8c
         ),
         'Illuminate\\Support\\' => 
         array (
-            0 => __DIR__ . '/..' . '/illuminate/conditionable',
-            1 => __DIR__ . '/..' . '/illuminate/macroable',
-            2 => __DIR__ . '/..' . '/illuminate/collections',
+            0 => __DIR__ . '/..' . '/illuminate/collections',
+            1 => __DIR__ . '/..' . '/illuminate/conditionable',
+            2 => __DIR__ . '/..' . '/illuminate/macroable',
             3 => __DIR__ . '/..' . '/illuminate/support',
         ),
         'Illuminate\\Filesystem\\' => 
