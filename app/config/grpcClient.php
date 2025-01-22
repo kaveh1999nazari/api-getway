@@ -1,5 +1,6 @@
 <?php
 $serviceIp = '172.20.8.53';
+$majodIP = '172.20.8.29';
 return [
     'services' => [
         'config' => [

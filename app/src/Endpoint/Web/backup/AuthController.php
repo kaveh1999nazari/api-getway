@@ -2,11 +2,11 @@
 
 namespace App\Endpoint\Web\backup;
 
-use App\Domain\Mapper\AuthorizeMapper;
-use App\Domain\Mapper\GenerateOtpMapper;
-use App\Domain\Mapper\GetSessionsMapper;
-use App\Domain\Mapper\IssueTokenMapper;
-use App\Domain\Mapper\LogoutSessionMapper;
+use App\Domain\Mapper\Backup\AuthorizeMapper;
+use App\Domain\Mapper\Backup\GenerateOtpMapper;
+use App\Domain\Mapper\Backup\GetSessionsMapper;
+use App\Domain\Mapper\Backup\IssueTokenMapper;
+use App\Domain\Mapper\Backup\LogoutSessionMapper;
 use App\Domain\Mapper\VerifyOtpMapper;
 use App\Service\AuthService;
 use Barsam\Auth\Messages\AuthorizeResponse;

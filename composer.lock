@@ -55,16 +55,16 @@
         },
         {
             "name": "barsam/grpc-definitions",
-            "version": "0.50.0",
+            "version": "0.50.2",
             "source": {
                 "type": "git",
                 "url": "git@gitlab.dngs.ir:microservices/grpc-definition.git",
-                "reference": "6782488d517c3debda62f44822ffca574bcd1588"
+                "reference": "5b6302452f0894741712599a7e32d88a73d7ed12"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://gitlab.dngs.ir/api/v4/projects/26/packages/composer/archives/barsam/grpc-definitions.zip?sha=6782488d517c3debda62f44822ffca574bcd1588",
-                "reference": "6782488d517c3debda62f44822ffca574bcd1588",
+                "url": "https://gitlab.dngs.ir/api/v4/projects/26/packages/composer/archives/barsam/grpc-definitions.zip?sha=5b6302452f0894741712599a7e32d88a73d7ed12",
+                "reference": "5b6302452f0894741712599a7e32d88a73d7ed12",
                 "shasum": ""
             },
             "type": "library",
@@ -77,16 +77,16 @@
         },
         {
             "name": "barsam/grpc-php",
-            "version": "0.58.0",
+            "version": "0.60.0",
             "source": {
                 "type": "git",
                 "url": "git@gitlab.dngs.ir:microservices/grpc-php.git",
-                "reference": "bf2aaf1cf31e6d2585363a323b133a65f7ec3afe"
+                "reference": "50f0e9f98978bc69a3280aff8cf3f960b19034d8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://gitlab.dngs.ir/api/v4/projects/27/packages/composer/archives/barsam/grpc-php.zip?sha=bf2aaf1cf31e6d2585363a323b133a65f7ec3afe",
-                "reference": "bf2aaf1cf31e6d2585363a323b133a65f7ec3afe",
+                "url": "https://gitlab.dngs.ir/api/v4/projects/27/packages/composer/archives/barsam/grpc-php.zip?sha=50f0e9f98978bc69a3280aff8cf3f960b19034d8",
+                "reference": "50f0e9f98978bc69a3280aff8cf3f960b19034d8",
                 "shasum": ""
             },
             "require": {

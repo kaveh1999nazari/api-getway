@@ -2,8 +2,8 @@
 
 namespace App\Endpoint\Web\backup;
 
-use App\Domain\Mapper\NotificationCreateTemplateMapper;
-use App\Domain\Mapper\NotificationGetChannelsMapper;
+use App\Domain\Mapper\Backup\NotificationCreateTemplateMapper;
+use App\Domain\Mapper\Backup\NotificationGetChannelsMapper;
 use App\Domain\Mapper\NotificationGetTemplatesMapper;
 use App\Domain\Mapper\NotificationSendByTemplateMapper;
 use App\Domain\Mapper\NotificationSendDirectMapper;

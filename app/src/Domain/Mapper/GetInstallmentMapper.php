@@ -2,14 +2,18 @@
 
 namespace App\Domain\Mapper;
 
+use App\Facade\Auth;
 use Barsam\Installment\Messages\GetRequest;
 
 class GetInstallmentMapper
 {
-    public static function fromRequest(array $inputs): GetRequest
+    public static function fromRequest(array $inputs, int $id, int $userId): GetRequest
     {
         return new GetRequest([
-            'id' => $inputs['id'],
+            'user_id' => $userId,
+            'loan_id' => $id,
+//            'page' => $inputs['page'],
+//            'per_page' => $inputs['per_page']
         ]);
     }
 }

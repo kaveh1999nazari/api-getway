@@ -2,11 +2,11 @@
 
 namespace App\Endpoint\Web\backup;
 
-use App\Domain\Mapper\TicketCreateMapper;
-use App\Domain\Mapper\TicketDeleteMapper;
-use App\Domain\Mapper\TicketGetMapper;
-use App\Domain\Mapper\TicketReplyMapper;
-use App\Domain\Mapper\TicketUpdateMapper;
+use App\Domain\Mapper\Backup\TicketCreateMapper;
+use App\Domain\Mapper\Backup\TicketDeleteMapper;
+use App\Domain\Mapper\Backup\TicketGetMapper;
+use App\Domain\Mapper\Backup\TicketReplyMapper;
+use App\Domain\Mapper\Backup\TicketUpdateMapper;
 use App\Service\TicketService;
 use Barsam\Ticket\Messages\CreateResponse;
 use Barsam\Ticket\Messages\DeleteResponse;

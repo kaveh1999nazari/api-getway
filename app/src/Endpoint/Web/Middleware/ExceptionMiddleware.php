@@ -29,7 +29,7 @@ class ExceptionMiddleware implements MiddlewareInterface
 
     private function renderError(Request $request, \Throwable $e): Response
     {
-        $response = $this->responseFactory->createResponse($e->getCode());
+        $response = $this->responseFactory->createResponse($e->getCode() ?? 403);
 
         $response = $response->withHeader('Content-Type', 'application/json; charset=UTF-8');
 

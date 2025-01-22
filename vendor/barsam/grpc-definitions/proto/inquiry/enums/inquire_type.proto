@@ -1,8 +1,0 @@
-syntax = "proto3";
-
-package barsam.inquiry.enums;
-
-enum InquireType {
-  MATCH = 0;
-  DETAIL = 1;
-}

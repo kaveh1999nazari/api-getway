@@ -6,18 +6,16 @@ use App\Domain\Mapper\CreateUserMapper;
 use App\Service\AuthService;
 use App\Service\NotificationService;
 use App\Service\UserService;
+use App\Utility\GRPC\Response;
 use Barsam\Auth\Enums\ResponseType;
 use Barsam\Auth\Messages\AuthorizeRequest;
 use Barsam\Auth\Messages\AuthorizeResponse;
 use Barsam\Notification\Messages\SendByTemplateRequest;
 use Barsam\Notification\Messages\SendByTemplateResponse;
-use Barsam\User\Messages\GetRequest;
-use Barsam\User\Messages\GetResponse;
 use Barsam\User\Messages\RegisterResponse;
 use Spiral\Http\Exception\HttpException;
 use Spiral\Http\Request\InputManager;
 use Spiral\Router\Annotation\Route;
-use App\Utility\GRPC\Response;
 
 
 class UserController
@@ -42,8 +40,6 @@ class UserController
                 RegisterResponse::class
         );
 
-
-//        dd($registerResponse->getDetail());
         if($registerResponse->getDetail()->code === 13)
         {
             throw new HttpException('این کاربر قبلا ثبت نام کرده است', 403);

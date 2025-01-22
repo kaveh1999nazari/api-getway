@@ -2,13 +2,13 @@
 
 namespace App\Endpoint\Web\backup;
 
-use App\Domain\Mapper\FinishCreditScoreMapper;
-use App\Domain\Mapper\InquireCardMapper;
-use App\Domain\Mapper\InquireCreditScoreMapper;
-use App\Domain\Mapper\InquireIbanMapper;
-use App\Domain\Mapper\InquireMobileOwnershipMapper;
-use App\Domain\Mapper\InquirePersonMapper;
-use App\Domain\Mapper\StartCreditScoreMapper;
+use App\Domain\Mapper\Backup\FinishCreditScoreMapper;
+use App\Domain\Mapper\Backup\InquireCardMapper;
+use App\Domain\Mapper\Backup\InquireCreditScoreMapper;
+use App\Domain\Mapper\Backup\InquireIbanMapper;
+use App\Domain\Mapper\Backup\InquireMobileOwnershipMapper;
+use App\Domain\Mapper\Backup\InquirePersonMapper;
+use App\Domain\Mapper\Backup\StartCreditScoreMapper;
 use App\Service\InquiryService;
 use Barsam\Inquiry\Messages\FinishCreditScoreResponse;
 use Barsam\Inquiry\Messages\InquireBankingScoreResponse;

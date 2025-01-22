@@ -6,6 +6,7 @@ use App\Facade\Auth;
 use App\Service\AuthService;
 use App\Service\UserService;
 use App\Utility\GRPC\Response;
+use Barsam\Auth\Enums\LoginType;
 use Barsam\Auth\Messages\AuthorizeRequest;
 use Barsam\Auth\Messages\ValidateTokenRequest;
 use Barsam\Auth\Messages\ValidateTokenResponse;
@@ -50,8 +51,8 @@ class AuthMiddleware implements MiddlewareInterface
             ValidateTokenResponse::class
         );
 
-        if ($validateResponse->getDetail()->code !== 0) {
-            throw new HttpException($validateResponse->getDetail()->details, 401);
+        if ($validateResponse->getResponse()->getValid() !== LoginType::VALID) {
+            throw new HttpException('لطفا مجددا وارد شوید', 401);
         }
 
         $getUserRequest = new GetRequest();
@@ -60,7 +61,7 @@ class AuthMiddleware implements MiddlewareInterface
         /** @var Response<GetResponse> $getUserResponse */
         $getUserResponse = $this->userService->Get($getUserRequest, GetResponse::class);
         if ($getUserResponse->getDetail()->code !== 0) {
-            throw new HttpException($getUserResponse->getDetail()->details, 401);
+            throw new HttpException('لطفا وارد شوید', 401);
         }
 
         $users = iterator_to_array($getUserResponse->getResponse()->getUsers());
@@ -68,6 +69,7 @@ class AuthMiddleware implements MiddlewareInterface
             throw new HttpException('لطفا وارد شوید', 401);
         }
         Auth::setUser($users[0]);
+        Auth::setToken($tokenParts[1]);
 
         return $handler->handle($request);
     }

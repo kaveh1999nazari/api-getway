@@ -2,11 +2,11 @@
 
 namespace App\Endpoint\Web\backup;
 
-use App\Domain\Mapper\WalletCreateMapper;
-use App\Domain\Mapper\WalletDepositMapper;
-use App\Domain\Mapper\WalletGetMapper;
-use App\Domain\Mapper\WalletGetTransactionsMapper;
-use App\Domain\Mapper\WalletWithdrawMapper;
+use App\Domain\Mapper\Backup\WalletCreateMapper;
+use App\Domain\Mapper\Backup\WalletDepositMapper;
+use App\Domain\Mapper\Backup\WalletGetMapper;
+use App\Domain\Mapper\Backup\WalletGetTransactionsMapper;
+use App\Domain\Mapper\Backup\WalletWithdrawMapper;
 use App\Service\WalletService;
 use Barsam\Wallet\Messages\CreateResponse;
 use Barsam\Wallet\Messages\DepositResponse;

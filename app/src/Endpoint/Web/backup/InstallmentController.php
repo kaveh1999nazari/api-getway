@@ -2,11 +2,11 @@
 
 namespace App\Endpoint\Web\backup;
 
-use App\Domain\Mapper\CreateInstallmentMapper;
-use App\Domain\Mapper\DeleteInstallmentMapper;
-use App\Domain\Mapper\GenerateInstallmentMapper;
+use App\Domain\Mapper\Backup\CreateInstallmentMapper;
+use App\Domain\Mapper\Backup\DeleteInstallmentMapper;
+use App\Domain\Mapper\Backup\GenerateInstallmentMapper;
+use App\Domain\Mapper\Backup\UpdateInstallmentMapper;
 use App\Domain\Mapper\GetInstallmentMapper;
-use App\Domain\Mapper\UpdateInstallmentMapper;
 use App\Service\InstallmentService;
 use Barsam\Installment\Messages\CreateResponse;
 use Barsam\Installment\Messages\DeleteResponse;

@@ -2,10 +2,10 @@
 
 namespace App\Endpoint\Web\backup;
 
-use App\Domain\Mapper\getAllMapper;
-use App\Domain\Mapper\getOneMapper;
-use App\Domain\Mapper\SyncMapper;
-use App\Domain\Mapper\UpdateBatchMapper;
+use App\Domain\Mapper\Backup\getAllMapper;
+use App\Domain\Mapper\Backup\getOneMapper;
+use App\Domain\Mapper\Backup\SyncMapper;
+use App\Domain\Mapper\Backup\UpdateBatchMapper;
 use App\Service\ConfigService;
 use Barsam\Config\Messages\GetAllResponse;
 use Barsam\Config\Messages\GetOneResponse;

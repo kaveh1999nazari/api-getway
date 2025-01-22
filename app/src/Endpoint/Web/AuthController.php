@@ -4,7 +4,6 @@ namespace App\Endpoint\Web;
 
 
 use App\Domain\Mapper\CurrentUserMapper;
-use App\Domain\Mapper\GetUserMapper;
 use App\Facade\Auth;
 use App\Service\AuthService;
 use App\Service\NotificationService;
@@ -14,20 +13,15 @@ use Barsam\Auth\Enums\GrantType;
 use Barsam\Auth\Enums\ResponseType;
 use Barsam\Auth\Messages\AuthorizeRequest;
 use Barsam\Auth\Messages\AuthorizeResponse;
-use Barsam\Auth\Messages\GenerateOtpRequest;
-use Barsam\Auth\Messages\GenerateOtpResponse;
 use Barsam\Auth\Messages\IssueTokenRequest;
 use Barsam\Auth\Messages\IssueTokenResponse;
 use Barsam\Auth\Messages\LogoutSessionRequest;
 use Barsam\Auth\Messages\LogoutSessionResponse;
-use Barsam\Auth\Messages\VerifyOtpRequest;
-use Barsam\Auth\Messages\VerifyOtpResponse;
 use Barsam\Notification\Messages\SendByTemplateRequest;
 use Barsam\Notification\Messages\SendByTemplateResponse;
 use Barsam\User\Messages\GetRequest;
 use Barsam\User\Messages\GetResponse;
 use Barsam\User\Models\User;
-use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Spiral\Http\Exception\HttpException;
 use Spiral\Http\Request\InputManager;
@@ -132,11 +126,10 @@ class AuthController
     }
 
     #[Route('/auth', name: 'auth.logout', methods: ['DELETE'], group: 'api_auth')]
-    public function logout(ServerRequestInterface $request): array
+    public function logout(): array
     {
-        $tokenParts = explode(' ', $request->getHeader('Authorization')[0])[1];
         $authRequest = new LogoutSessionRequest();
-        $authRequest->setAccessToken($tokenParts);
+        $authRequest->setAccessToken(Auth::getToken());
 
         $this->authService->LogoutSession(
             $authRequest,

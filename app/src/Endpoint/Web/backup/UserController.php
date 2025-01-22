@@ -2,15 +2,15 @@
 
 namespace App\Endpoint\Web\backup;
 
-use App\Domain\Mapper\CheckCredentialMapper;
+use App\Domain\Mapper\Backup\CheckCredentialMapper;
+use App\Domain\Mapper\Backup\DeleteUserMapper;
+use App\Domain\Mapper\Backup\FieldCreateMapper;
+use App\Domain\Mapper\Backup\FieldDeleteMapper;
+use App\Domain\Mapper\Backup\FieldGetMapper;
+use App\Domain\Mapper\Backup\FieldUpdateMapper;
+use App\Domain\Mapper\Backup\GetUserMapper;
+use App\Domain\Mapper\Backup\UpdateUserMapper;
 use App\Domain\Mapper\CreateUserMapper;
-use App\Domain\Mapper\DeleteUserMapper;
-use App\Domain\Mapper\FieldCreateMapper;
-use App\Domain\Mapper\FieldDeleteMapper;
-use App\Domain\Mapper\FieldGetMapper;
-use App\Domain\Mapper\FieldUpdateMapper;
-use App\Domain\Mapper\GetUserMapper;
-use App\Domain\Mapper\UpdateUserMapper;
 use App\Service\UserService;
 use App\Utility\GoogleTimeHelper;
 use Barsam\User\Messages\CheckCredentialsResponse;
@@ -84,7 +84,7 @@ class UserController
             $usersArray = [
                 'id' => $user->getId(),
                 'login_id' => $user->getLoginId(),
-//                'password' => $user->getPassword(),
+                'password' => $user->getPassword(),
                 'created_at' => GoogleTimeHelper::timestampToDateTimeImmutable($user->getCreatedAt())->format(DateTimeInterface::ATOM),
                 'updated_at' => GoogleTimeHelper::timestampToDateTimeImmutable($user->getUpdatedAt())->format(DateTimeInterface::ATOM),
                 'deleted_at' => $user->getDeletedAt() ?

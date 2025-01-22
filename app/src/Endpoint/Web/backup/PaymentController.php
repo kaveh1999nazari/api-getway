@@ -2,8 +2,8 @@
 
 namespace App\Endpoint\Web\backup;
 
-use App\Domain\Mapper\PaymentRequestMapper;
-use App\Domain\Mapper\PaymentVerifyMapper;
+use App\Domain\Mapper\Backup\PaymentRequestMapper;
+use App\Domain\Mapper\Backup\PaymentVerifyMapper;
 use App\Service\PaymentService;
 use Barsam\Payment\Messages\RequestResponse;
 use Barsam\Payment\Messages\VerifyResponse;

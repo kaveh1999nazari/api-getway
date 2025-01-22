@@ -2,10 +2,10 @@
 
 namespace App\Endpoint\Web\backup;
 
-use App\Domain\Mapper\CpgCreateMapper;
-use App\Domain\Mapper\CpgDeleteMapper;
-use App\Domain\Mapper\CpgGetMapper;
-use App\Domain\Mapper\CpgUpdateMapper;
+use App\Domain\Mapper\Backup\CpgCreateMapper;
+use App\Domain\Mapper\Backup\CpgDeleteMapper;
+use App\Domain\Mapper\Backup\CpgGetMapper;
+use App\Domain\Mapper\Backup\CpgUpdateMapper;
 use App\Service\CpgService;
 use Barsam\Cpg\Messages\CreateResponse;
 use Barsam\Cpg\Messages\DeleteResponse;

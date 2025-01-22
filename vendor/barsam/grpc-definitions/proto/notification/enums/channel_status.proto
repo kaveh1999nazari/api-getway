@@ -1,8 +1,0 @@
-syntax = "proto3";
-
-package barsam.notification.enums;
-
-enum ChannelStatus {
-  ACTIVE = 0;
-  INACTIVE = 1;
-}

@@ -2,7 +2,7 @@
 
 namespace App\Endpoint\Web\backup;
 
-use App\Domain\Mapper\OtpGenerateMapper;
+use App\Domain\Mapper\Backup\OtpGenerateMapper;
 use App\Domain\Mapper\OtpVerifyMapper;
 use App\Service\OtpService;
 use Barsam\Otp\Messages\GenerateResponse;
