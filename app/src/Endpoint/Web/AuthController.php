@@ -132,11 +132,11 @@ class AuthController
     }
 
     #[Route('/auth', name: 'auth.logout', methods: ['DELETE'], group: 'api_auth')]
-    public function logout(ServerRequestInterface $request)
+    public function logout(ServerRequestInterface $request): array
     {
-        $tokenParts = explode(' ', $request->getHeader('Authorization')[0]);
+        $tokenParts = explode(' ', $request->getHeader('Authorization')[0])[1];
         $authRequest = new LogoutSessionRequest();
-        $authRequest->setAccessToken($tokenParts[0]);
+        $authRequest->setAccessToken($tokenParts);
 
         $this->authService->LogoutSession(
             $authRequest,
