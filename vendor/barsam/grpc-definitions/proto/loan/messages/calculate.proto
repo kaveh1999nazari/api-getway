@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package barsam.loan.messages;
+
+// Define the request message
+message CalculateRequest {
+  uint64 plan_id = 1;
+  string selected_amount = 2;
+  uint32 selected_duration = 3;
+}
+
+// Define the response message
+message CalculateResponse {
+    string installment_amount = 1;
+    string infrastructure_amount = 2;
+    string prepayment_amount = 3;
+    string total_prepayment_amount = 4;
+    string total_user_payment = 5;
+}

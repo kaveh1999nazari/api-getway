@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package barsam.wallet.models;
+
+message Payment {
+  uint64 id = 1;
+  uint64 transaction_id = 2;
+  uint64 user_id = 3;
+}
