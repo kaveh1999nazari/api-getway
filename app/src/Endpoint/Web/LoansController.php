@@ -3,8 +3,10 @@
 namespace App\Endpoint\Web;
 
 use App\Domain\Mapper\CreateLoanMapper;
+use App\Endpoint\Web\backup\GetPlanLoanMapper;
 use App\Facade\Auth;
 use App\Service\LoanService;
+use App\Utility\GoogleTimeHelper;
 use App\Utility\GRPC\Response;
 use Barsam\Loan\Messages\CreateResponse;
 use Barsam\Loan\Messages\GetPlanRequest;
@@ -13,10 +15,12 @@ use Barsam\Loan\Messages\GetRequest;
 use Barsam\Loan\Messages\GetResponse;
 use Barsam\Loan\Models\Loan;
 use Barsam\Loan\Models\Plan;
+use DateTimeInterface;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Spiral\Http\Request\InputManager;
 use Spiral\Router\Annotation\Route;
+use Spiral\Http\Exception\HttpException;
 
 class LoansController
 {
@@ -95,12 +99,20 @@ class LoansController
                 'total_user_payment' => $loan->getTotalUserPayment(),
                 'credit_remaining' => $loan->getCreditRemaining(),
                 'refund_bank_account_number' => $loan->getRefundBankAccountNumber(),
-                'granted_at' => $loan->getGrantedAt()->getSeconds() ? date('Y-m-d H:i:s', $loan->getGrantedAt()->getSeconds()) : null,
+                'granted_at' => $loan->getGrantedAt()->getSeconds() ?
+                    GoogleTimeHelper::timestampToDateTimeImmutable($loan->getGrantedAt())->format(DateTimeInterface::ATOM)
+                    : null,
+                'created_at' => $loan->getCreatedAt()->getSeconds() ?
+                    GoogleTimeHelper::timestampToDateTimeImmutable($loan->getCreatedAt())->format(DateTimeInterface::ATOM)
+                    : null,
                 'status' => $loan->getStatus(),
                 'status_one' => $loan->getStatusOne(),
                 'status_two' => $loan->getStatusTow(),
                 'status_three' => $loan->getStatusThree(),
             ];
+
+
+
 
         }
         return $loansArray;
@@ -158,5 +170,30 @@ class LoansController
             'status_two' => $loan->getStatusTow(),
             'status_three' => $loan->getStatusThree(),
         ];
+    }
+
+    #[Route('/loans/plans/', methods: ['GET'], group: 'api_auth')]
+    public function getPlan(InputManager $input, ServerRequestInterface $request): array
+    {
+        $amount = $input->query('amount');
+
+        $loanRequest = GetPlanLoanMapper::fromRequest($input->data->all());
+
+        $loanResponse = $this->loanService->GetPlan(
+            $loanRequest,
+            GetPlanResponse::class
+        );
+
+        $min = $loanResponse->getResponse()->getplans()[0]->getMinAmount();
+        $max = $loanResponse->getResponse()->getplans()[0]->getMaxAmount();
+
+        if ($amount >= $min && $amount <= $max) {
+            $loan = iterator_to_array($loanResponse->getResponse()->getPlans())[0];
+            return [
+                'available_durations' => explode(',', $loan->getAvailableDurations()),
+            ];
+        } else {
+            throw new HttpException('مقدارت با مقدار موجود نمیخونه', 406);
+        }
     }
 }
