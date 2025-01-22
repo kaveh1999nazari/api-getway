@@ -164,7 +164,9 @@ class LoansController
             'credit_remaining' => $loan->getCreditRemaining(),
             'total_paid_installment' => 0,
             'refund_bank_account_number' => $loan->getRefundBankAccountNumber(),
-            'granted_at' => $loan->getGrantedAt()->getSeconds() ? date('Y-m-d H:i:s', $loan->getGrantedAt()->getSeconds()) : null,
+            'granted_at' => $loan->getGrantedAt()->getSeconds() ?
+                GoogleTimeHelper::timestampToDateTimeImmutable($loan->getGrantedAt())->format(DateTimeInterface::ATOM)
+                : null,
             'status_all' => $loan->getStatus(),
             'status_one' => $loan->getStatusOne(),
             'status_two' => $loan->getStatusTow(),
