@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package barsam.cpg.messages;
+
+import "google/protobuf/timestamp.proto";
+
+// Define the item message
+message Item {
+  string sku = 1;
+  string name = 2;
+  uint64 unit_price = 3;
+  uint64 quantity = 4;
+}
+
+// Define the request message
+message CreateRequest {
+  string amount = 1;
+  string mobile = 2;
+  string national_code = 3;
+  string description = 4;
+  string callback_url = 5;
+  string code = 6;
+  uint64 shope_id = 7;
+  google.protobuf.Timestamp expired_at = 8;
+  repeated Item items = 9; // Use the Item message here
+}
+
+// Define the response message
+message CreateResponse {
+  uint64 cpg_request_id = 1;
+}

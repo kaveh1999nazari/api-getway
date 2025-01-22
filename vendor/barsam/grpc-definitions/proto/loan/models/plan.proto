@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package barsam.loan.models;
+
+import "google/protobuf/timestamp.proto";
+
+message Plan {
+  uint64 id = 1;
+  string title = 2;
+  string max_amount = 3;
+  string min_amount = 4;
+  double interest_rate = 5;
+  double infrastructure_rate = 6;
+  double prepayment_rate = 7;
+  string available_durations = 8;
+  string description = 9;
+  google.protobuf.Timestamp created_at = 10;
+  google.protobuf.Timestamp updated_at = 11;
+}

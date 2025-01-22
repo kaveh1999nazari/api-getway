@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package barsam.payment.enums;
+
+enum PaymentType {
+  // Unknown payment type
+  UNKNOWN = 0;
+
+  // Redirect payment
+  // Requires the user to be redirected to the specified link
+  REDIRECT = 1;
+
+  // Payment form
+  // Requires the user to submit a form the specified link with the specified data
+  FORM = 2;
+}

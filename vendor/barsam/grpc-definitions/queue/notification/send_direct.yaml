@@ -1,0 +1,24 @@
+consumer:
+  module: notification
+  name: send_direct
+  description: >
+    This queue handles the direct sending of notifications. It processes messages
+    that contain information about the recipient and the content of the notification.
+
+  payload:
+    channel_id:
+      type: int
+      required: true
+      description: The ID of the channel to send the notification to.
+    recipient:
+      type: string
+      required: true
+      description: The recipient of the notification (mobile, email, etc.).
+    content:
+      type: string
+      required: true
+      description: The content of the notification.
+    subject:
+      type: string
+      required: false
+      description: The subject of the notification if sending an email.

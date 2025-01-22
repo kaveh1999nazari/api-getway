@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package barsam.loan.enums;
+
+enum Status {
+  STATUS_UNKNOWN = 0;
+  STATUS_PENDING = 1;
+  STATUS_WAITING_FOR_CONFIRMATION = 2;
+  STATUS_CONFIRMED = 3;
+  STATUS_PAID = 4;
+  STATUS_DONE = 5;
+}

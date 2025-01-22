@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package barsam.user.messages;
+
+// Define the request message
+message FieldDeleteRequest {
+  uint64 id = 1;
+}
+
+// Define the response message
+message FieldDeleteResponse {
+
+}

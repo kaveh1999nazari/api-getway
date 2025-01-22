@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package barsam.auth.models;
+
+message Session {
+  uint64 id = 1;
+  string user_agent = 2;
+  string ip_address = 3;
+  string location = 4;
+  string last_used_at = 5;
+  string created_at = 6;
+  uint64 user_id = 7;
+}

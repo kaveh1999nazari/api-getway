@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package barsam.otp;
+
+import "otp/messages/generate.proto";
+import "otp/messages/verify.proto";
+
+// OTP Service
+service OtpService {
+  // Generate OTP
+  rpc Generate(messages.GenerateRequest) returns (messages.GenerateResponse);
+
+  // Verify OTP
+  rpc Verify(messages.VerifyRequest) returns (messages.VerifyResponse);
+}

@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package barsam.ticket.models;
+
+import "google/protobuf/timestamp.proto";
+
+message TicketReply {
+  uint64 id = 1;
+  uint64 ticket_id = 2;
+  uint64 user_id = 3;
+  string body = 4;
+  repeated string files = 5;
+  bool is_admin = 6;
+  google.protobuf.Timestamp created_at = 7;
+}

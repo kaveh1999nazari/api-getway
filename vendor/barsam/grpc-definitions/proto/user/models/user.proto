@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package barsam.user.models;
+
+import "google/protobuf/timestamp.proto";
+import "user/models/user_meta.proto";
+
+message User {
+  string id = 1;
+  string login_id = 2;
+  string password = 3;
+  bool is_merchant = 4;
+  // The user's meta fields
+  repeated models.UserMeta user_metas = 5;
+  google.protobuf.Timestamp created_at = 6;
+  google.protobuf.Timestamp updated_at = 7;
+  google.protobuf.Timestamp deleted_at = 8;
+}

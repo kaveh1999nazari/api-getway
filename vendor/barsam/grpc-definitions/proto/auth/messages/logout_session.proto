@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package barsam.auth.messages;
+
+// Define the request message
+message LogoutSessionRequest {
+  oneof _ {
+    string access_token = 1;
+    uint64 session_id = 2;
+  }
+}
+
+// Define the response message
+message LogoutSessionResponse {
+
+}

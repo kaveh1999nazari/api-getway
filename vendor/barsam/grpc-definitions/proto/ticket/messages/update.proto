@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package barsam.ticket.messages;
+
+import "ticket/enums/ticket_status.proto";
+
+// Define the request message
+message UpdateRequest {
+  uint64 id = 1;
+  enums.TicketStatus status = 2;
+  string private_note = 3;
+  repeated string tags = 4;
+}
+
+// Define the response message
+message UpdateResponse {
+
+}

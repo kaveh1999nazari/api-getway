@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package barsam.loan.enums;
+
+enum StatusTow {
+  STATUS_LEVEL2_UNKNOWN = 0;
+  STATUS_LEVEL2_PENDING = 1;
+  STATUS_LEVEL2_WAITING_FOR_CONFIRMATION = 2;
+  STATUS_LEVEL2_CONFIRMED = 3;
+  STATUS_LEVEL2_REJECTED = 4;
+}

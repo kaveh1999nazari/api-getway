@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package barsam.loan.messages;
+
+import "loan/models/loan.proto";
+
+message GetRequest {
+  uint64 id = 1;
+
+  // The user ID to filter the loans
+  uint64 user_id = 2;
+
+  // The page number
+  uint32 page = 3;
+
+  // The number of items per page
+  uint32 per_page = 4;
+}
+
+message GetResponse {
+  // The list of loans
+  repeated models.Loan loans = 1;
+
+  // The total number of loans
+  uint64 total_records = 2;
+
+  // The total number of pages
+  uint32 max_page = 3;
+
+}

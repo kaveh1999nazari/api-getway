@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package barsam.organization.messages;
+
+// Define the request message
+message UpdateRequest {
+  uint64 id = 1;
+  string name = 2;
+  string address = 3;
+  string email = 4;
+  string phone = 5;
+  string city = 6;
+  string website = 7;
+}
+
+// Define the response message
+message UpdateResponse {
+
+}
