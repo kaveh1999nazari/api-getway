@@ -16,7 +16,6 @@ use Barsam\Loan\Messages\GetResponse;
 use Barsam\Loan\Models\Loan;
 use Barsam\Loan\Models\Plan;
 use DateTimeInterface;
-use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Spiral\Http\Request\InputManager;
 use Spiral\Router\Annotation\Route;
@@ -110,10 +109,6 @@ class LoansController
                 'status_two' => $loan->getStatusTow(),
                 'status_three' => $loan->getStatusThree(),
             ];
-
-
-
-
         }
         return $loansArray;
     }
