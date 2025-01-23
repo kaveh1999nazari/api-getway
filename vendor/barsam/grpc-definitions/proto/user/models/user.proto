@@ -4,6 +4,7 @@ package barsam.user.models;
 
 import "google/protobuf/timestamp.proto";
 import "user/models/user_meta.proto";
+import "user/enums/status.proto";
 
 message User {
   string id = 1;
@@ -15,5 +16,5 @@ message User {
   google.protobuf.Timestamp created_at = 6;
   google.protobuf.Timestamp updated_at = 7;
   google.protobuf.Timestamp deleted_at = 8;
-  bool is_active = 9;
+  enums.Status status = 9;
 }

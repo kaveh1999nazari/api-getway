@@ -7,9 +7,10 @@ import "location/models/address.proto";
 // Define the request message
 message GetRequest {
   uint64 id = 1;
+  uint64 user_id = 2;
 }
 
 // Define the response message
 message GetResponse {
-  models.Address address = 1;
+  repeated models.Address addresses = 1;
 }

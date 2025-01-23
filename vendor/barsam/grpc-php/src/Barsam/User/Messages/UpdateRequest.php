@@ -36,9 +36,9 @@ class UpdateRequest extends \Google\Protobuf\Internal\Message
     /**
      *Change user status
      *
-     * Generated from protobuf field <code>bool is_active = 4;</code>
+     * Generated from protobuf field <code>.barsam.user.enums.Status status = 4;</code>
      */
-    protected $is_active = false;
+    protected $status = 0;
 
     /**
      * Constructor.
@@ -52,7 +52,7 @@ class UpdateRequest extends \Google\Protobuf\Internal\Message
      *           Non-encrypted password
      *     @type array|\Google\Protobuf\Internal\MapField $meta_fields
      *           Meta fields
-     *     @type bool $is_active
+     *     @type int $status
      *          Change user status
      * }
      */
@@ -142,25 +142,25 @@ class UpdateRequest extends \Google\Protobuf\Internal\Message
     /**
      *Change user status
      *
-     * Generated from protobuf field <code>bool is_active = 4;</code>
-     * @return bool
+     * Generated from protobuf field <code>.barsam.user.enums.Status status = 4;</code>
+     * @return int
      */
-    public function getIsActive()
+    public function getStatus()
     {
-        return $this->is_active;
+        return $this->status;
     }
 
     /**
      *Change user status
      *
-     * Generated from protobuf field <code>bool is_active = 4;</code>
-     * @param bool $var
+     * Generated from protobuf field <code>.barsam.user.enums.Status status = 4;</code>
+     * @param int $var
      * @return $this
      */
-    public function setIsActive($var)
+    public function setStatus($var)
     {
-        GPBUtil::checkBool($var);
-        $this->is_active = $var;
+        GPBUtil::checkEnum($var, \Barsam\User\Enums\Status::class);
+        $this->status = $var;
 
         return $this;
     }

@@ -6,7 +6,7 @@ import "location/models/city.proto";
 
 // Define the request message
 message GetCityRequest {
-  string province_id = 1;
+  uint64 province_id = 1;
 }
 
 // Define the response message

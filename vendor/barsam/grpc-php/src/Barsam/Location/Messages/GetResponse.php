@@ -16,9 +16,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class GetResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>.barsam.location.models.Address address = 1;</code>
+     * Generated from protobuf field <code>repeated .barsam.location.models.Address addresses = 1;</code>
      */
-    protected $address = null;
+    private $addresses;
 
     /**
      * Constructor.
@@ -26,7 +26,7 @@ class GetResponse extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type \Barsam\Location\Models\Address $address
+     *     @type array<\Barsam\Location\Models\Address>|\Google\Protobuf\Internal\RepeatedField $addresses
      * }
      */
     public function __construct($data = NULL) {
@@ -35,33 +35,23 @@ class GetResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.barsam.location.models.Address address = 1;</code>
-     * @return \Barsam\Location\Models\Address|null
+     * Generated from protobuf field <code>repeated .barsam.location.models.Address addresses = 1;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
      */
-    public function getAddress()
+    public function getAddresses()
     {
-        return $this->address;
-    }
-
-    public function hasAddress()
-    {
-        return isset($this->address);
-    }
-
-    public function clearAddress()
-    {
-        unset($this->address);
+        return $this->addresses;
     }
 
     /**
-     * Generated from protobuf field <code>.barsam.location.models.Address address = 1;</code>
-     * @param \Barsam\Location\Models\Address $var
+     * Generated from protobuf field <code>repeated .barsam.location.models.Address addresses = 1;</code>
+     * @param array<\Barsam\Location\Models\Address>|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
-    public function setAddress($var)
+    public function setAddresses($var)
     {
-        GPBUtil::checkMessage($var, \Barsam\Location\Models\Address::class);
-        $this->address = $var;
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Barsam\Location\Models\Address::class);
+        $this->addresses = $arr;
 
         return $this;
     }

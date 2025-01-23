@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package barsam.user.enums;
+
+enum Status {
+  USER_UNKNOWN = 0;
+  USER_ACTIVE = 1;
+  USER_DEACTIVE = 2;
+  USER_BANNED = 3;
+
+}

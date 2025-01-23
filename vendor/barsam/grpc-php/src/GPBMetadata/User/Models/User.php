@@ -16,10 +16,11 @@ class User
         }
         \GPBMetadata\Google\Protobuf\Timestamp::initOnce();
         \GPBMetadata\User\Models\UserMeta::initOnce();
+        \GPBMetadata\User\Enums\Status::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ô
-user/models/user.protobarsam.user.modelsuser/models/user_meta.proto" 
+¥
+user/models/user.protobarsam.user.modelsuser/models/user_meta.protouser/enums/status.proto"¸
 User
 
 id (	
@@ -33,8 +34,8 @@ created_at (2.google.protobuf.Timestamp.
 
 updated_at (2.google.protobuf.Timestamp.
 
-deleted_at (2.google.protobuf.Timestamp
-	is_active	 (bproto3'
+deleted_at (2.google.protobuf.Timestamp)
+status	 (2.barsam.user.enums.Statusbproto3'
         , true);
 
         static::$is_initialized = true;

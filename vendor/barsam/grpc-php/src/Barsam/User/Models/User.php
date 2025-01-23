@@ -48,9 +48,9 @@ class User extends \Google\Protobuf\Internal\Message
      */
     protected $deleted_at = null;
     /**
-     * Generated from protobuf field <code>bool is_active = 9;</code>
+     * Generated from protobuf field <code>.barsam.user.enums.Status status = 9;</code>
      */
-    protected $is_active = false;
+    protected $status = 0;
 
     /**
      * Constructor.
@@ -67,7 +67,7 @@ class User extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\Timestamp $created_at
      *     @type \Google\Protobuf\Timestamp $updated_at
      *     @type \Google\Protobuf\Timestamp $deleted_at
-     *     @type bool $is_active
+     *     @type int $status
      * }
      */
     public function __construct($data = NULL) {
@@ -286,23 +286,23 @@ class User extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool is_active = 9;</code>
-     * @return bool
+     * Generated from protobuf field <code>.barsam.user.enums.Status status = 9;</code>
+     * @return int
      */
-    public function getIsActive()
+    public function getStatus()
     {
-        return $this->is_active;
+        return $this->status;
     }
 
     /**
-     * Generated from protobuf field <code>bool is_active = 9;</code>
-     * @param bool $var
+     * Generated from protobuf field <code>.barsam.user.enums.Status status = 9;</code>
+     * @param int $var
      * @return $this
      */
-    public function setIsActive($var)
+    public function setStatus($var)
     {
-        GPBUtil::checkBool($var);
-        $this->is_active = $var;
+        GPBUtil::checkEnum($var, \Barsam\User\Enums\Status::class);
+        $this->status = $var;
 
         return $this;
     }

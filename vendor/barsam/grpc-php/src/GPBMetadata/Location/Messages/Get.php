@@ -17,14 +17,15 @@ class Get
         \GPBMetadata\Location\Models\Address::initOnce();
         $pool->internalAddGeneratedFile(
             '
-š
-location/messages/get.protobarsam.location.messages"
+­
+location/messages/get.protobarsam.location.messages")
 
 GetRequest
 
-id ("?
-GetResponse0
-address (2.barsam.location.models.Addressbproto3'
+id (
+user_id ("A
+GetResponse2
+	addresses (2.barsam.location.models.Addressbproto3'
         , true);
 
         static::$is_initialized = true;

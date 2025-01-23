@@ -14,16 +14,17 @@ class Update
         if (static::$is_initialized == true) {
           return;
         }
+        \GPBMetadata\User\Enums\Status::initOnce();
         $pool->internalAddGeneratedFile(
             '
-
-user/messages/update.protobarsam.user.messages"Á
+¨
+user/messages/update.protobarsam.user.messages"Ù
 UpdateRequest
 
 id (
 password_raw (	H
-meta_fields (23.barsam.user.messages.UpdateRequest.MetaFieldsEntry
-	is_active (1
+meta_fields (23.barsam.user.messages.UpdateRequest.MetaFieldsEntry)
+status (2.barsam.user.enums.Status1
 MetaFieldsEntry
 key (
 value (	:8"

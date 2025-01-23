@@ -1,5 +1,7 @@
 syntax = "proto3";
 
+import "user/enums/status.proto";
+
 package barsam.user.messages;
 
 // Define the request message
@@ -14,7 +16,7 @@ message UpdateRequest {
   map<uint64, string> meta_fields = 3;
 
   //Change user status
-  bool is_active = 4;
+  enums.Status status = 4;
 
 }
 

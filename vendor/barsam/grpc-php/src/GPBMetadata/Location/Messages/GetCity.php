@@ -20,7 +20,7 @@ class GetCity
 ¬
  location/messages/get_city.protobarsam.location.messages"%
 GetCityRequest
-province_id (	"?
+province_id ("?
 GetCityResponse,
 cities (2.barsam.location.models.Citybproto3'
         , true);

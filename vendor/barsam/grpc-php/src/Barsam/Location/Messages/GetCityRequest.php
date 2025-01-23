@@ -16,9 +16,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class GetCityRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string province_id = 1;</code>
+     * Generated from protobuf field <code>uint64 province_id = 1;</code>
      */
-    protected $province_id = '';
+    protected $province_id = 0;
 
     /**
      * Constructor.
@@ -26,7 +26,7 @@ class GetCityRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $province_id
+     *     @type int|string $province_id
      * }
      */
     public function __construct($data = NULL) {
@@ -35,8 +35,8 @@ class GetCityRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string province_id = 1;</code>
-     * @return string
+     * Generated from protobuf field <code>uint64 province_id = 1;</code>
+     * @return int|string
      */
     public function getProvinceId()
     {
@@ -44,13 +44,13 @@ class GetCityRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string province_id = 1;</code>
-     * @param string $var
+     * Generated from protobuf field <code>uint64 province_id = 1;</code>
+     * @param int|string $var
      * @return $this
      */
     public function setProvinceId($var)
     {
-        GPBUtil::checkString($var, True);
+        GPBUtil::checkUint64($var);
         $this->province_id = $var;
 
         return $this;
