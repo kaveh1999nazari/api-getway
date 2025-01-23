@@ -15,10 +15,11 @@ class Installment
           return;
         }
         \GPBMetadata\Google\Protobuf\Timestamp::initOnce();
+        \GPBMetadata\Installment\Enums\Status::initOnce();
         $pool->internalAddGeneratedFile(
             '
-á
-$installment/models/installment.protobarsam.installment.models"•
+³
+$installment/models/installment.protobarsam.installment.modelsinstallment/enums/status.proto"Ç
 Installment
 
 id (
@@ -34,7 +35,8 @@ created_at (2.google.protobuf.Timestamp.
 updated_at	 (2.google.protobuf.Timestamp.
 
 deleted_at
- (2.google.protobuf.Timestampbproto3'
+ (2.google.protobuf.Timestamp0
+status (2 .barsam.installment.enums.Statusbproto3'
         , true);
 
         static::$is_initialized = true;

@@ -21,8 +21,8 @@ class Loan
         \GPBMetadata\Loan\Enums\StatusThree::initOnce();
         $pool->internalAddGeneratedFile(
             '
-þ
-loan/models/loan.protobarsam.loan.modelsloan/enums/status.protoloan/enums/status_one.protoloan/enums/status_tow.protoloan/enums/status_three.proto"Õ
+œ
+loan/models/loan.protobarsam.loan.modelsloan/enums/status.protoloan/enums/status_one.protoloan/enums/status_tow.protoloan/enums/status_three.proto"ó
 Loan
 
 id (
@@ -52,7 +52,8 @@ created_at (2.google.protobuf.Timestamp.
 
 updated_at (2.google.protobuf.Timestamp.
 
-deleted_at (2.google.protobuf.Timestampbproto3'
+deleted_at (2.google.protobuf.Timestamp
+is_approved_by_admin (bproto3'
         , true);
 
         static::$is_initialized = true;

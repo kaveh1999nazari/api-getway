@@ -35,6 +35,10 @@ class UpdateRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string due_date = 5;</code>
      */
     protected $due_date = '';
+    /**
+     * Generated from protobuf field <code>.barsam.installment.enums.Status status = 6;</code>
+     */
+    protected $status = 0;
 
     /**
      * Constructor.
@@ -47,6 +51,7 @@ class UpdateRequest extends \Google\Protobuf\Internal\Message
      *     @type string $amount
      *     @type string $penalty_amount
      *     @type string $due_date
+     *     @type int $status
      * }
      */
     public function __construct($data = NULL) {
@@ -160,6 +165,28 @@ class UpdateRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->due_date = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.barsam.installment.enums.Status status = 6;</code>
+     * @return int
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * Generated from protobuf field <code>.barsam.installment.enums.Status status = 6;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setStatus($var)
+    {
+        GPBUtil::checkEnum($var, \Barsam\Installment\Enums\Status::class);
+        $this->status = $var;
 
         return $this;
     }

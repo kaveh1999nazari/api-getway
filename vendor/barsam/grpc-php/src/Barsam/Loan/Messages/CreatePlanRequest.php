@@ -47,6 +47,10 @@ class CreatePlanRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string description = 8;</code>
      */
     protected $description = '';
+    /**
+     * Generated from protobuf field <code>int64 organization_id = 9;</code>
+     */
+    protected $organization_id = 0;
 
     /**
      * Constructor.
@@ -62,6 +66,7 @@ class CreatePlanRequest extends \Google\Protobuf\Internal\Message
      *     @type float $prepayment_rate
      *     @type string $available_durations
      *     @type string $description
+     *     @type int|string $organization_id
      * }
      */
     public function __construct($data = NULL) {
@@ -241,6 +246,28 @@ class CreatePlanRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->description = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>int64 organization_id = 9;</code>
+     * @return int|string
+     */
+    public function getOrganizationId()
+    {
+        return $this->organization_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>int64 organization_id = 9;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setOrganizationId($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->organization_id = $var;
 
         return $this;
     }

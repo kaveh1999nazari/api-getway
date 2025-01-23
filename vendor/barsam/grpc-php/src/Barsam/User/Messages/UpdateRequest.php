@@ -33,6 +33,12 @@ class UpdateRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>map<uint64, string> meta_fields = 3;</code>
      */
     private $meta_fields;
+    /**
+     *Change user status
+     *
+     * Generated from protobuf field <code>bool is_active = 4;</code>
+     */
+    protected $is_active = false;
 
     /**
      * Constructor.
@@ -46,6 +52,8 @@ class UpdateRequest extends \Google\Protobuf\Internal\Message
      *           Non-encrypted password
      *     @type array|\Google\Protobuf\Internal\MapField $meta_fields
      *           Meta fields
+     *     @type bool $is_active
+     *          Change user status
      * }
      */
     public function __construct($data = NULL) {
@@ -127,6 +135,32 @@ class UpdateRequest extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::UINT64, \Google\Protobuf\Internal\GPBType::STRING);
         $this->meta_fields = $arr;
+
+        return $this;
+    }
+
+    /**
+     *Change user status
+     *
+     * Generated from protobuf field <code>bool is_active = 4;</code>
+     * @return bool
+     */
+    public function getIsActive()
+    {
+        return $this->is_active;
+    }
+
+    /**
+     *Change user status
+     *
+     * Generated from protobuf field <code>bool is_active = 4;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setIsActive($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->is_active = $var;
 
         return $this;
     }

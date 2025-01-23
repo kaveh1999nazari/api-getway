@@ -3,6 +3,7 @@ syntax = "proto3";
 package barsam.installment.models;
 
 import "google/protobuf/timestamp.proto";
+import "installment/enums/status.proto";
 
 message Installment {
   uint64 id = 1;
@@ -15,4 +16,5 @@ message Installment {
   google.protobuf.Timestamp created_at = 8;
   google.protobuf.Timestamp updated_at = 9;
   google.protobuf.Timestamp deleted_at = 10;
+  enums.Status status = 11;
 }

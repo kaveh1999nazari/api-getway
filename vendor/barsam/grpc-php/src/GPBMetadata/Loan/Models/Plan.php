@@ -17,8 +17,8 @@ class Plan
         \GPBMetadata\Google\Protobuf\Timestamp::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ß
-loan/models/plan.protobarsam.loan.models"¨
+ø
+loan/models/plan.protobarsam.loan.models"Á
 Plan
 
 id (
@@ -36,7 +36,8 @@ min_amount (	
 created_at
  (2.google.protobuf.Timestamp.
 
-updated_at (2.google.protobuf.Timestampbproto3'
+updated_at (2.google.protobuf.Timestamp
+organization_id (bproto3'
         , true);
 
         static::$is_initialized = true;

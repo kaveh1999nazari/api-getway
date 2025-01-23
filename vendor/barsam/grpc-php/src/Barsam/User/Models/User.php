@@ -47,6 +47,10 @@ class User extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Timestamp deleted_at = 8;</code>
      */
     protected $deleted_at = null;
+    /**
+     * Generated from protobuf field <code>bool is_active = 9;</code>
+     */
+    protected $is_active = false;
 
     /**
      * Constructor.
@@ -63,6 +67,7 @@ class User extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\Timestamp $created_at
      *     @type \Google\Protobuf\Timestamp $updated_at
      *     @type \Google\Protobuf\Timestamp $deleted_at
+     *     @type bool $is_active
      * }
      */
     public function __construct($data = NULL) {
@@ -276,6 +281,28 @@ class User extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->deleted_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool is_active = 9;</code>
+     * @return bool
+     */
+    public function getIsActive()
+    {
+        return $this->is_active;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool is_active = 9;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setIsActive($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->is_active = $var;
 
         return $this;
     }

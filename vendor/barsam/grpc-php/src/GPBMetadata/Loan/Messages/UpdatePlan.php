@@ -16,8 +16,8 @@ class UpdatePlan
         }
         $pool->internalAddGeneratedFile(
             '
-­
-loan/messages/update_plan.protobarsam.loan.messages"Õ
+Æ
+loan/messages/update_plan.protobarsam.loan.messages"î
 UpdatePlanRequest
 
 id (
@@ -30,7 +30,9 @@ min_amount (	
 infrastructure_rate (
 prepayment_rate (
 available_durations (	
-description	 (	"
+description	 (	
+organization_id
+ ("
 UpdatePlanResponsebproto3'
         , true);
 

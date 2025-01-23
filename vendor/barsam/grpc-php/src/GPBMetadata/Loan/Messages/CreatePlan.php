@@ -16,8 +16,8 @@ class CreatePlan
         }
         $pool->internalAddGeneratedFile(
             '
-­
-loan/messages/create_plan.protobarsam.loan.messages"É
+Æ
+loan/messages/create_plan.protobarsam.loan.messages"â
 CreatePlanRequest
 title (	
 
@@ -28,7 +28,8 @@ min_amount (	
 infrastructure_rate (
 prepayment_rate (
 available_durations (	
-description (	" 
+description (	
+organization_id	 (" 
 CreatePlanResponse
 
 id (bproto3'

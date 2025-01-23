@@ -79,6 +79,10 @@ class UpdateRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.barsam.loan.enums.StatusThree status_three = 16;</code>
      */
     protected $status_three = 0;
+    /**
+     * Generated from protobuf field <code>bool is_approved_by_admin = 17;</code>
+     */
+    protected $is_approved_by_admin = false;
 
     /**
      * Constructor.
@@ -102,6 +106,7 @@ class UpdateRequest extends \Google\Protobuf\Internal\Message
      *     @type int $status_one
      *     @type int $status_tow
      *     @type int $status_three
+     *     @type bool $is_approved_by_admin
      * }
      */
     public function __construct($data = NULL) {
@@ -467,6 +472,28 @@ class UpdateRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Barsam\Loan\Enums\StatusThree::class);
         $this->status_three = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool is_approved_by_admin = 17;</code>
+     * @return bool
+     */
+    public function getIsApprovedByAdmin()
+    {
+        return $this->is_approved_by_admin;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool is_approved_by_admin = 17;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setIsApprovedByAdmin($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->is_approved_by_admin = $var;
 
         return $this;
     }

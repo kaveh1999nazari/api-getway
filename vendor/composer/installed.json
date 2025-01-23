@@ -218,17 +218,17 @@
         },
         {
             "name": "barsam/grpc-definitions",
-            "version": "0.52.0",
-            "version_normalized": "0.52.0.0",
+            "version": "0.53.2",
+            "version_normalized": "0.53.2.0",
             "source": {
                 "type": "git",
                 "url": "git@gitlab.dngs.ir:microservices/grpc-definition.git",
-                "reference": "2e7435a1c67066334f4d132a0aa112ec5606a1f1"
+                "reference": "2fdcfb7011eb5b851135e2b0fd38ea1cbea76f98"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://gitlab.dngs.ir/api/v4/projects/26/packages/composer/archives/barsam/grpc-definitions.zip?sha=2e7435a1c67066334f4d132a0aa112ec5606a1f1",
-                "reference": "2e7435a1c67066334f4d132a0aa112ec5606a1f1",
+                "url": "https://gitlab.dngs.ir/api/v4/projects/26/packages/composer/archives/barsam/grpc-definitions.zip?sha=2fdcfb7011eb5b851135e2b0fd38ea1cbea76f98",
+                "reference": "2fdcfb7011eb5b851135e2b0fd38ea1cbea76f98",
                 "shasum": ""
             },
             "type": "library",
@@ -243,17 +243,17 @@
         },
         {
             "name": "barsam/grpc-php",
-            "version": "0.63.0",
-            "version_normalized": "0.63.0.0",
+            "version": "0.65.0",
+            "version_normalized": "0.65.0.0",
             "source": {
                 "type": "git",
                 "url": "git@gitlab.dngs.ir:microservices/grpc-php.git",
-                "reference": "6fa2043d32653efd93356c3e3afb34607bbf1dc6"
+                "reference": "c79e12902f1d12fd6b162eb158b3b717a4839337"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://gitlab.dngs.ir/api/v4/projects/27/packages/composer/archives/barsam/grpc-php.zip?sha=6fa2043d32653efd93356c3e3afb34607bbf1dc6",
-                "reference": "6fa2043d32653efd93356c3e3afb34607bbf1dc6",
+                "url": "https://gitlab.dngs.ir/api/v4/projects/27/packages/composer/archives/barsam/grpc-php.zip?sha=c79e12902f1d12fd6b162eb158b3b717a4839337",
+                "reference": "c79e12902f1d12fd6b162eb158b3b717a4839337",
                 "shasum": ""
             },
             "require": {
@@ -343,17 +343,17 @@
         },
         {
             "name": "buggregator/trap",
-            "version": "1.13.1",
-            "version_normalized": "1.13.1.0",
+            "version": "1.13.2",
+            "version_normalized": "1.13.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/buggregator/trap.git",
-                "reference": "2ae227457719039383b04e79556d09203ba2786f"
+                "reference": "4359f6b43229c9a412ef9449de9f252798e30462"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/buggregator/trap/zipball/2ae227457719039383b04e79556d09203ba2786f",
-                "reference": "2ae227457719039383b04e79556d09203ba2786f",
+                "url": "https://api.github.com/repos/buggregator/trap/zipball/4359f6b43229c9a412ef9449de9f252798e30462",
+                "reference": "4359f6b43229c9a412ef9449de9f252798e30462",
                 "shasum": ""
             },
             "require": {
@@ -390,7 +390,7 @@
                 "ext-simplexml": "To load trap.xml",
                 "roxblnfk/unpoly": "If you want to remove unnecessary PHP polyfills depend on PHP version."
             },
-            "time": "2025-01-19T19:22:54+00:00",
+            "time": "2025-01-23T08:14:37+00:00",
             "bin": [
                 "bin/trap"
             ],
@@ -421,6 +421,7 @@
             "description": "A simple and powerful tool for debugging PHP applications.",
             "homepage": "https://buggregator.dev/",
             "keywords": [
+                "Fibers",
                 "WebSockets",
                 "binary dump",
                 "cli",
@@ -428,6 +429,7 @@
                 "debug",
                 "dev",
                 "dump",
+                "dumper",
                 "helper",
                 "sentry",
                 "server",
@@ -435,16 +437,12 @@
             ],
             "support": {
                 "issues": "https://github.com/buggregator/trap/issues",
-                "source": "https://github.com/buggregator/trap/tree/1.13.1"
+                "source": "https://github.com/buggregator/trap/tree/1.13.2"
             },
             "funding": [
                 {
-                    "url": "https://github.com/sponsors/buggregator",
-                    "type": "github"
-                },
-                {
-                    "url": "https://patreon.com/butschster",
-                    "type": "patreon"
+                    "url": "https://boosty.to/roxblnfk",
+                    "type": "boosty"
                 },
                 {
                     "url": "https://patreon.com/roxblnfk",

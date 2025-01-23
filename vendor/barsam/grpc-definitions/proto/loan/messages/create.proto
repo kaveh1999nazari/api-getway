@@ -26,6 +26,7 @@ message CreateRequest {
   enums.StatusOne status_one = 15;
   enums.StatusTow status_tow = 16;
   enums.StatusThree status_three = 17;
+  bool is_approved_by_admin = 18;
 }
 
 // Define the response message

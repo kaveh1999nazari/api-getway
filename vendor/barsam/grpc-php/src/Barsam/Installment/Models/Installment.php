@@ -53,6 +53,10 @@ class Installment extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Timestamp deleted_at = 10;</code>
      */
     protected $deleted_at = null;
+    /**
+     * Generated from protobuf field <code>.barsam.installment.enums.Status status = 11;</code>
+     */
+    protected $status = 0;
 
     /**
      * Constructor.
@@ -70,6 +74,7 @@ class Installment extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\Timestamp $created_at
      *     @type \Google\Protobuf\Timestamp $updated_at
      *     @type \Google\Protobuf\Timestamp $deleted_at
+     *     @type int $status
      * }
      */
     public function __construct($data = NULL) {
@@ -323,6 +328,28 @@ class Installment extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->deleted_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.barsam.installment.enums.Status status = 11;</code>
+     * @return int
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * Generated from protobuf field <code>.barsam.installment.enums.Status status = 11;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setStatus($var)
+    {
+        GPBUtil::checkEnum($var, \Barsam\Installment\Enums\Status::class);
+        $this->status = $var;
 
         return $this;
     }

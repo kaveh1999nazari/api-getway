@@ -25,6 +25,7 @@ message UpdateRequest {
   enums.StatusOne status_one = 14;
   enums.StatusTow status_tow = 15;
   enums.StatusThree status_three = 16;
+  bool is_approved_by_admin = 17;
 }
 
 message UpdateResponse {

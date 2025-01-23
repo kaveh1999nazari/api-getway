@@ -16,13 +16,14 @@ class Update
         }
         $pool->internalAddGeneratedFile(
             '
-ı
-user/messages/update.protobarsam.user.messages"®
+
+user/messages/update.protobarsam.user.messages"Á
 UpdateRequest
 
 id (
 password_raw (	H
-meta_fields (23.barsam.user.messages.UpdateRequest.MetaFieldsEntry1
+meta_fields (23.barsam.user.messages.UpdateRequest.MetaFieldsEntry
+	is_active (1
 MetaFieldsEntry
 key (
 value (	:8"

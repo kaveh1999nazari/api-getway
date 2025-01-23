@@ -18,8 +18,8 @@ class User
         \GPBMetadata\User\Models\UserMeta::initOnce();
         $pool->internalAddGeneratedFile(
             '
-·
-user/models/user.protobarsam.user.modelsuser/models/user_meta.proto"ç
+Ù
+user/models/user.protobarsam.user.modelsuser/models/user_meta.proto"†
 User
 
 id (	
@@ -33,7 +33,8 @@ created_at (2.google.protobuf.Timestamp.
 
 updated_at (2.google.protobuf.Timestamp.
 
-deleted_at (2.google.protobuf.Timestampbproto3'
+deleted_at (2.google.protobuf.Timestamp
+	is_active	 (bproto3'
         , true);
 
         static::$is_initialized = true;

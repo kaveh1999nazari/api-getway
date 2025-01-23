@@ -2,6 +2,8 @@ syntax = "proto3";
 
 package barsam.installment.messages;
 
+import "installment/enums/status.proto";
+
 // Define the request message
 message UpdateRequest {
   uint64 id = 1;
@@ -9,6 +11,7 @@ message UpdateRequest {
   string amount = 3;
   string penalty_amount = 4;
   string due_date = 5;
+  enums.Status status = 6;
 }
 
 // Define the response message

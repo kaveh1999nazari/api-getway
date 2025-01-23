@@ -14,17 +14,19 @@ class Update
         if (static::$is_initialized == true) {
           return;
         }
+        \GPBMetadata\Installment\Enums\Status::initOnce();
         $pool->internalAddGeneratedFile(
             '
-Á
-!installment/messages/update.protobarsam.installment.messages"e
+ô
+!installment/messages/update.protobarsam.installment.messages"—
 UpdateRequest
 
 id (
 number (
 amount (	
 penalty_amount (	
-due_date (	"
+due_date (	0
+status (2 .barsam.installment.enums.Status"
 UpdateResponsebproto3'
         , true);
 

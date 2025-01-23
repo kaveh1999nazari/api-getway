@@ -12,6 +12,10 @@ message UpdateRequest {
 
   // Meta fields
   map<uint64, string> meta_fields = 3;
+
+  //Change user status
+  bool is_active = 4;
+
 }
 
 // Define the response message

@@ -12,6 +12,7 @@ message CreatePlanRequest {
   double prepayment_rate = 6;
   string available_durations = 7;
   string description = 8;
+  int64 organization_id = 9;
 }
 
 // Define the response message

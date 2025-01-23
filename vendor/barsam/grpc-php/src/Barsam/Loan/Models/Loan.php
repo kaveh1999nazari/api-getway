@@ -97,6 +97,10 @@ class Loan extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Timestamp deleted_at = 21;</code>
      */
     protected $deleted_at = null;
+    /**
+     * Generated from protobuf field <code>bool is_approved_by_admin = 22;</code>
+     */
+    protected $is_approved_by_admin = false;
 
     /**
      * Constructor.
@@ -125,6 +129,7 @@ class Loan extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\Timestamp $created_at
      *     @type \Google\Protobuf\Timestamp $updated_at
      *     @type \Google\Protobuf\Timestamp $deleted_at
+     *     @type bool $is_approved_by_admin
      * }
      */
     public function __construct($data = NULL) {
@@ -630,6 +635,28 @@ class Loan extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->deleted_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool is_approved_by_admin = 22;</code>
+     * @return bool
+     */
+    public function getIsApprovedByAdmin()
+    {
+        return $this->is_approved_by_admin;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool is_approved_by_admin = 22;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setIsApprovedByAdmin($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->is_approved_by_admin = $var;
 
         return $this;
     }

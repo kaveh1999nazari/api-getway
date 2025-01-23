@@ -57,6 +57,10 @@ class Plan extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Timestamp updated_at = 11;</code>
      */
     protected $updated_at = null;
+    /**
+     * Generated from protobuf field <code>int64 organization_id = 12;</code>
+     */
+    protected $organization_id = 0;
 
     /**
      * Constructor.
@@ -75,6 +79,7 @@ class Plan extends \Google\Protobuf\Internal\Message
      *     @type string $description
      *     @type \Google\Protobuf\Timestamp $created_at
      *     @type \Google\Protobuf\Timestamp $updated_at
+     *     @type int|string $organization_id
      * }
      */
     public function __construct($data = NULL) {
@@ -340,6 +345,28 @@ class Plan extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->updated_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>int64 organization_id = 12;</code>
+     * @return int|string
+     */
+    public function getOrganizationId()
+    {
+        return $this->organization_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>int64 organization_id = 12;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setOrganizationId($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->organization_id = $var;
 
         return $this;
     }
