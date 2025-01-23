@@ -2,7 +2,7 @@
   "name": "barsam/grpc-php",
   "description": "A PHP implementation of Barsam gRPC",
   "type": "library",
-  "version": "0.70.0",
+  "version": "0.71.0",
   "autoload": {
     "psr-4": {
       "Barsam\\": "src/Barsam",

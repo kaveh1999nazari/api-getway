@@ -21,8 +21,8 @@ class Update
         \GPBMetadata\Loan\Enums\StatusThree::initOnce();
         $pool->internalAddGeneratedFile(
             '
-‹
-loan/messages/update.protobarsam.loan.messagesloan/enums/status.protoloan/enums/status_one.protoloan/enums/status_tow.protoloan/enums/status_three.proto"Ê
+¢
+loan/messages/update.protobarsam.loan.messagesloan/enums/status.protoloan/enums/status_one.protoloan/enums/status_tow.protoloan/enums/status_three.proto"á
 UpdateRequest
 
 id (
@@ -45,7 +45,8 @@ status_one (2.barsam.loan.enums.StatusOne0
 
 status_tow (2.barsam.loan.enums.StatusTow4
 status_three (2.barsam.loan.enums.StatusThree
-is_approved_by_admin ("
+is_approved_by_admin (
+guaranteeFile (	"
 UpdateResponsebproto3'
         , true);
 

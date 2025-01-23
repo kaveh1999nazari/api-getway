@@ -3,6 +3,7 @@
 namespace App\Endpoint\Web;
 
 
+use App\Domain\Mapper\CreateUserMapper;
 use App\Domain\Mapper\CurrentUserMapper;
 use App\Facade\Auth;
 use App\Service\AuthService;
@@ -18,12 +19,16 @@ use Barsam\Auth\Messages\IssueTokenRequest;
 use Barsam\Auth\Messages\IssueTokenResponse;
 use Barsam\Auth\Messages\LogoutSessionRequest;
 use Barsam\Auth\Messages\LogoutSessionResponse;
+use Barsam\Inquiry\Messages\InquireMobileOwnershipRequest;
+use Barsam\Inquiry\Messages\InquireMobileOwnershipResponse;
 use Barsam\Inquiry\Messages\InquirePersonRequest;
 use Barsam\Inquiry\Messages\InquirePersonResponse;
 use Barsam\Notification\Messages\SendByTemplateRequest;
 use Barsam\Notification\Messages\SendByTemplateResponse;
 use Barsam\User\Messages\GetRequest;
 use Barsam\User\Messages\GetResponse;
+use Barsam\User\Messages\RegisterRequest;
+use Barsam\User\Messages\RegisterResponse;
 use Barsam\User\Models\User;
 use Barsam\User\Models\UserMeta;
 use Psr\Http\Message\ServerRequestInterface;
@@ -37,7 +42,7 @@ class AuthController
         private readonly AuthService         $authService,
         private readonly UserService         $userService,
         private readonly NotificationService $notificationService,
-        private readonly InquiryService $inquiryService,
+        private readonly InquiryService      $inquiryService,
 
     )
     {
@@ -128,24 +133,7 @@ class AuthController
     #[Route('/auth', name: 'auth.get', methods: ['GET'], group: 'api_auth')]
     public function get(): array
     {
-        $inquiryRequest = new InquirePersonRequest();
-        $inquiryRequest->setNationalId(Auth::user()->getUserMetas()[1]->getValue());
-        $inquiryRequest->setBirthDate(Auth::user()->getUserMetas()[0]->getValue());
-
-        $inquiryResponse = $this->inquiryService->InquirePerson(
-            $inquiryRequest,
-            InquirePersonResponse::class
-        );
-
-        return [
-            'id' => Auth::user()->getId(),
-            'mobile'=>Auth::user()->getLoginId(),
-            'first_name' => $inquiryResponse->getResponse()->getFirstName(),
-            'last_name' => $inquiryResponse->getResponse()->getLastName(),
-            'father_name' => $inquiryResponse->getResponse()->getFatherName(),
-            'birth_date' => Auth::user()->getUserMetas()[0]->getValue(),
-            'national_code' => Auth::user()->getUserMetas()[1]->getValue()
-        ];
+        return CurrentUserMapper::fromRequest(Auth::user());
     }
 
     #[Route('/auth', name: 'auth.logout', methods: ['DELETE'], group: 'api_auth')]
@@ -160,5 +148,84 @@ class AuthController
         );
 
         return [];
+    }
+
+    #[Route('/auth/register', name: 'auth.register', methods: ['POST'], group:'api')]
+    public function register(InputManager $input): array
+    {
+        $shahkaarRequest = new InquireMobileOwnershipRequest([
+            'mobile' => $input->post('login_id'),
+            'national_id' => $input->post('meta_fields')["1"],
+        ]);
+        /** @var Response<InquireMobileOwnershipResponse> $shahkaarResponse */
+        $shahkaarResponse = $this->inquiryService->InquireMobileOwnership(
+            $shahkaarRequest,
+            InquireMobileOwnershipResponse::class,
+        );
+
+        if (!$shahkaarResponse->getResponse()->getIsMatched()) {
+            throw new HttpException('شماره وارد شده با کد ملی تطبیق ندارد', 403);
+        }
+
+        $inquiryRequest = new InquirePersonRequest([
+            'national_id' => $input->post('meta_fields')["1"],
+            'birth_date' => $input->post('meta_fields')["2"],
+        ]);
+
+        /** @var Response<InquirePersonResponse> $inquiryResponse */
+        $inquiryResponse = $this->inquiryService->InquirePerson(
+            $inquiryRequest,
+            InquirePersonResponse::class
+        );
+
+        $registerRequest = CreateUserMapper::fromRequest($input->data->all());
+        $registerRequest = new RegisterRequest();
+        $registerRequest->setLoginId($input->post('login_id'));
+        $registerRequest->setPasswordRaw('123456');
+        $registerRequest->setMetaFields([
+            1 => $input->post('meta_fields')['1'],
+            2 => $input->post('meta_fields')['2'],
+            3 => $inquiryResponse->getResponse()->getFirstName(),
+            4 => $inquiryResponse->getResponse()->getLastName(),
+            5 => $inquiryResponse->getResponse()->getFatherName(),
+        ]);
+
+        /** @var Response<RegisterResponse> $registerResponse */
+        $registerResponse = $this->userService->Register(
+            $registerRequest,
+            RegisterResponse::class
+        );
+
+        if($registerResponse->getDetail()->code !== 0)
+        {
+            throw new HttpException($registerResponse->getDetail()->details, 403);
+        }
+
+
+        $authorizeRequest = new AuthorizeRequest();
+        $authorizeRequest->setClientId($registerResponse->getResponse()->getUserId());
+        $authorizeRequest->setResponseType(ResponseType::CODE);
+
+        /** @var Response $otpResponse */
+        $otpResponse = $this->authService->Authorize(
+            $authorizeRequest,
+            AuthorizeResponse::class
+        );
+
+        $otpCode = $otpResponse->getResponse()->getCode();
+
+        $sendOtpRequest = new SendByTemplateRequest();
+        $sendOtpRequest->setRecipient($input->post('login_id'));
+        $sendOtpRequest->setChannelId(2);
+        $sendOtpRequest->setData(['code' => $otpCode]);
+        $sendOtpRequest->setTemplate(2);
+        $otpResponse = $this->notificationService->SendByTemplate(
+            $sendOtpRequest,
+            SendByTemplateResponse::class
+        );
+
+        return [
+            'id' => $registerResponse->getResponse()->getUserId(),
+        ];
     }
 }

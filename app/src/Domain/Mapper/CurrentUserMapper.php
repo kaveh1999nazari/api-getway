@@ -19,6 +19,8 @@ class CurrentUserMapper
             $data[$meta->getField()->getLabel()] = $meta->getValue();
         }
 
+        $data['is_verified'] = $data['credit_score'] >= 400 && strtotime($data['credit_score_expire']) > time();
+
         return $data;
     }
 

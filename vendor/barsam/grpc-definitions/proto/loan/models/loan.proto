@@ -31,4 +31,5 @@ message Loan {
   google.protobuf.Timestamp updated_at = 20;
   google.protobuf.Timestamp deleted_at = 21;
   bool is_approved_by_admin = 22;
+  string guaranteeFile = 23;
 }

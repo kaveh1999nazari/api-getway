@@ -26,6 +26,7 @@
         "spiral/roadrunner-cli": "^2.5",
         "spiral/router": "*",
         "spiral/stempler-bridge": "^3.8",
+        "spiral/storage": "*",
         "spiral/translator": "^3.8"
     },
     "require-dev": {

@@ -114,6 +114,8 @@ class Kernel extends \Spiral\Framework\Kernel
 //            \Spiral\Cache\Bootloader\CacheBootloader::class,
 //            \Spiral\RoadRunnerBridge\Bootloader\CacheBootloader::class,
 
+            //Upload file storage
+            \Spiral\Storage\Bootloader\StorageBootloader::class,
         ];
     }
 

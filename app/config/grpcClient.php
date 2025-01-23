@@ -26,7 +26,7 @@ return [
         ],
         'user' => [
             'class' => \App\Service\UserService::class,
-            'host' => $serviceIp . ':50006',
+            'host' => $majodIP . ':9002',
         ],
         'wallet' => [
             'class' => \App\Service\WalletService::class,

@@ -27,6 +27,7 @@ message CreateRequest {
   enums.StatusTow status_tow = 16;
   enums.StatusThree status_three = 17;
   bool is_approved_by_admin = 18;
+  string guaranteeFile = 19;
 }
 
 // Define the response message

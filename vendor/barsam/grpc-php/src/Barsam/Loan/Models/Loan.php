@@ -101,6 +101,10 @@ class Loan extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool is_approved_by_admin = 22;</code>
      */
     protected $is_approved_by_admin = false;
+    /**
+     * Generated from protobuf field <code>string guaranteeFile = 23;</code>
+     */
+    protected $guaranteeFile = '';
 
     /**
      * Constructor.
@@ -130,6 +134,7 @@ class Loan extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\Timestamp $updated_at
      *     @type \Google\Protobuf\Timestamp $deleted_at
      *     @type bool $is_approved_by_admin
+     *     @type string $guaranteeFile
      * }
      */
     public function __construct($data = NULL) {
@@ -657,6 +662,28 @@ class Loan extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->is_approved_by_admin = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string guaranteeFile = 23;</code>
+     * @return string
+     */
+    public function getGuaranteeFile()
+    {
+        return $this->guaranteeFile;
+    }
+
+    /**
+     * Generated from protobuf field <code>string guaranteeFile = 23;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setGuaranteeFile($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->guaranteeFile = $var;
 
         return $this;
     }

@@ -87,6 +87,10 @@ class CreateRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool is_approved_by_admin = 18;</code>
      */
     protected $is_approved_by_admin = false;
+    /**
+     * Generated from protobuf field <code>string guaranteeFile = 19;</code>
+     */
+    protected $guaranteeFile = '';
 
     /**
      * Constructor.
@@ -112,6 +116,7 @@ class CreateRequest extends \Google\Protobuf\Internal\Message
      *     @type int $status_tow
      *     @type int $status_three
      *     @type bool $is_approved_by_admin
+     *     @type string $guaranteeFile
      * }
      */
     public function __construct($data = NULL) {
@@ -521,6 +526,28 @@ class CreateRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->is_approved_by_admin = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string guaranteeFile = 19;</code>
+     * @return string
+     */
+    public function getGuaranteeFile()
+    {
+        return $this->guaranteeFile;
+    }
+
+    /**
+     * Generated from protobuf field <code>string guaranteeFile = 19;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setGuaranteeFile($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->guaranteeFile = $var;
 
         return $this;
     }
