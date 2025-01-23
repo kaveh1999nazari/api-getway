@@ -6,6 +6,7 @@ namespace App\Endpoint\Web;
 use App\Domain\Mapper\CurrentUserMapper;
 use App\Facade\Auth;
 use App\Service\AuthService;
+use App\Service\InquiryService;
 use App\Service\NotificationService;
 use App\Service\UserService;
 use App\Utility\GRPC\Response;
@@ -17,11 +18,14 @@ use Barsam\Auth\Messages\IssueTokenRequest;
 use Barsam\Auth\Messages\IssueTokenResponse;
 use Barsam\Auth\Messages\LogoutSessionRequest;
 use Barsam\Auth\Messages\LogoutSessionResponse;
+use Barsam\Inquiry\Messages\InquirePersonRequest;
+use Barsam\Inquiry\Messages\InquirePersonResponse;
 use Barsam\Notification\Messages\SendByTemplateRequest;
 use Barsam\Notification\Messages\SendByTemplateResponse;
 use Barsam\User\Messages\GetRequest;
 use Barsam\User\Messages\GetResponse;
 use Barsam\User\Models\User;
+use Barsam\User\Models\UserMeta;
 use Psr\Http\Message\ServerRequestInterface;
 use Spiral\Http\Exception\HttpException;
 use Spiral\Http\Request\InputManager;
@@ -33,6 +37,8 @@ class AuthController
         private readonly AuthService         $authService,
         private readonly UserService         $userService,
         private readonly NotificationService $notificationService,
+        private readonly InquiryService $inquiryService,
+
     )
     {
     }
@@ -122,7 +128,24 @@ class AuthController
     #[Route('/auth', name: 'auth.get', methods: ['GET'], group: 'api_auth')]
     public function get(): array
     {
-        return CurrentUserMapper::fromRequest(Auth::user());
+        $inquiryRequest = new InquirePersonRequest();
+        $inquiryRequest->setNationalId(Auth::user()->getUserMetas()[1]->getValue());
+        $inquiryRequest->setBirthDate(Auth::user()->getUserMetas()[0]->getValue());
+
+        $inquiryResponse = $this->inquiryService->InquirePerson(
+            $inquiryRequest,
+            InquirePersonResponse::class
+        );
+
+        return [
+            'id' => Auth::user()->getId(),
+            'mobile'=>Auth::user()->getLoginId(),
+            'first_name' => $inquiryResponse->getResponse()->getFirstName(),
+            'last_name' => $inquiryResponse->getResponse()->getLastName(),
+            'father_name' => $inquiryResponse->getResponse()->getFatherName(),
+            'birth_date' => Auth::user()->getUserMetas()[0]->getValue(),
+            'national_code' => Auth::user()->getUserMetas()[1]->getValue()
+        ];
     }
 
     #[Route('/auth', name: 'auth.logout', methods: ['DELETE'], group: 'api_auth')]
