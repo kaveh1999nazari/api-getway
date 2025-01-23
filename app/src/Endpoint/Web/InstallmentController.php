@@ -6,6 +6,7 @@ use App\Domain\Mapper\GetInstallmentMapper;
 use App\Facade\Auth;
 use App\Service\InstallmentService;
 use App\Utility\GoogleTimeHelper;
+use App\Utility\GRPC\Response;
 use Barsam\Installment\Messages\GetResponse;
 use DateTimeInterface;
 use Psr\Http\Message\ServerRequestInterface;
@@ -26,11 +27,14 @@ class InstallmentController
         $id = $request->getAttribute('route')->getMatches()['id'];
         $installmentRequest = GetInstallmentMapper::fromRequest($input->query->all(), $id, Auth::user()->getId());
 
+        /** @var Response $installmentResponse */
         $installmentResponse = $this->installmentService->Get(
             $installmentRequest,
             GetResponse::class
         );
 
+//        dump($installmentResponse->getResponse());
+//        dump($installmentResponse->getDetail());
         $installments = $installmentResponse->getResponse()->getInstallments();
 
         $installmentDetails = [];
@@ -42,6 +46,7 @@ class InstallmentController
                 'number' => $installment->getNumber(),
                 'amount' => $installment->getAmount(),
                 'penalty_amount' => $installment->getPenaltyAmount(),
+                'due_date' => $installment->getDueDate(),
                 'created_at' => GoogleTimeHelper::timestampToDateTimeImmutable($installment->getCreatedAt())->format(DateTimeInterface::ATOM),
                 'updated_at' => GoogleTimeHelper::timestampToDateTimeImmutable($installment->getUpdatedAt())->format(DateTimeInterface::ATOM)
             ];
