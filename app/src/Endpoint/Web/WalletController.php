@@ -30,29 +30,30 @@ class WalletController
             GetTransactionsResponse::class
         );
 
-        dump($walletResponse->getResponse());
+//        dump($walletResponse->getResponse());
+//        dump($walletResponse->getDetail());
 
-//        $transactions = $walletResponse->getResponse()->getTransactions();
-//        $transactionsArray = [];
-//        foreach ($transactions as $transaction) {
-//            $transactionsArray[] = [
-//                'id' => $transaction->getId(),
-//                'wallet_id' => $transaction->getWalletId(),
-//                'type' => $transaction->getType(),
-//                'amount' => $transaction->getAmount(),
-//                'description' => $transaction->getDescription(),
-//                'status' => $transaction->getStatus(),
-//                'caused_by_id' => $transaction->getCausedById(),
-//                'caused_by_name' => $transaction->getCausedByName(),
-//                'reference_number' => $transaction->getReferenceNumber(),
-//                'created_at' => GoogleTimeHelper::timestampToDateTimeImmutable($transaction->getCreatedAt())->format(DateTimeInterface::ATOM),
-//            ];
-//        }
+        $transactions = $walletResponse->getResponse()->getTransactions();
+        $transactionsArray = [];
+        foreach ($transactions as $transaction) {
+            $transactionsArray[] = [
+                'id' => $transaction->getId(),
+                'wallet_id' => $transaction->getWalletId(),
+                'type' => $transaction->getType(),
+                'amount' => $transaction->getAmount(),
+                'description' => $transaction->getDescription(),
+                'status' => $transaction->getStatus(),
+                'caused_by_id' => $transaction->getCausedById(),
+                'caused_by_name' => $transaction->getCausedByName(),
+                'reference_number' => $transaction->getReferenceNumber(),
+                'created_at' => GoogleTimeHelper::timestampToDateTimeImmutable($transaction->getCreatedAt())->format(DateTimeInterface::ATOM),
+            ];
+        }
 
         return [
-//            'data' => $transactionsArray,
-//            'max_page' => $walletResponse->getResponse()->getMaxPage(),
-//            'total_records' => $walletResponse->getResponse()->getTotalRecords(),
+            'data' => $transactionsArray,
+            'max_page' => $walletResponse->getResponse()->getMaxPage(),
+            'total_records' => $walletResponse->getResponse()->getTotalRecords(),
         ];
     }
 

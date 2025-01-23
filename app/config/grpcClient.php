@@ -30,7 +30,7 @@ return [
         ],
         'wallet' => [
             'class' => \App\Service\WalletService::class,
-            'host' => $abbsIp . ':9002'
+            'host' => $serviceIp . ':50007'
         ],
         'organization' => [
             'class' => \App\Service\OrganizationService::class,
