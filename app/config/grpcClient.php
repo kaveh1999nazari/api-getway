@@ -56,6 +56,10 @@ return [
             'class' => \App\Service\PaymentService::class,
             'host' => $serviceIp . ':50013'
         ],
+        'location' => [
+            'class' => \App\Service\LocationService::class,
+            'host' => $serviceIp . ':50014'
+        ]
 //        'otp' => [
 //            'class' => \App\Service\OtpService::class,
 //            'host' => '172.20.8.90:90012'
