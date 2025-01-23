@@ -24,7 +24,7 @@ class InquiryController
     {
         $inquiryRequest = new StartCreditScoreRequest();
         $inquiryRequest->setMobile($input->post('mobile'));
-        $inquiryRequest->setNationalId($input->post('national_id'));
+        $inquiryRequest->setNationalId($input->post('national_code'));
 
         /** @var Response $inquiryResponse */
         $inquiryResponse = $this->inquiryService->StartCreditScore(
@@ -34,6 +34,7 @@ class InquiryController
 
         $requestId = $inquiryResponse->getResponse()->getRequestId();
 
+//        dirname('/runtime/cache/validations')
         $filePath = __DIR__ . '/request_ids_' . $inquiryRequest->getNationalId();
         file_put_contents($filePath, $requestId);
 
