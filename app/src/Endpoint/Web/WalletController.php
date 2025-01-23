@@ -30,9 +30,6 @@ class WalletController
             GetTransactionsResponse::class
         );
 
-//        dump($walletResponse->getResponse());
-//        dump($walletResponse->getDetail());
-
         $transactions = $walletResponse->getResponse()->getTransactions();
         $transactionsArray = [];
         foreach ($transactions as $transaction) {
