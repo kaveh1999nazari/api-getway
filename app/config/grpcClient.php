@@ -10,7 +10,7 @@ return [
         ],
         'installment' => [
             'class' => \App\Service\InstallmentService::class,
-            'host' => $serviceIp . ':50002'
+            'host' => $majodIP . ':9003'
         ],
         'loan' => [
             'class' => \App\Service\LoanService::class,
