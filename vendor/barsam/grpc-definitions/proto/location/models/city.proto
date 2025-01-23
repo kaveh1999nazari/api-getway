@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package barsam.location.models;
+
+import "location/models/province.proto";
+
+message City {
+  uint64 id = 1;
+  uint64 province_id = 2;
+  string name = 3;
+  models.Province province = 4;
+}

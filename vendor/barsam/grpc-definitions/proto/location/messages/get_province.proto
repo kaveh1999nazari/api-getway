@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package barsam.location.messages;
+
+import "location/models/province.proto";
+
+// Define the request message
+message GetProvinceRequest {
+
+}
+
+// Define the response message
+message GetProvinceResponse {
+  repeated models.Province provinces = 1;
+}

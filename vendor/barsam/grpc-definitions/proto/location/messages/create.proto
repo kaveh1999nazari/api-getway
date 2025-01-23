@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package barsam.location.messages;
+
+// Define the request message
+message CreateRequest {
+  uint64 city_id = 1;
+  uint64 user_id = 2;
+  string address = 3;
+  string postal_code = 4;
+  string phone_number = 5;
+}
+
+// Define the response message
+message CreateResponse {
+  uint64 id = 1;
+}

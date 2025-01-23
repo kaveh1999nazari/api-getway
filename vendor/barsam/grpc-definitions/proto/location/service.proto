@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package barsam.location;
+
+import "location/messages/create.proto";
+import "location/messages/get.proto";
+import "location/messages/update.proto";
+import "location/messages/delete.proto";
+import "location/messages/get_province.proto";
+import "location/messages/get_city.proto";
+
+service LocationService {
+  rpc Create(messages.CreateRequest) returns (messages.CreateResponse);
+
+  rpc Get(messages.GetRequest) returns (messages.GetResponse);
+
+  rpc Update(messages.UpdateRequest) returns (messages.UpdateResponse);
+
+  rpc Delete(messages.DeleteRequest) returns (messages.DeleteResponse);
+
+  rpc GetProvince(messages.GetProvinceRequest) returns (messages.GetProvinceResponse);
+
+  rpc GetCity(messages.GetCityRequest) returns (messages.GetCityResponse);
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package barsam.installment.enums;
+
+enum Status {
+  INSTALLMENT_UNKNOWN = 0;
+  INSTALLMENT_PENDING = 1;
+  INSTALLMENT_PAID = 2;
+  INSTALLMENT_DUE = 3;
+
+}

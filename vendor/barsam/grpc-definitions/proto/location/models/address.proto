@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package barsam.location.models;
+
+import "location/models/city.proto";
+
+message Address {
+  uint64 id = 1;
+  uint64 city_id = 2;
+  string address = 3;
+  string postal_code = 4;
+  string phone_number = 5;
+  models.City city = 6;
+}
