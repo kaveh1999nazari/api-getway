@@ -11,7 +11,7 @@ class CurrentUserMapper
     {
         $data = [
             'id' => $user->getId(),
-            'mobile'=>$user->getLoginId(),
+            'mobile' => $user->getLoginId(),
         ];
 
         /** @var UserMeta $meta */
@@ -19,7 +19,10 @@ class CurrentUserMapper
             $data[$meta->getField()->getLabel()] = $meta->getValue();
         }
 
-        $data['is_verified'] = $data['credit_score'] >= 400 && strtotime($data['credit_score_expire']) > time();
+        $data['is_verified'] = isset($data['credit_score'])
+            && $data['credit_score'] >= 400
+            && isset($data['credit_score_expire'])
+            && strtotime($data['credit_score_expire']) > time();
 
         return $data;
     }
