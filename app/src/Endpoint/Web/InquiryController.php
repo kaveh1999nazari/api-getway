@@ -26,7 +26,7 @@ class InquiryController
     {
     }
 
-    #[Route('/inquiries/start', name: 'inquiry.start', methods: ['POST'], group: 'api')]
+    #[Route('/inquiries/start', name: 'inquiry.start', methods: ['POST'], group: 'api_auth')]
     public function start(InputManager $input): array
     {
         $inquiryRequest = new StartCreditScoreRequest();
@@ -49,7 +49,7 @@ class InquiryController
         return [];
     }
 
-    #[Route('/inquiries/finish', name: 'inquiry.finish', methods: ['POST'], group: 'api')]
+    #[Route('/inquiries/finish', name: 'inquiry.finish', methods: ['POST'], group: 'api_auth')]
     public function finish(InputManager $input): array
     {
         $inquiryRequest = new FinishCreditScoreRequest();
@@ -62,6 +62,7 @@ class InquiryController
 
         $inquiryRequest->setCode($input->post('code'));
 
+        /** @var Response<FinishCreditScoreResponse> $inquiryResponse */
         $inquiryResponse = $this->inquiryService->FinishCreditScore(
             $inquiryRequest,
             FinishCreditScoreResponse::class
