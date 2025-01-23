@@ -56,7 +56,7 @@ class UsersController
         }
 
 
-        $storagePath = sprintf('public/uploads/%s', Auth::user()->getId());
+        $storagePath = sprintf('public/uploads/users/%s', Auth::user()->getId());
         $this->files->ensureDirectory($storagePath);
 
         $frontExt = pathinfo($idFront->getClientFilename(), PATHINFO_EXTENSION);
