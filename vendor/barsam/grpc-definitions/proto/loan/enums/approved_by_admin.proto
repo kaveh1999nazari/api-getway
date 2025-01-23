@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package barsam.loan.enums;
+
+enum ApprovedByAdmin {
+  LOAN_APPROVED_BY_ADMIN_UNKNOWN = 0;
+  LOAN_APPROVED_BY_ADMIN_PENDING = 1;
+  LOAN_APPROVED_BY_ADMIN_APPROVED = 2;
+  LOAN_APPROVED_BY_ADMIN_REJECTED = 3;
+}

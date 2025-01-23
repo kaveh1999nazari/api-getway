@@ -7,6 +7,7 @@ import "loan/enums/status.proto";
 import "loan/enums/status_one.proto";
 import "loan/enums/status_tow.proto";
 import "loan/enums/status_three.proto";
+import "loan/enums/approved_by_admin.proto";
 
 message Loan {
   uint64 id = 1;
@@ -30,6 +31,8 @@ message Loan {
   google.protobuf.Timestamp created_at = 19;
   google.protobuf.Timestamp updated_at = 20;
   google.protobuf.Timestamp deleted_at = 21;
-  bool is_approved_by_admin = 22;
+  enums.ApprovedByAdmin is_approved_by_admin = 22;
   string guaranteeFile = 23;
+  string guaranteeNumber = 24;
+
 }

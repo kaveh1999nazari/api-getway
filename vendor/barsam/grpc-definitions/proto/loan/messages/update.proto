@@ -7,6 +7,7 @@ import "loan/enums/status.proto";
 import "loan/enums/status_one.proto";
 import "loan/enums/status_tow.proto";
 import "loan/enums/status_three.proto";
+import "loan/enums/approved_by_admin.proto";
 // Define the request message
 message UpdateRequest {
   uint64 id = 1;
@@ -25,8 +26,9 @@ message UpdateRequest {
   enums.StatusOne status_one = 14;
   enums.StatusTow status_tow = 15;
   enums.StatusThree status_three = 16;
-  bool is_approved_by_admin = 17;
+  enums.ApprovedByAdmin is_approved_by_admin = 17;
   string guaranteeFile = 18;
+  string guaranteeNumber = 19;
 
 }
 

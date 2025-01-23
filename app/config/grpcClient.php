@@ -10,7 +10,7 @@ return [
         ],
         'installment' => [
             'class' => \App\Service\InstallmentService::class,
-            'host' => $majodIP . ':9003'
+            'host' => $serviceIp . ':50002'
         ],
         'loan' => [
             'class' => \App\Service\LoanService::class,
@@ -26,7 +26,7 @@ return [
         ],
         'user' => [
             'class' => \App\Service\UserService::class,
-            'host' => $majodIP . ':9002',
+            'host' => $serviceIp . ':50006',
         ],
         'wallet' => [
             'class' => \App\Service\WalletService::class,
@@ -46,7 +46,7 @@ return [
         ],
         'inquiry' => [
             'class' => \App\Service\InquiryService::class,
-            'host' => $majodIP . ':9001',
+            'host' => $serviceIp . ':50011',
         ],
         'cpg' => [
             'class' => \App\Service\CpgService::class,

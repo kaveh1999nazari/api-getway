@@ -8,6 +8,7 @@ message FinishCreditScoreRequest {
   string code = 2;
   string mobile = 3;
   string national_code = 4;
+  int64 user_id = 5;
 }
 
 // Define the response message

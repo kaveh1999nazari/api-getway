@@ -9,6 +9,7 @@ import "inquiry/messages/inquire_banking_score.proto";
 import "inquiry/messages/inquire_mobile_ownership.proto";
 import "inquiry/messages/start_credit_score.proto";
 import "inquiry/messages/finish_credit_score.proto";
+import "inquiry/messages/get_history.proto";
 
 service InquiryService {
   // Inquire person information
@@ -33,4 +34,7 @@ service InquiryService {
 
   // Inquire mobile ownership information and match it with the person information
   rpc InquireMobileOwnership(messages.InquireMobileOwnershipRequest) returns (messages.InquireMobileOwnershipResponse);
+
+  //Get inquiry verifying history with id and user id
+  rpc GetHistory(messages.GetHistoryRequest) returns (messages.GetHistoryResponse);
 }

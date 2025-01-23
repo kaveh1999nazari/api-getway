@@ -84,9 +84,9 @@ class CreateRequest extends \Google\Protobuf\Internal\Message
      */
     protected $status_three = 0;
     /**
-     * Generated from protobuf field <code>bool is_approved_by_admin = 18;</code>
+     * Generated from protobuf field <code>.barsam.loan.enums.ApprovedByAdmin is_approved_by_admin = 18;</code>
      */
-    protected $is_approved_by_admin = false;
+    protected $is_approved_by_admin = 0;
     /**
      * Generated from protobuf field <code>string guaranteeFile = 19;</code>
      */
@@ -115,7 +115,7 @@ class CreateRequest extends \Google\Protobuf\Internal\Message
      *     @type int $status_one
      *     @type int $status_tow
      *     @type int $status_three
-     *     @type bool $is_approved_by_admin
+     *     @type int $is_approved_by_admin
      *     @type string $guaranteeFile
      * }
      */
@@ -509,8 +509,8 @@ class CreateRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool is_approved_by_admin = 18;</code>
-     * @return bool
+     * Generated from protobuf field <code>.barsam.loan.enums.ApprovedByAdmin is_approved_by_admin = 18;</code>
+     * @return int
      */
     public function getIsApprovedByAdmin()
     {
@@ -518,13 +518,13 @@ class CreateRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool is_approved_by_admin = 18;</code>
-     * @param bool $var
+     * Generated from protobuf field <code>.barsam.loan.enums.ApprovedByAdmin is_approved_by_admin = 18;</code>
+     * @param int $var
      * @return $this
      */
     public function setIsApprovedByAdmin($var)
     {
-        GPBUtil::checkBool($var);
+        GPBUtil::checkEnum($var, \Barsam\Loan\Enums\ApprovedByAdmin::class);
         $this->is_approved_by_admin = $var;
 
         return $this;

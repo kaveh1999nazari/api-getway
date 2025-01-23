@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package barsam.inquiry.models;
+
+import "google/protobuf/timestamp.proto";
+
+message History {
+  uint64 id = 1;
+  uint64 user_id = 2;
+  string score = 3;
+  string dataJson = 4;
+  string requestId = 5;
+  google.protobuf.Timestamp created_at = 6;
+}

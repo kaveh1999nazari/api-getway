@@ -80,13 +80,17 @@ class UpdateRequest extends \Google\Protobuf\Internal\Message
      */
     protected $status_three = 0;
     /**
-     * Generated from protobuf field <code>bool is_approved_by_admin = 17;</code>
+     * Generated from protobuf field <code>.barsam.loan.enums.ApprovedByAdmin is_approved_by_admin = 17;</code>
      */
-    protected $is_approved_by_admin = false;
+    protected $is_approved_by_admin = 0;
     /**
      * Generated from protobuf field <code>string guaranteeFile = 18;</code>
      */
     protected $guaranteeFile = '';
+    /**
+     * Generated from protobuf field <code>string guaranteeNumber = 19;</code>
+     */
+    protected $guaranteeNumber = '';
 
     /**
      * Constructor.
@@ -110,8 +114,9 @@ class UpdateRequest extends \Google\Protobuf\Internal\Message
      *     @type int $status_one
      *     @type int $status_tow
      *     @type int $status_three
-     *     @type bool $is_approved_by_admin
+     *     @type int $is_approved_by_admin
      *     @type string $guaranteeFile
+     *     @type string $guaranteeNumber
      * }
      */
     public function __construct($data = NULL) {
@@ -482,8 +487,8 @@ class UpdateRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool is_approved_by_admin = 17;</code>
-     * @return bool
+     * Generated from protobuf field <code>.barsam.loan.enums.ApprovedByAdmin is_approved_by_admin = 17;</code>
+     * @return int
      */
     public function getIsApprovedByAdmin()
     {
@@ -491,13 +496,13 @@ class UpdateRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool is_approved_by_admin = 17;</code>
-     * @param bool $var
+     * Generated from protobuf field <code>.barsam.loan.enums.ApprovedByAdmin is_approved_by_admin = 17;</code>
+     * @param int $var
      * @return $this
      */
     public function setIsApprovedByAdmin($var)
     {
-        GPBUtil::checkBool($var);
+        GPBUtil::checkEnum($var, \Barsam\Loan\Enums\ApprovedByAdmin::class);
         $this->is_approved_by_admin = $var;
 
         return $this;
@@ -521,6 +526,28 @@ class UpdateRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->guaranteeFile = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string guaranteeNumber = 19;</code>
+     * @return string
+     */
+    public function getGuaranteeNumber()
+    {
+        return $this->guaranteeNumber;
+    }
+
+    /**
+     * Generated from protobuf field <code>string guaranteeNumber = 19;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setGuaranteeNumber($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->guaranteeNumber = $var;
 
         return $this;
     }

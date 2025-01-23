@@ -98,13 +98,17 @@ class Loan extends \Google\Protobuf\Internal\Message
      */
     protected $deleted_at = null;
     /**
-     * Generated from protobuf field <code>bool is_approved_by_admin = 22;</code>
+     * Generated from protobuf field <code>.barsam.loan.enums.ApprovedByAdmin is_approved_by_admin = 22;</code>
      */
-    protected $is_approved_by_admin = false;
+    protected $is_approved_by_admin = 0;
     /**
      * Generated from protobuf field <code>string guaranteeFile = 23;</code>
      */
     protected $guaranteeFile = '';
+    /**
+     * Generated from protobuf field <code>string guaranteeNumber = 24;</code>
+     */
+    protected $guaranteeNumber = '';
 
     /**
      * Constructor.
@@ -133,8 +137,9 @@ class Loan extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\Timestamp $created_at
      *     @type \Google\Protobuf\Timestamp $updated_at
      *     @type \Google\Protobuf\Timestamp $deleted_at
-     *     @type bool $is_approved_by_admin
+     *     @type int $is_approved_by_admin
      *     @type string $guaranteeFile
+     *     @type string $guaranteeNumber
      * }
      */
     public function __construct($data = NULL) {
@@ -645,8 +650,8 @@ class Loan extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool is_approved_by_admin = 22;</code>
-     * @return bool
+     * Generated from protobuf field <code>.barsam.loan.enums.ApprovedByAdmin is_approved_by_admin = 22;</code>
+     * @return int
      */
     public function getIsApprovedByAdmin()
     {
@@ -654,13 +659,13 @@ class Loan extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>bool is_approved_by_admin = 22;</code>
-     * @param bool $var
+     * Generated from protobuf field <code>.barsam.loan.enums.ApprovedByAdmin is_approved_by_admin = 22;</code>
+     * @param int $var
      * @return $this
      */
     public function setIsApprovedByAdmin($var)
     {
-        GPBUtil::checkBool($var);
+        GPBUtil::checkEnum($var, \Barsam\Loan\Enums\ApprovedByAdmin::class);
         $this->is_approved_by_admin = $var;
 
         return $this;
@@ -684,6 +689,28 @@ class Loan extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->guaranteeFile = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string guaranteeNumber = 24;</code>
+     * @return string
+     */
+    public function getGuaranteeNumber()
+    {
+        return $this->guaranteeNumber;
+    }
+
+    /**
+     * Generated from protobuf field <code>string guaranteeNumber = 24;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setGuaranteeNumber($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->guaranteeNumber = $var;
 
         return $this;
     }
