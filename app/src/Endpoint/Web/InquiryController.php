@@ -38,9 +38,7 @@ class InquiryController
         file_put_contents($filePath, $requestId);
 
 
-        return [
-//            'request_id' => $inquiryResponse->getResponse()->getRequestId(),
-        ];
+        return [];
     }
 
     #[Route('/inquiries/finish', name: 'inquiry.finish', methods: ['POST'], group: 'api')]
