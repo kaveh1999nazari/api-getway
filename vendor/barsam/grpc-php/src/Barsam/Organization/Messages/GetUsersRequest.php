@@ -24,15 +24,19 @@ class GetUsersRequest extends \Google\Protobuf\Internal\Message
      */
     protected $organization_id = 0;
     /**
+     * Generated from protobuf field <code>uint64 user_id = 3;</code>
+     */
+    protected $user_id = 0;
+    /**
      * The page number
      *
-     * Generated from protobuf field <code>uint32 page = 3;</code>
+     * Generated from protobuf field <code>uint32 page = 4;</code>
      */
     protected $page = 0;
     /**
      * The number of items per page
      *
-     * Generated from protobuf field <code>uint32 per_page = 4;</code>
+     * Generated from protobuf field <code>uint32 per_page = 5;</code>
      */
     protected $per_page = 0;
 
@@ -44,6 +48,7 @@ class GetUsersRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type int|string $id
      *     @type int|string $organization_id
+     *     @type int|string $user_id
      *     @type int $page
      *           The page number
      *     @type int $per_page
@@ -100,9 +105,31 @@ class GetUsersRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Generated from protobuf field <code>uint64 user_id = 3;</code>
+     * @return int|string
+     */
+    public function getUserId()
+    {
+        return $this->user_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>uint64 user_id = 3;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setUserId($var)
+    {
+        GPBUtil::checkUint64($var);
+        $this->user_id = $var;
+
+        return $this;
+    }
+
+    /**
      * The page number
      *
-     * Generated from protobuf field <code>uint32 page = 3;</code>
+     * Generated from protobuf field <code>uint32 page = 4;</code>
      * @return int
      */
     public function getPage()
@@ -113,7 +140,7 @@ class GetUsersRequest extends \Google\Protobuf\Internal\Message
     /**
      * The page number
      *
-     * Generated from protobuf field <code>uint32 page = 3;</code>
+     * Generated from protobuf field <code>uint32 page = 4;</code>
      * @param int $var
      * @return $this
      */
@@ -128,7 +155,7 @@ class GetUsersRequest extends \Google\Protobuf\Internal\Message
     /**
      * The number of items per page
      *
-     * Generated from protobuf field <code>uint32 per_page = 4;</code>
+     * Generated from protobuf field <code>uint32 per_page = 5;</code>
      * @return int
      */
     public function getPerPage()
@@ -139,7 +166,7 @@ class GetUsersRequest extends \Google\Protobuf\Internal\Message
     /**
      * The number of items per page
      *
-     * Generated from protobuf field <code>uint32 per_page = 4;</code>
+     * Generated from protobuf field <code>uint32 per_page = 5;</code>
      * @param int $var
      * @return $this
      */

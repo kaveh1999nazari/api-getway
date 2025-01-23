@@ -17,14 +17,15 @@ class GetUsers
         \GPBMetadata\Organization\Models\OrganizationUsers::initOnce();
         $pool->internalAddGeneratedFile(
             '
-®
-%organization/messages/get_users.protobarsam.organization.messages"V
+¿
+%organization/messages/get_users.protobarsam.organization.messages"g
 GetUsersRequest
 
 id (
-organization_id (
-page (
-per_page ("†
+organization_id (
+user_id (
+page (
+per_page ("†
 GetUsersResponseI
 organization_users (2-.barsam.organization.models.OrganizationUsers
 total_records (
