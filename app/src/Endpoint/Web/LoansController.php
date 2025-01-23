@@ -189,7 +189,7 @@ class LoansController
             'status_one' => $loan->getStatusOne(),
             'status_two' => $loan->getStatusTow(),
             'status_three' => $loan->getStatusThree(),
-            'is_approved_by_admin' => false,
+            'is_approved_by_admin' => null,
         ];
     }
 }
