@@ -18,6 +18,7 @@ use Barsam\Loan\Models\Loan;
 use Barsam\Loan\Models\Plan;
 use DateTimeInterface;
 use Psr\Http\Message\ServerRequestInterface;
+use Spiral\Http\Exception\HttpException;
 use Spiral\Http\Request\InputManager;
 use Spiral\Router\Annotation\Route;
 
@@ -35,10 +36,16 @@ class LoansController
     {
         $loanRequest = CreateLoanMapper::fromRequest($input->data->all());
 
+        /** @var Response<CreateResponse> $loanResponse */
         $loanResponse = $this->loanService->Create(
             $loanRequest,
             CreateResponse::class
         );
+
+        if($loanResponse->getDetail()->code === 13)
+        {
+            throw new HttpException($loanResponse->getDetail()->details, 406);
+        }
 
         return [
             'id' => $loanResponse->getResponse()->getId()
@@ -104,7 +111,7 @@ class LoansController
                 'created_at' => $loan->getCreatedAt()->getSeconds() ?
                     GoogleTimeHelper::timestampToDateTimeImmutable($loan->getCreatedAt())->format(DateTimeInterface::ATOM)
                     : null,
-                'status' => $loan->getStatus(),
+                'status_all' => $loan->getStatus(),
                 'status_one' => $loan->getStatusOne(),
                 'status_two' => $loan->getStatusTow(),
                 'status_three' => $loan->getStatusThree(),
@@ -145,10 +152,12 @@ class LoansController
         $loanRequest->setId($id);
         $loanRequest->setPage($input->post('page', 1));
 
+        /** @var Response<GetResponse> $loanResponse */
         $loanResponse = $this->loanService->Get(
             $loanRequest,
             GetResponse::class
         );
+
         /** @var Loan $loan */
         $loan = iterator_to_array($loanResponse->getResponse()->getLoans())[0];
 
@@ -189,7 +198,7 @@ class LoansController
             'status_one' => $loan->getStatusOne(),
             'status_two' => $loan->getStatusTow(),
             'status_three' => $loan->getStatusThree(),
-            'is_approved_by_admin' => null,
+            'is_approved_by_admin' => $loan->getIsApprovedByAdmin(),
         ];
     }
 }
