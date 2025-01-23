@@ -7,6 +7,7 @@ use App\Facade\Auth;
 use App\Service\LoanService;
 use App\Utility\GoogleTimeHelper;
 use App\Utility\GRPC\Response;
+use Barsam\Loan\Enums\StatusTow;
 use Barsam\Loan\Messages\CalculateRequest;
 use Barsam\Loan\Messages\CalculateResponse;
 use Barsam\Loan\Messages\CreateResponse;
@@ -14,10 +15,14 @@ use Barsam\Loan\Messages\GetPlanRequest;
 use Barsam\Loan\Messages\GetPlanResponse;
 use Barsam\Loan\Messages\GetRequest;
 use Barsam\Loan\Messages\GetResponse;
+use Barsam\Loan\Messages\UpdateRequest;
+use Barsam\Loan\Messages\UpdateResponse;
 use Barsam\Loan\Models\Loan;
 use Barsam\Loan\Models\Plan;
+use Barsam\User\Models\UserMeta;
 use DateTimeInterface;
 use Psr\Http\Message\ServerRequestInterface;
+use Spiral\Files\FilesInterface;
 use Spiral\Http\Exception\HttpException;
 use Spiral\Http\Request\InputManager;
 use Spiral\Router\Annotation\Route;
@@ -27,6 +32,8 @@ class LoansController
 
     public function __construct(
         private readonly LoanService $loanService,
+        private readonly FilesInterface $files,
+
     )
     {
     }
@@ -199,6 +206,53 @@ class LoansController
             'status_two' => $loan->getStatusTow(),
             'status_three' => $loan->getStatusThree(),
             'is_approved_by_admin' => $loan->getIsApprovedByAdmin(),
+        ];
+    }
+
+    #[Route(route: '/loans/<id:\d+>/guarantee', name: 'loans.upload_guarantee', methods: 'POST', group: 'api_auth')]
+    public function uploadGuarantee(ServerRequestInterface $request, InputManager $input): array
+    {
+        $id = $request->getAttribute('route')->getMatches()['id'];
+
+        $guaranteeFile = $input->file('guarantee_file');
+//        $guaranteeNumber = $input->post('guarantee_number');
+
+        if ($guaranteeFile === null) {
+            throw new HttpException('تصویری اپلود نشده است', 400);
+        }
+
+        $mediaType = $guaranteeFile->getClientMediaType();
+        if (!in_array($mediaType, ['image/jpeg', 'image/png'])) {
+            throw new HttpException('فایل اپلود اشتباه است', 400);
+        }
+
+        $storagePath = sprintf('public/uploads/loans/%s', $id);
+        $this->files->ensureDirectory($storagePath);
+
+        $guaranteeExt = pathinfo($guaranteeFile->getClientFilename(), PATHINFO_EXTENSION);
+        $guaranteeFileName = uniqid('guarantee_') . '.' . strtolower($guaranteeExt);
+        $guaranteePath = sprintf('%s/%s', $storagePath, $guaranteeFileName);
+        $guaranteeFile->moveTo($guaranteePath);
+
+        $updateLoanRequest = new UpdateRequest([
+            'id' => $id,
+            'guarantee_file' => $guaranteePath,
+            'guarantee_number' => $input->post('guarantee_number'),
+            'guarantee_type' => $input->post('guarantee_type'),
+            'status_one' => StatusTow::STATUS_LEVEL2_WAITING_FOR_CONFIRMATION,
+        ]);
+
+        /** @var Response<UpdateResponse> $updateUserResponse */
+        $updateLoanResponse = $this->loanService->Update(
+            $updateLoanRequest,
+            UpdateResponse::class,
+        );
+        if ($updateLoanResponse->getDetail()->code !== 0) {
+            throw new HttpException('مشکلی در آپلود فایل شمانت وجود دارد', 403);
+        }
+
+        return [
+            'guarantee_file' => $guaranteePath,
         ];
     }
 }
